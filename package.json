@@ -4,6 +4,13 @@
   "description": "Vue.js 2 wrapper over Atlassian User Interface (AUI)",
   "author": "dskrodzki <damian.skrodzki@spartez.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spartez/vue-aui.git"
+  },
+  "homepage": "https://github.com/spartez/vue-aui#readme",
+  "keywords": ["vue", "vuejs", "aui", "atlassian", "atlassian user interface"],
+  "bugs": "https://github.com/spartez/vue-aui/issues",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
