@@ -34,8 +34,7 @@ Therefore it's not recommended to use dashes but rather fixed versions or tildas
 
 ## Publishing
 
-1. `npm version patch` (`minor` or `major`)
-2. `./build/publish.js`
+1. `./build/publish.js patch` (use `minor` or `major` to use release those versions))
 
 ## Build Setup
 
