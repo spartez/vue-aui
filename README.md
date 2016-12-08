@@ -2,6 +2,8 @@
 
 > Vue.js 2 wrapper over Atlassian User Interface (AUI)
 
+![npm version](https://badge.fury.io/js/vue-aui.svg)
+
 ## Usage
 
 ### Requirements
