@@ -6,9 +6,12 @@
 </template>
 
 <script>
+  const SEPARATOR = ',';
+
   export default{
     props: {
-      value: String
+      value: Array,
+      tagsMode: Boolean
     },
 
     data: function () {
@@ -22,26 +25,37 @@
       this.$on('optionsChanged', this.updateOptions)
     },
 
-    mounted: function () {
+    mounted () {
       this.$input = AJS.$(this.$refs.input)
-      this.$input.val(this.value)
+      this.setSelectValue(this.value)
 
-      this.$input.auiSelect2({
-        data: () => ({results: this.options})
-      });
+      const options = {}
 
+      if (this.tagsMode) {
+        options.formatNoMatches = () => "Type to add a value"
+        options.tags = () => this.options
+      } else {
+        options.multiple = true
+        options.data = () => ({results: this.options})
+      }
+
+      this.$input.auiSelect2(options)
       this.$input.on('change', this.onSelect2ValueChanged)
     },
 
     watch: {
       value: function (value) {
-        this.$input.auiSelect2('val', value)
+        this.$input.auiSelect2("val", value)
       }
     },
 
     methods: {
-      onSelect2ValueChanged: function (event) {
+      onSelect2ValueChanged(event) {
         this.$emit('input', event.val)
+      },
+
+      setSelectValue(values) {
+        this.$input.val(values && values.join(SEPARATOR))
       },
 
       updateOptions() {
