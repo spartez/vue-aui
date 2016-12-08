@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Vue.js 2 wrapper over Atlassian User Interface (AUI)",
   "author": "dskrodzki <damian.skrodzki@spartez.com>",
-  "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
@@ -11,6 +11,7 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e"
   },
+  "main": "dist/static/js/vue-aui.js",
   "dependencies": {
     "vue": "^2.1.0"
   },
