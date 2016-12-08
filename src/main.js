@@ -3,7 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 
-import './components'
+import VueAui from './components/VueAui'
+
+Vue.use(VueAui)
 
 /* eslint-disable no-new */
 new Vue({
