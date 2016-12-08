@@ -25,12 +25,17 @@
 
             <h3>Select2 Single</h3>
             <p>
-              <aui-select2-single v-model="selectValue">
+              <aui-select2-single v-model="selectValue" placeholder="Select any value">
                 <aui-select2-option value="value1">Option 1</aui-select2-option>
                 <aui-select2-option value="value2">Option 2</aui-select2-option>
               </aui-select2-single>
               <span>{{selectValue}}</span>
-              <button class="aui-button aui-button-link" @click="selectValue = undefined">Clear value</button>
+            </p>
+            <p>
+              <aui-select2-single v-model="selectValue2" placeholder="Select any value">
+                <aui-select2-option value="value1">Any value</aui-select2-option>
+              </aui-select2-single>
+              <button class="aui-button aui-button-link" @click="selectValue2 = undefined">Clear value</button>
             </p>
 
             <h3>Select2 Multi</h3>
@@ -69,6 +74,7 @@
         toggle1: true,
         toggle2: false,
         selectValue: 'value1',
+        selectValue2: undefined,
         selectValues: ['value1'],
         selectTags: ["tag1"]
       }

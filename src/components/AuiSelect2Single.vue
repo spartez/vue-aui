@@ -8,7 +8,8 @@
 <script>
   export default{
     props: {
-      value: String
+      value: String,
+      placeholder: String
     },
 
     data: function () {
@@ -27,7 +28,8 @@
       this.$input.val(this.value)
 
       this.$input.auiSelect2({
-        data: () => ({results: this.options})
+        data: () => ({results: this.options}),
+        placeholder: this.placeholder
       });
 
       this.$input.on('change', this.onSelect2ValueChanged)
