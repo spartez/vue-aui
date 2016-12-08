@@ -12,7 +12,8 @@ var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: './src/main.js',
+    'vue-aui': ['./src/components/VueAui.js']
   },
   output: {
     path: config.build.assetsRoot,
