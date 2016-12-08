@@ -1,6 +1,6 @@
 {
   "name": "vue-aui",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Vue.js 2 wrapper over Atlassian User Interface (AUI)",
   "author": "dskrodzki <damian.skrodzki@spartez.com>",
   "private": true,
