@@ -12,7 +12,7 @@ var env = process.env.NODE_ENV === 'testing'
 
 var webpackConfig = merge(baseWebpackConfig, {
   module: {
-    loaders: utils.styleLoaders({ sourceMap: config.build.productionSourceMap, extract: true })
+    loaders: utils.styleLoaders({ sourceMap: config.build.productionSourceMap, extract: false })  // TODO extraction should be re-enabled and css included on plugin install
   },
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
@@ -39,7 +39,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     // extract css into its own file
-    // new ExtractTextPlugin(utils.assetsPath('css/[name].css')), // TODO this should be uncommented and included on plugin install
+    new ExtractTextPlugin(utils.assetsPath('css/[name].css')),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
