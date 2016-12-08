@@ -12,7 +12,7 @@
     "test": "npm run unit && npm run e2e"
   },
   "main": "dist/static/js/vue-aui.js",
-  "dependencies": {
+  "peerDependencies": {
     "vue": "^2.1.0"
   },
   "devDependencies": {
