@@ -9,7 +9,8 @@
   export default{
     props: {
       value: String,
-      placeholder: String
+      placeholder: String,
+      width: String
     },
 
     data: function () {
@@ -31,7 +32,8 @@
       this.$input.val(this.value)
       this.$input.auiSelect2({
         data: () => ({results: this.options}),
-        placeholder: this.placeholder
+        placeholder: this.placeholder,
+        width: this.width
       });
       this.$input.on('change', this.onSelect2ValueChanged)
     },
