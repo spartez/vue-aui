@@ -25,6 +25,16 @@
               <aui-toggle-button v-model="toggle2" id="example-toggle" label="Switch me"
                                  tooltip-on="On" tooltip-off="Off"></aui-toggle-button>
             </p>
+
+            <h3>Single Select</h3>
+            <p>
+              <aui-select2-single v-model="selectValue">
+                <aui-select2-option value="value1">Option 1</aui-select2-option>
+                <aui-select2-option value="value2">Option 2</aui-select2-option>
+              </aui-select2-single>
+              <span>{{selectValue}}</span>
+              <button class="aui-button aui-button-link" @click="selectValue = undefined">Clear value</button>
+            </p>
           </section>
         </div>
       </div>
@@ -38,7 +48,8 @@
     data() {
       return {
         toggle1: true,
-        toggle2: false
+        toggle2: false,
+        selectValue: 'value1'
       }
     }
   }
