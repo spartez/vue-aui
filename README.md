@@ -17,6 +17,9 @@
 npm install vue-aui --save
 ```
 
+### Examples
+https://spartez.github.io/vue-aui/
+
 ### Versioning
 This package is **NOT** considered as stable. 
 
@@ -28,6 +31,11 @@ Therefore it's not recommended to use dashes but rather fixed versions or tildas
   "vue-aui", "~0.1.0",
   "vue-aui", "^0.1.0", // NOT recommended - can break with minor release
 ```
+
+## Publishing
+
+1. `npm version patch` (`minor` or `major`)
+2. `./build/publish.js`
 
 ## Build Setup
 
