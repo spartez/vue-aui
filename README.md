@@ -2,6 +2,31 @@
 
 > Vue.js 2 wrapper over Atlassian User Interface (AUI)
 
+## Usage
+
+### Requirements
+
+* NPM 3.10.8+
+* AUI 6.0.3+ - you need to make attach this yourself to the page
+
+### Installation
+
+```
+npm install vue-aui --save
+```
+
+### Versioning
+This package is **NOT** considered as stable. 
+
+Before 1.X release any minor version can break the API but patch version will not.
+Therefore it's not recommended to use dashes but rather fixed versions or tildas as below:
+
+```
+  "vue-aui", "0.1.0",
+  "vue-aui", "~0.1.0",
+  "vue-aui", "^0.1.0", // NOT recommended - can break with minor release
+```
+
 ## Build Setup
 
 ``` bash
