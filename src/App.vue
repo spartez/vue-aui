@@ -110,7 +110,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .custom-class {
     width: 300px;
   }
