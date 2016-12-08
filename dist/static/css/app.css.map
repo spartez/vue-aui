@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///webpack:///src/App.vue"],"names":[],"mappings":"AACA,cACE,WAAa","file":"static/css/app.css","sourcesContent":["\n.custom-class {\n  width: 300px;\n}\n\n\n\n// WEBPACK FOOTER //\n// webpack:///src/App.vue"],"sourceRoot":""}
