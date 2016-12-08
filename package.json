@@ -25,9 +25,6 @@
     "test": "npm run unit && npm run e2e"
   },
   "main": "dist/static/js/vue-aui.js",
-  "dependencies": {
-    "extract-text-webpack-plugin": "^1.0.1"
-  },
   "peerDependencies": {
     "vue": "^2.1.0"
   },
@@ -75,6 +72,7 @@
     "ora": "^0.3.0",
     "shelljs": "^0.7.4",
     "url-loader": "^0.5.7",
+    "vue": "^2.1.4",
     "vue-loader": "^10.0.0",
     "vue-style-loader": "^1.0.0",
     "vue-template-compiler": "^2.1.0",
