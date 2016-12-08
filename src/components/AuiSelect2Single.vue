@@ -24,14 +24,15 @@
     },
 
     mounted: function () {
+      this.$refs.input.classList = this.$el.classList
+      this.$el.classList = []
+
       this.$input = AJS.$(this.$refs.input)
       this.$input.val(this.value)
-
       this.$input.auiSelect2({
         data: () => ({results: this.options}),
         placeholder: this.placeholder
       });
-
       this.$input.on('change', this.onSelect2ValueChanged)
     },
 

@@ -32,7 +32,7 @@
               <span>{{selectValue}}</span>
             </p>
             <p>
-              <aui-select2-single v-model="selectValue2" placeholder="Select any value">
+              <aui-select2-single v-model="selectValue2" placeholder="Select any value" class="custom-class">
                 <aui-select2-option value="value1">Any value</aui-select2-option>
               </aui-select2-single>
               <button class="aui-button aui-button-link" @click="selectValue2 = undefined">Clear value</button>
@@ -81,3 +81,9 @@
     }
   }
 </script>
+
+<style>
+  .custom-class {
+    width: 300px;
+  }
+</style>
