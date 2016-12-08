@@ -10,7 +10,8 @@
     props: {
       value: String,
       placeholder: String,
-      width: String
+      width: String,
+      dropdownAutoWidth: Boolean
     },
 
     data: function () {
@@ -33,7 +34,8 @@
       this.$input.auiSelect2({
         data: () => ({results: this.options}),
         placeholder: this.placeholder,
-        width: this.width
+        width: this.width,
+        dropdownAutoWidth: this.dropdownAutoWidth
       });
       this.$input.on('change', this.onSelect2ValueChanged)
     },
