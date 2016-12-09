@@ -17,6 +17,11 @@
                   <li :class="{'aui-nav-selected': $route.path === '/'}">
                     <router-link to="/">Gettings started</router-link>
                   </li>
+                </ul>
+                <div class="aui-nav-heading">
+                  <strong>Components</strong>
+                </div>
+                <ul class="aui-nav">
                   <li :class="{'aui-nav-selected': $route.path === '/components/buttons'}">
                     <router-link to="/components/buttons">Buttons</router-link>
                   </li>

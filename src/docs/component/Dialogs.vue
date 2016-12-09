@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h3>Dialog</h3>
+    <h2>Dialog</h2>
+    <h3>Examples</h3>
     <p>
       <aui-dialog title="Example dialog" cancel-button="Cancel" @onClose="alert('Close clicked')">
         Dialog content
@@ -20,6 +21,15 @@
           Focus dialog and type ESC to close it.
         </div>
       </aui-dialog>
+    </p>
+    <h3>Usage</h3>
+    <p>
+      <iframe height='465' scrolling='no' title='vue-aui dialogs demo'
+              src='//codepen.io/dskrodzki/embed/JbZgBo/?height=465&theme-id=light&default-tab=html,result&embed-version=2'
+              frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a
+        href='http://codepen.io/dskrodzki/pen/JbZgBo/'>vue-aui dialogs demo</a> by Damian Skrodzki (<a
+        href='http://codepen.io/dskrodzki'>@dskrodzki</a>) on <a href='http://codepen.io'>CodePen</a>.
+      </iframe>
     </p>
   </div>
 </template>
