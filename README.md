@@ -17,8 +17,30 @@
 npm install vue-aui --save
 ```
 
+or alternatively
+
+```html
+<script src="path/to/dist/vue-aui.js"></script>
+```
+and finally install vuejs plugin using
+
+```ecmascript
+Vue.use(VueAui)
+```
+This will register all the components.
+
 ### Examples
-https://spartez.github.io/vue-aui/
+In any .vue component just use
+```html
+<aui-select2-multi v-model="myModel">
+  <aui-select2-option value="value1">Option 1</aui-select2-option>
+  <aui-select2-option if="shouldShow" value="value2">Option 2</aui-select2-option>
+</aui-select2-multi>
+```
+
+Full components reference: https://spartez.github.io/vue-aui/
+
+CodePen demo starter: http://codepen.io/damienix/pen/woXRpP
 
 ### Versioning
 This package is **NOT** considered as stable. 

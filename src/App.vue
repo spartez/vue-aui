@@ -11,6 +11,9 @@
       <div class="aui-page-panel">
         <div class="aui-page-panel-inner">
           <section class="aui-page-panel-content">
+
+            <p data-height="347" data-theme-id="light" data-slug-hash="woXRpP" data-default-tab="html,result" data-user="damienix" data-embed-version="2" data-pen-title="vue-aui demo" class="codepen">See the Pen <a href="http://codepen.io/damienix/pen/woXRpP/">vue-aui demo</a> by Damian Skrodzki (<a href="http://codepen.io/damienix">@damienix</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
             <h3>Toggle button</h3>
             <h4>Simple use</h4>
             <p>
