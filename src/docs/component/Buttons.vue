@@ -28,24 +28,8 @@
     data() {
       return {
         toggle1: true,
-        toggle2: false,
-        selectValue: 'value1',
-        selectValue2: undefined,
-        selectValues: ['value1'],
-        selectTags: ["tag1"]
-      }
-    },
-
-    methods: {
-      alert(text) {
-        alert(text)
+        toggle2: false
       }
     }
   }
 </script>
-
-<style scoped>
-  .custom-class {
-    width: 300px;
-  }
-</style>
