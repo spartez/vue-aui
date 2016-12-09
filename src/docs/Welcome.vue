@@ -2,13 +2,13 @@
   <div>
     <h1>Welcome to vue-aui!
       <a href="https://badge.fury.io/js/vue-aui"><img src="https://badge.fury.io/js/vue-aui.svg"/></a>
+      <a href="https://github.com/spartez/vue-aui"><img class="gh-mark" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width="24"></a>
     </h1>
     <p>
-      vue-aui is Vue 2 wrapper over Atlassian User Interface.
-      <a href="https://github.com/spartez/vue-aui">Github</a>
+      vue-aui is <a href="https://github.com/vuejs/vue">Vuejs</a> 2 wrapper over <a href="https://docs.atlassian.com/aui/">Atlassian User Interface</a>.
     </p>
     <h2>Installation</h2>
-    <p><a href="https://github.com/spartez/vue-aui#installation">TODO</a></p>
+    <p><a href="https://github.com/spartez/vue-aui#installation">Link</a></p>
     <h2>Demo</h2>
     <p>
 
