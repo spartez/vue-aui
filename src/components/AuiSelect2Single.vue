@@ -57,6 +57,9 @@
           const text = child.$slots.default[0].text
           return {id, text}
         })
+        if (this.$input) {
+          this.$input.auiSelect2('val', this.value);
+        }
       }
     }
   }

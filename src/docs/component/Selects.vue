@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Select2 Single</h2>
-    <h3>Examples</h3>
+
     <p>
       <aui-select2-single v-model="selectValue" placeholder="Select any value">
         <aui-select2-option value="value1">Option 1</aui-select2-option>
@@ -9,12 +9,26 @@
       </aui-select2-single>
       <span>{{selectValue}}</span>
     </p>
+
     <p>
       <aui-select2-single v-model="selectValue2" placeholder="Select any value" class="custom-class">
         <aui-select2-option value="value1">Any value</aui-select2-option>
       </aui-select2-single>
       <button class="aui-button aui-button-link" @click="selectValue2 = undefined">Clear value</button>
     </p>
+
+    <h5>Single select with default value and options loaded asynchronously</h5>
+    <p>
+      <aui-select2-single v-model="selectInitialValue" placeholder="Select any value" class="custom-class">
+        <aui-select2-option :value="value" v-for="value in asyncValues">{{ value }}</aui-select2-option>
+      </aui-select2-single>
+      <button class="aui-button aui-button-link" @click="selectInitialValue = undefined">Clear value</button>
+      <button class="aui-button aui-button-link" @click="selectInitialValue = 'value1'">Set</button>
+      ({{selectInitialValue}})
+    </p>
+
+    <h2>Select2 Multi</h2>
+
     <p>
     <form class="aui">
       <aui-select2-multi v-model="selectValues">
@@ -51,10 +65,18 @@
     data() {
       return {
         selectValue: 'value1',
+        selectInitialValue: 'value1',
+        asyncValues: [],
         selectValue2: undefined,
         selectValues: ['value1'],
         selectTags: ["tag1"]
       }
+    },
+
+    mounted() {
+      setTimeout(() => {
+        this.asyncValues = ["value1", "value2"]
+      }, 1000)
     }
   }
 </script>
