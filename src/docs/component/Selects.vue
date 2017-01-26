@@ -3,7 +3,7 @@
     <h2>Select2 Single</h2>
 
     <p>
-      <aui-select2-single v-model="selectValue" placeholder="Select any value">
+      <aui-select2-single v-model="selectValue" placeholder="Select value" allow-clear>
         <aui-select2-option value="value1">Option 1</aui-select2-option>
         <aui-select2-option value="value2">Option 2</aui-select2-option>
       </aui-select2-single>
@@ -11,7 +11,7 @@
     </p>
 
     <p>
-      <aui-select2-single v-model="selectValue2" placeholder="Select any value" class="custom-class">
+      <aui-select2-single v-model="selectValue2" placeholder="Select value" class="custom-class">
         <aui-select2-option value="value1">Any value</aui-select2-option>
       </aui-select2-single>
       <button class="aui-button aui-button-link" @click="selectValue2 = undefined">Clear value</button>
@@ -19,7 +19,7 @@
 
     <h5>Single select with default value and options loaded asynchronously</h5>
     <p>
-      <aui-select2-single v-model="selectInitialValue" placeholder="Select any value" class="custom-class">
+      <aui-select2-single v-model="selectInitialValue" class="custom-class">
         <aui-select2-option :value="value" v-for="value in asyncValues">{{ value }}</aui-select2-option>
       </aui-select2-single>
       <button class="aui-button aui-button-link" @click="selectInitialValue = undefined">Clear value</button>

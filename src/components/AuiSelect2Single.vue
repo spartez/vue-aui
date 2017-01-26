@@ -11,7 +11,8 @@
       value: String,
       placeholder: String,
       width: String,
-      dropdownAutoWidth: Boolean
+      dropdownAutoWidth: Boolean,
+      allowClear: Boolean
     },
 
     data: function () {
@@ -32,6 +33,7 @@
       this.$input = AJS.$(this.$refs.input)
       this.$input.val(this.value)
       this.$input.auiSelect2({
+        allowClear: this.allowClear,
         data: () => ({results: this.options}),
         placeholder: this.placeholder,
         width: this.width,
@@ -64,3 +66,9 @@
     }
   }
 </script>
+
+<style>
+  .aui-select2-container.select2-container.select2-allowclear .select2-choice abbr {
+    display: block;
+  }
+</style>
