@@ -40,7 +40,7 @@
     <span>{{selectValues}}</span>
 
     <form class="aui">
-      <aui-select2-multi v-model="selectTags" tags-mode>
+      <aui-select2-multi v-model="selectTags" tags-mode sortable>
         <aui-select2-option value="tag1">Tag 1</aui-select2-option>
         <aui-select2-option value="tag2">Tag 2</aui-select2-option>
       </aui-select2-multi>

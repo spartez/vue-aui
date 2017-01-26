@@ -5,22 +5,23 @@
     </span>
 </template>
 
-<script>
+<script type="es6">
   const SEPARATOR = ',';
 
-  export default{
+  export default {
     props: {
       value: Array,
-      tagsMode: Boolean
+      tagsMode: Boolean,
+      sortable: Boolean
     },
 
-    data: function () {
+    data() {
       return {
         options: []
       }
     },
 
-    created: function () {
+    created () {
       this.updateOptions()
       this.$on('optionsChanged', this.updateOptions)
     },
@@ -43,6 +44,15 @@
       }
 
       this.$input.auiSelect2(options)
+
+      if (this.sortable) {
+        this.$input.prev('div').find('.select2-choices').sortable({
+          containment: 'parent',
+          start: () => this.$input.auiSelect2("onSortStart"),
+          update: () => this.$input.auiSelect2("onSortEnd")
+        });
+      }
+
       this.$input.on('change', this.onSelect2ValueChanged)
     },
 
