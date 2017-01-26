@@ -31,7 +31,7 @@
 
     <p>
     <form class="aui">
-      <aui-select2-multi v-model="selectValues">
+      <aui-select2-multi v-model="selectValues" class="custom-class2">
         <aui-select2-option value="value1">Value 1</aui-select2-option>
         <aui-select2-option value="value2">Value 2</aui-select2-option>
         <aui-select2-option value="value3">Value 3</aui-select2-option>
