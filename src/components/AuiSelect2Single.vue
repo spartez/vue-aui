@@ -12,7 +12,8 @@
       placeholder: String,
       width: String,
       dropdownAutoWidth: Boolean,
-      allowClear: Boolean
+      allowClear: Boolean,
+      query: Function
     },
 
     data: function () {
@@ -34,6 +35,7 @@
       this.$input.val(this.value)
       this.$input.auiSelect2({
         allowClear: this.allowClear,
+        query: this.query,
         data: () => ({results: this.options}),
         placeholder: this.placeholder,
         width: this.width,

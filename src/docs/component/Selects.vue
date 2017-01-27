@@ -27,6 +27,12 @@
       ({{selectInitialValue}})
     </p>
 
+    <h5>Single select with asynchronous query for options</h5>
+    <p>
+      <aui-select2-single v-model="selectValueAsync" class="custom-class" :query="queryValues"></aui-select2-single>
+      ({{selectValueAsync}})
+    </p>
+
     <h2>Select2 Multi</h2>
 
     <p>
@@ -68,6 +74,7 @@
         selectInitialValue: 'value1',
         asyncValues: [],
         selectValue2: undefined,
+        selectValueAsync: undefined,
         selectValues: ['value1'],
         selectTags: ["tag1"]
       }
@@ -77,6 +84,23 @@
       setTimeout(() => {
         this.asyncValues = ["value1", "value2"]
       }, 1000)
+    },
+
+    methods: {
+      queryValues(query) {
+        if (query.term === undefined) {
+        } else if (query.term === '') {
+          query.callback({results: [{id: 'me', text: "Me"}]})
+        } else {
+          setTimeout(() =>
+            query.callback({
+              results: [
+                {id: query.term, text: query.term},
+                {id: query.term + 3, text: query.term + 3},
+              ]
+            }), 200);
+        }
+      }
     }
   }
 </script>
