@@ -4,34 +4,42 @@
 
 [![npm version](https://badge.fury.io/js/vue-aui.svg)](https://badge.fury.io/js/vue-aui)
 
-## Usage
-
-### Demo
+### Demo and docs
 
 https://github.com/spartez/vue-aui
 
-### Requirements
-
-* NPM 3.10.8+
-* AUI 6.0.3+ - you need to make attach this yourself to the page
-
 ### Installation
 
+##### Requirements
+
+* NPM 3.10.8+
+* AUI 6.0+ - you need to attach this yourself to the page
+
+##### Using npm
 ```
 npm install vue-aui --save
 ```
 
-or alternatively
-
-```html
-<script src="path/to/dist/vue-aui.js"></script>
-```
 and finally install vuejs plugin using
 
 ```ecmascript
 Vue.use(VueAui)
 ```
 This will register all the components.
+
+##### Or directly onto page
+
+```html
+<script src="path/to/dist/vue-aui.js"></script>
+```
+
+### Supported components
+
+* aui-dialog
+* aui-select2-single
+* aui-select2-multi
+* aui-tabs
+* aui-toggle-button
 
 ### Examples
 In any .vue component just use
