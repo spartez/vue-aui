@@ -14,7 +14,7 @@
 <script>
   export default {
     mounted() {
-      const link = AJS.$('.menu-item a')[0];
+      const link = AJS.$(this.$el).find('.menu-item a')[0];
       const $link = AJS.$(link);
       AJS.tabs.change($link)
       AJS.tabs.setup();
