@@ -1,3 +1,5 @@
+import './main.css'
+
 import Vue from 'vue'
 import App from './docs/App'
 
@@ -6,8 +8,11 @@ import Buttons from './docs/component/Buttons.vue'
 import Selects from './docs/component/Selects.vue'
 import Dialogs from './docs/component/Dialogs.vue'
 import Welcome from './docs/Welcome.vue'
+
+import VueHighlightJS from 'vue-highlightjs'
 import VueRouter from 'vue-router'
 
+Vue.use(VueHighlightJS)
 Vue.use(VueAui)
 Vue.use(VueRouter)
 
