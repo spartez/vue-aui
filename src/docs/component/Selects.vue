@@ -2,63 +2,75 @@
   <div>
     <h2>Select2 Single</h2>
 
-    <p>
-      <aui-select2-single v-model="selectValue" placeholder="Select value" allow-clear>
-        <aui-select2-option value="value1">Option 1</aui-select2-option>
-        <aui-select2-option value="value2">Option 2</aui-select2-option>
-      </aui-select2-single>
-      <span>{{selectValue}}</span>
-    </p>
+    <aui-tabs>
+      <aui-tab name="Example" id="single-select-example">
+        <p>
+          <aui-select2-single v-model="selectValue" placeholder="Select value" allow-clear>
+            <aui-select2-option value="value1">Option 1</aui-select2-option>
+            <aui-select2-option value="value2">Option 2</aui-select2-option>
+          </aui-select2-single>
+          <span>{{selectValue}}</span>
+        </p>
 
-    <p>
-      <aui-select2-single v-model="selectValue2" placeholder="Select value" class="custom-class">
-        <aui-select2-option value="value1">Any value</aui-select2-option>
-      </aui-select2-single>
-      <button class="aui-button aui-button-link" @click="selectValue2 = undefined">Clear value</button>
-    </p>
+        <p>
+          <aui-select2-single v-model="selectValue2" placeholder="Select value" class="custom-class">
+            <aui-select2-option value="value1">Any value</aui-select2-option>
+          </aui-select2-single>
+          <button class="aui-button aui-button-link" @click="selectValue2 = undefined">Clear value</button>
+        </p>
 
-    <h5>Single select with default value and options loaded asynchronously</h5>
-    <p>
-      <aui-select2-single v-model="selectInitialValue" class="custom-class">
-        <aui-select2-option :value="value" v-for="value in asyncValues">{{ value }}</aui-select2-option>
-      </aui-select2-single>
-      <button class="aui-button aui-button-link" @click="selectInitialValue = undefined">Clear value</button>
-      <button class="aui-button aui-button-link" @click="selectInitialValue = 'value1'">Set</button>
-      ({{selectInitialValue}})
-    </p>
+        <h5>Single select with default value and options loaded asynchronously</h5>
+        <p>
+          <aui-select2-single v-model="selectInitialValue" class="custom-class">
+            <aui-select2-option :value="value" v-for="value in asyncValues">{{ value }}</aui-select2-option>
+          </aui-select2-single>
+          <button class="aui-button aui-button-link" @click="selectInitialValue = undefined">Clear value</button>
+          <button class="aui-button aui-button-link" @click="selectInitialValue = 'value1'">Set</button>
+          ({{selectInitialValue}})
+        </p>
 
-    <h5>Single select with asynchronous query for options</h5>
-    <p>
-      <aui-select2-single v-model="selectValueAsync" class="custom-class"
-                          :query="queryValues"
-                          :init-selection="initialValue"></aui-select2-single>
-      ({{selectValueAsync}})
-    </p>
+        <h5>Single select with asynchronous query for options</h5>
+        <p>
+          <aui-select2-single v-model="selectValueAsync" class="custom-class"
+                              :query="queryValues"
+                              :init-selection="initialValue"></aui-select2-single>
+          ({{selectValueAsync}})
+        </p>
+      </aui-tab>
+      <aui-tab name="Code" id="single-select-code">
+        <pre v-highlightjs><code class="xml" v-text='code1'></code></pre>
+      </aui-tab>
 
-    <pre v-highlightjs><code class="xml" v-text='code1'></code></pre>
+    </aui-tabs>
 
     <h2>Select2 Multi</h2>
-    <p>
-    <form class="aui">
-      <aui-select2-multi v-model="selectValues" class="custom-class2">
-        <aui-select2-option value="value1">Value 1</aui-select2-option>
-        <aui-select2-option value="value2">Value 2</aui-select2-option>
-        <aui-select2-option value="value3">Value 3</aui-select2-option>
-      </aui-select2-multi>
-    </form>
-    <span>{{selectValues}}</span>
 
-    <form class="aui">
-      <aui-select2-multi v-model="selectTags" tags-mode sortable>
-        <aui-select2-option value="tag1">Tag 1</aui-select2-option>
-        <aui-select2-option value="tag2">Tag 2</aui-select2-option>
-      </aui-select2-multi>
-    </form>
-    <span>{{selectTags}}</span>
-    </p>
+    <aui-tabs>
+      <aui-tab name="Example" id="select2-multi-example">
+        <p>
+        <form class="aui">
+          <aui-select2-multi v-model="selectValues" class="custom-class2">
+            <aui-select2-option value="value1">Value 1</aui-select2-option>
+            <aui-select2-option value="value2">Value 2</aui-select2-option>
+            <aui-select2-option value="value3">Value 3</aui-select2-option>
+          </aui-select2-multi>
+        </form>
+        <span>{{selectValues}}</span>
 
-    <pre v-highlightjs><code class="xml" v-text='code2'></code></pre>
+        <form class="aui">
+          <aui-select2-multi v-model="selectTags" tags-mode sortable>
+            <aui-select2-option value="tag1">Tag 1</aui-select2-option>
+            <aui-select2-option value="tag2">Tag 2</aui-select2-option>
+          </aui-select2-multi>
+        </form>
+        <span>{{selectTags}}</span>
+        </p>
+      </aui-tab>
+      <aui-tab name="Code" id="select2-multi-code">
+        <pre v-highlightjs><code class="xml" v-text='code2'></code></pre>
 
+      </aui-tab>
+    </aui-tabs>
   </div>
 </template>
 

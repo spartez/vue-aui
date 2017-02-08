@@ -2,3 +2,11 @@ code {
   border: 1px #ccc solid;
   border-radius: 3px;
 }
+
+.tabs-pane {
+  padding-top: 10px;
+}
+
+.aui-tabs {
+  padding-top: 10px;
+}

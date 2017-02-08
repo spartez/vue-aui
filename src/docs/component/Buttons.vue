@@ -2,17 +2,22 @@
   <div>
     <h2>Toggle button</h2>
 
-    <h3>Examples</h3>
-    <p>
-      <aui-toggle-button v-model="toggle1"></aui-toggle-button>
-      <span>{{toggle1}}</span>
-    </p>
-    <p>
-      <aui-toggle-button v-model="toggle2" id="example-toggle" label="Switch me" tooltip-on="On"
-                         tooltip-off="Off"></aui-toggle-button>
-    </p>
+    <aui-tabs>
+      <aui-tab name="Example" id="buttons-example">
+        <p>
+          <aui-toggle-button v-model="toggle1"></aui-toggle-button>
+          <span>{{toggle1}}</span>
+        </p>
+        <p>
+          <aui-toggle-button v-model="toggle2" id="example-toggle" label="Switch me" tooltip-on="On"
+                             tooltip-off="Off"></aui-toggle-button>
+        </p>
+      </aui-tab>
+      <aui-tab name="Code" id="buttons-code">
+        <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
+      </aui-tab>
+    </aui-tabs>
 
-    <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
   </div>
 </template>
 
