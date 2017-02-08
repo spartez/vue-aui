@@ -4,10 +4,12 @@ import Vue from 'vue'
 import App from './docs/App'
 
 import VueAui from './components/VueAui'
-import Buttons from './docs/component/Buttons.vue'
-import Selects from './docs/component/Selects.vue'
-import Dialogs from './docs/component/Dialogs.vue'
+
 import Welcome from './docs/Welcome.vue'
+import Buttons from './docs/component/Buttons.vue'
+import Dialogs from './docs/component/Dialogs.vue'
+import Selects from './docs/component/Selects.vue'
+import Tabs from './docs/component/Tabs.vue'
 
 import VueHighlightJS from 'vue-highlightjs'
 import VueRouter from 'vue-router'
@@ -21,7 +23,8 @@ const router = new VueRouter({
     {path: '/', component: Welcome},
     {path: '/components/buttons', component: Buttons},
     {path: '/components/dialogs', component: Dialogs},
-    {path: '/components/selects', component: Selects}
+    {path: '/components/selects', component: Selects},
+    {path: '/components/tabs', component: Tabs}
   ]
 })
 

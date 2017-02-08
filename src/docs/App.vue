@@ -31,6 +31,9 @@
                   <li :class="{'aui-nav-selected': $route.path === '/components/selects'}">
                     <router-link to="/components/selects">Selects</router-link>
                   </li>
+                  <li :class="{'aui-nav-selected': $route.path === '/components/tabs'}">
+                    <router-link to="/components/tabs">Tabs</router-link>
+                  </li>
                 </ul>
               </div>
             </nav>
