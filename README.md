@@ -6,6 +6,10 @@
 
 ## Usage
 
+### Demo
+
+https://github.com/spartez/vue-aui
+
 ### Requirements
 
 * NPM 3.10.8+
