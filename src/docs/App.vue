@@ -22,8 +22,8 @@
                   <strong>Components</strong>
                 </div>
                 <ul class="aui-nav">
-                  <li :class="{'aui-nav-selected': $route.path === page.url}" v-for="page in pages">
-                    <router-link :to="page.url">{{ page.name }}</router-link>
+                  <li :class="{'aui-nav-selected': $route.path === page.path}" v-for="page in pages">
+                    <router-link :to="page.path">{{ page.docsName }}</router-link>
                   </li>
                 </ul>
               </div>
@@ -43,12 +43,7 @@
   export default {
     data() {
       return {
-        pages: [
-          {name: "Buttons", url: "/components/buttons"},
-          {name: "Dialogs", url: "/components/dialogs"},
-          {name: "Selects", url: "/components/selects"},
-          {name: "Tabs", url: "/components/tabs"},
-        ]
+        pages: this.$router.options.routes.filter(page => page.docsName)
       }
     }
   }

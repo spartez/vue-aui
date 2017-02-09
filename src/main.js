@@ -21,10 +21,10 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   routes: [
     {path: '/', component: Welcome},
-    {path: '/components/buttons', component: Buttons},
-    {path: '/components/dialogs', component: Dialogs},
-    {path: '/components/selects', component: Selects},
-    {path: '/components/tabs', component: Tabs}
+    {path: '/components/buttons', component: Buttons, docsName: "Buttons"},
+    {path: '/components/dialogs', component: Dialogs, docsName: "Dialogs"},
+    {path: '/components/selects', component: Selects, docsName: "Selects"},
+    {path: '/components/tabs', component: Tabs, docsName: "Tabs"}
   ]
 })
 
