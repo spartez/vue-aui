@@ -22,17 +22,8 @@
                   <strong>Components</strong>
                 </div>
                 <ul class="aui-nav">
-                  <li :class="{'aui-nav-selected': $route.path === '/components/buttons'}">
-                    <router-link to="/components/buttons">Buttons</router-link>
-                  </li>
-                  <li :class="{'aui-nav-selected': $route.path === '/components/dialogs'}">
-                    <router-link to="/components/dialogs">Dialogs</router-link>
-                  </li>
-                  <li :class="{'aui-nav-selected': $route.path === '/components/selects'}">
-                    <router-link to="/components/selects">Selects</router-link>
-                  </li>
-                  <li :class="{'aui-nav-selected': $route.path === '/components/tabs'}">
-                    <router-link to="/components/tabs">Tabs</router-link>
+                  <li :class="{'aui-nav-selected': $route.path === page.url}" v-for="page in pages">
+                    <router-link :to="page.url">{{ page.name }}</router-link>
                   </li>
                 </ul>
               </div>
@@ -49,7 +40,18 @@
 </template>
 
 <script>
-  export default {}
+  export default {
+    data() {
+      return {
+        pages: [
+          {name: "Buttons", url: "/components/buttons"},
+          {name: "Dialogs", url: "/components/dialogs"},
+          {name: "Selects", url: "/components/selects"},
+          {name: "Tabs", url: "/components/tabs"},
+        ]
+      }
+    }
+  }
 </script>
 
 <style scoped>
