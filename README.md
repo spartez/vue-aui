@@ -6,7 +6,7 @@
 
 ### Demo and docs
 
-https://github.com/spartez/vue-aui
+https://spartez.github.io/vue-aui/
 
 ### Installation
 
