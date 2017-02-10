@@ -1,7 +1,7 @@
 <template>
-  <ul class="aui-nav">
+  <section class="aui-page-panel-content">
     <slot></slot>
-  </ul>
+  </section>
 </template>
 
 <script>

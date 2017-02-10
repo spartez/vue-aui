@@ -8,10 +8,11 @@ import AuiDialog from './AuiDialog.vue'
 import AuiTabs from './AuiTabs.vue'
 import AuiTab from './AuiTab.vue'
 
-import AuiNavGroup from './AuiNavGroup.vue'
 import AuiNavItem from './AuiNavItem.vue'
 import AuiNavHeader from './AuiNavHeader.vue'
-import AuiNavVertical from './AuiNavVertical.vue'
+import AuiNavGroup from './AuiNavGroup.vue'
+import AuiNavTab from './AuiNavTab.vue'
+import AuiNavVerticalRouter from './AuiNavVerticalRouter.js'
 
 export default {
   install(Vue, options) {
@@ -23,8 +24,9 @@ export default {
     Vue.component('aui-tabs', AuiTabs)
     Vue.component('aui-tab', AuiTab)
     Vue.component('aui-nav-item', AuiNavItem)
-    Vue.component('aui-nav-group', AuiNavGroup)
     Vue.component('aui-nav-header', AuiNavHeader)
-    Vue.component('aui-nav-vertical', AuiNavVertical)
+    Vue.component('aui-nav-group', AuiNavGroup)
+    Vue.component('aui-nav-tab', AuiNavTab)
+    Vue.component('aui-nav-vertical', AuiNavVerticalRouter)
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <li :class="classes">
+  <li :class="{'aui-nav-selected': this.selected}">
     <a :href="href">{{name}}</a>
   </li>
 </template>
@@ -10,12 +10,12 @@
       name: String,
       href: String,
       selected: Boolean
-    },
-
-    data() {
-      return {
-        classes: {'aui-nav-selected': this.selected}
-      }
     }
   }
 </script>
+
+<style scoped>
+  a {
+    cursor: pointer;
+  }
+</style>

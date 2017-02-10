@@ -2,11 +2,10 @@
   <div>
     <h2>Navigation</h2>
 
+    <h3>Vertical</h3>
     <aui-tabs>
       <aui-tab name="Example" id="tabs-example">
-        <h3>Vertical</h3>
-
-        <aui-nav-vertical class="wrapped">
+        <aui-nav-vertical class="wrapped bordered short-width">
           <aui-nav-group>
             <aui-nav-item name="Selected Item" href="https://example.com" selected></aui-nav-item>
             <aui-nav-item name="Item 2" href="https://google.com"></aui-nav-item>
@@ -17,11 +16,28 @@
             <aui-nav-item name="Item 4"></aui-nav-item>
           </aui-nav-group>
         </aui-nav-vertical>
-
       </aui-tab>
-
       <aui-tab name="Code" id="tabs-code">
         <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
+      </aui-tab>
+    </aui-tabs>
+
+    <h3>Vertical with automatic tabs switching</h3>
+    <aui-tabs>
+      <aui-tab name="Example" id="tabs-example2">
+        <aui-nav-vertical class="bordered" tabs-mode>
+          <aui-nav-group>
+            <aui-nav-item name="Selected Item" selected>Content</aui-nav-item>
+          </aui-nav-group>
+          <aui-nav-header name="Header"></aui-nav-header>
+          <aui-nav-group>
+            <aui-nav-item name="Item 2">Content Two</aui-nav-item>
+            <aui-nav-item name="Item 3">Content Three</aui-nav-item>
+          </aui-nav-group>
+        </aui-nav-vertical>
+      </aui-tab>
+      <aui-tab name="Code" id="tabs-code2">
+        <pre v-highlightjs><code class="xml" v-text='code2'></code></pre>
       </aui-tab>
     </aui-tabs>
   </div>
@@ -31,7 +47,7 @@
   export default {
     data() {
       return {
-        code: `<aui-nav-vertical class="wrapped">
+        code: `<aui-nav-vertical>
   <aui-nav-group>
     <aui-nav-item name="Selected Item" href="https://example.com" selected></aui-nav-item>
     <aui-nav-item name="Item 2" href="https://google.com"></aui-nav-item>
@@ -41,6 +57,16 @@
     <aui-nav-item name="Item 3" href="#"></aui-nav-item>
     <aui-nav-item name="Item 4"></aui-nav-item>
   </aui-nav-group>
+</aui-nav-vertical>`,
+        code2: `<aui-nav-vertical class="bordered" tabs-mode>
+  <aui-nav-group>
+    <aui-nav-item name="Selected Item" selected>Content</aui-nav-item>
+  </aui-nav-group>
+  <aui-nav-header name="Header"></aui-nav-header>
+  <aui-nav-group>
+    <aui-nav-item name="Item 2">Content Two</aui-nav-item>
+    <aui-nav-item name="Item 3">Content Three</aui-nav-item>
+  </aui-nav-group>
 </aui-nav-vertical>`
       }
     }
@@ -48,11 +74,17 @@
 </script>
 
 <style scoped>
-  .wrapped {
+  .short-width {
+    width: 200px;
+  }
+
+  .bordered {
     border: #ccc solid 1px;
     margin-top: 10px;
-    padding: 20px;
-    width: 200px;
     border-radius: 3px;
+  }
+
+  .wrapped {
+    padding: 20px;
   }
 </style>
