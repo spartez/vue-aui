@@ -4,7 +4,7 @@
 
     <h3>Vertical</h3>
     <aui-tabs>
-      <aui-tab name="Example" id="tabs-example">
+      <aui-tab name="Example">
         <aui-nav-vertical class="wrapped bordered short-width">
           <aui-nav-group>
             <aui-nav-item name="Selected Item" href="https://example.com" selected></aui-nav-item>
@@ -17,14 +17,14 @@
           </aui-nav-group>
         </aui-nav-vertical>
       </aui-tab>
-      <aui-tab name="Code" id="tabs-code">
+      <aui-tab name="Code">
         <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
       </aui-tab>
     </aui-tabs>
 
     <h3>Vertical with automatic tabs switching</h3>
     <aui-tabs>
-      <aui-tab name="Example" id="tabs-example2">
+      <aui-tab name="Example">
         <aui-nav-vertical class="bordered" tabs-mode>
           <aui-nav-group>
             <aui-nav-item name="Selected Item" selected>Content</aui-nav-item>
@@ -36,7 +36,7 @@
           </aui-nav-group>
         </aui-nav-vertical>
       </aui-tab>
-      <aui-tab name="Code" id="tabs-code2">
+      <aui-tab name="Code">
         <pre v-highlightjs><code class="xml" v-text='code2'></code></pre>
       </aui-tab>
     </aui-tabs>

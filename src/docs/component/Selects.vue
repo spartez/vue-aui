@@ -3,7 +3,7 @@
     <h2>Select2 Single</h2>
 
     <aui-tabs>
-      <aui-tab name="Example" id="single-select-example">
+      <aui-tab name="Example">
         <p>
           <aui-select2-single v-model="selectValue" placeholder="Select value" allow-clear>
             <aui-select2-option value="value1">Option 1</aui-select2-option>
@@ -37,7 +37,7 @@
           ({{selectValueAsync}})
         </p>
       </aui-tab>
-      <aui-tab name="Code" id="single-select-code">
+      <aui-tab name="Code">
         <pre v-highlightjs><code class="xml" v-text='code1'></code></pre>
       </aui-tab>
 
@@ -46,7 +46,7 @@
     <h2>Select2 Multi</h2>
 
     <aui-tabs>
-      <aui-tab name="Example" id="select2-multi-example">
+      <aui-tab name="Example">
         <p>
         <form class="aui">
           <aui-select2-multi v-model="selectValues" class="custom-class2">
@@ -66,9 +66,8 @@
         <span>{{selectTags}}</span>
         </p>
       </aui-tab>
-      <aui-tab name="Code" id="select2-multi-code">
+      <aui-tab name="Code">
         <pre v-highlightjs><code class="xml" v-text='code2'></code></pre>
-
       </aui-tab>
     </aui-tabs>
   </div>

@@ -3,7 +3,7 @@
     <h2>Dialog</h2>
 
     <aui-tabs>
-      <aui-tab name="Example" id="dialog-example">
+      <aui-tab name="Example">
 
         <aui-dialog title="Example dialog" :show-close-button="'true'" width="600px" height="100px" max-height="300px"
                     @onClose="alert('Close clicked')">
@@ -20,7 +20,7 @@
         </aui-dialog>
       </aui-tab>
 
-      <aui-tab name="Code" id="dialog-code">
+      <aui-tab name="Code">
         <pre v-highlightjs><code class="xml" v-text='code2'></code></pre>
       </aui-tab>
     </aui-tabs>

@@ -4,13 +4,13 @@
     <h2>Tabs</h2>
 
     <aui-tabs>
-      <aui-tab name="Example" id="tabs-example">
+      <aui-tab name="Example">
         <aui-tabs>
-          <aui-tab name="Tab 1" id="tab1">
+          <aui-tab name="Tab 1">
             <h3>Tab 1</h3>
             <p>This is content of tab 1</p>
           </aui-tab>
-          <aui-tab name="Tab 2" id="tab2">
+          <aui-tab name="Tab 2">
             <h3>Tab 2</h3>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
               industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
@@ -23,7 +23,7 @@
         </aui-tabs>
       </aui-tab>
 
-      <aui-tab name="Code" id="tabs-code">
+      <aui-tab name="Code">
         <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
       </aui-tab>
     </aui-tabs>
@@ -35,11 +35,11 @@
     data() {
       return {
         code: `<aui-tabs>
-  <aui-tab name="Tab 1" id="tab1">
+  <aui-tab name="Tab 1">
     <h3>Tab 1</h3>
     <p>This is content of tab 1</p>
   </aui-tab>
-  <aui-tab name="Tab 2" id="tab2">
+  <aui-tab name="Tab 2">
     <h3>Tab 2</h3>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
       industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and

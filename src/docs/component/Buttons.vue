@@ -3,7 +3,7 @@
     <h2>Toggle button</h2>
 
     <aui-tabs>
-      <aui-tab name="Example" id="buttons-example">
+      <aui-tab name="Example">
         <p>
           <aui-toggle-button v-model="toggle1"></aui-toggle-button>
           <span>{{toggle1}}</span>
@@ -13,7 +13,7 @@
                              tooltip-off="Off"></aui-toggle-button>
         </p>
       </aui-tab>
-      <aui-tab name="Code" id="buttons-code">
+      <aui-tab name="Code">
         <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
       </aui-tab>
     </aui-tabs>

@@ -3,7 +3,7 @@
     <div class="aui-tabs horizontal-tabs">
       <ul class="tabs-menu">
         <li ref="item" class="menu-item" v-for="tab in tabs">
-          <a :href="'#' + tab.componentOptions.propsData.id">{{tab.data.attrs.name}}</a>
+          <a :href="'#' + tab.componentOptions.propsData.tabId">{{tab.data.attrs.name}}</a>
         </li>
       </ul>
       <slot></slot>
@@ -22,7 +22,14 @@
 
     computed: {
       tabs(){
-        return this.$slots.default.filter(slot => slot.componentOptions && slot.componentOptions.tag === "aui-tab")
+        const tabs = this.$slots.default.filter(slot => slot.componentOptions && slot.componentOptions.tag === "aui-tab");
+        for (let obj of tabs) {
+          if (!obj.tab_id) {
+            obj.tab_id = Math.random().toString().substring(2)
+            obj.componentOptions.propsData.tabId = obj.tab_id
+          }
+        }
+        return tabs
       }
     }
   }

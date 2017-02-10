@@ -6,6 +6,12 @@
 
 <script>
   export default {
-    props: ['id']
+    props: ['tabId'],
+
+    data() {
+      return {
+        id: this.tabId
+      }
+    }
   }
 </script>
