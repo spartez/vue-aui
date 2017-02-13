@@ -4,9 +4,7 @@ import AuiNavTab from "./AuiNavTab.vue"
 export default {
   render(createElement) {
     const auiNavGroups = this.groupsAndHeaders.map(groupOrHeader => {
-      if (groupOrHeader.componentOptions.tag === 'aui-nav-header') {
-        return groupOrHeader
-      } else {
+      if (groupOrHeader.componentOptions.tag === 'aui-nav-group') {
         const children = groupOrHeader.componentOptions && groupOrHeader.componentOptions.children || [];
         children
           .filter(s => (s.componentOptions && s.componentOptions.tag === 'aui-nav-item'))
@@ -16,8 +14,8 @@ export default {
               click: () => this.selectedTab = tab.componentOptions.propsData.name
             }
           });
-        return groupOrHeader
       }
+      return groupOrHeader
     });
 
     const selectedItem = this.items
@@ -45,7 +43,8 @@ export default {
     items() {
       return this.groupsAndHeaders
         .reduce((items, group) => group.componentOptions.children ? items.concat(group.componentOptions.children) : items, [])
-        .filter(item => item.componentOptions);
+        .filter(item => item.componentOptions)
+        .filter(item => item.componentOptions.tag === 'aui-nav-item')
     }
   },
 
