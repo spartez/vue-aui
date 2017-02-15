@@ -27,23 +27,18 @@
       <div class="aui-page-panel">
         <div class="aui-page-panel-inner">
           <div class="aui-page-panel-nav">
-            <nav class="aui-navgroup aui-navgroup-vertical">
-              <div class="aui-navgroup-inner">
-                <ul class="aui-nav">
-                  <li :class="{'aui-nav-selected': $route.path === '/'}">
-                    <router-link to="/">Gettings started</router-link>
-                  </li>
-                </ul>
-                <div class="aui-nav-heading">
-                  <strong>Components</strong>
-                </div>
-                <ul class="aui-nav">
-                  <li :class="{'aui-nav-selected': $route.path === page.path}" v-for="page in pages">
-                    <router-link :to="page.path">{{ page.docsName }}</router-link>
-                  </li>
-                </ul>
-              </div>
-            </nav>
+            <aui-nav-vertical>
+
+              <aui-nav-group>
+                <aui-nav-item name="Gettings started" href="#" :selected="$route.path === '/'"></aui-nav-item>
+              </aui-nav-group>
+
+              <aui-nav-header name="Components"></aui-nav-header>
+              <aui-nav-group>
+                <aui-nav-item v-for="page in pages" :name="page.docsName" :href="'#' + page.path"
+                              :selected="$route.path === page.path"></aui-nav-item>
+              </aui-nav-group>
+            </aui-nav-vertical>
           </div>
           <section class="aui-page-panel-content">
             <router-view></router-view>
