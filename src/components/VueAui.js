@@ -1,3 +1,5 @@
+import AuiButton from './buttons/AuiButton'
+
 import AuiToggleButton from './buttons/AuiToggleButton.vue'
 import AuiSelect2Single from './select2/AuiSelect2Single.vue'
 import AuiSelect2Multi from './select2/AuiSelect2Multi.vue'
@@ -16,6 +18,7 @@ import AuiNavVerticalRouter from './navigation/AuiNavVerticalRouter.js'
 
 export default {
   install(Vue, options) {
+    Vue.component('aui-button', AuiButton)
     Vue.component('aui-select2-single', AuiSelect2Single)
     Vue.component('aui-select2-multi', AuiSelect2Multi)
     Vue.component('aui-select2-option', AuiSelect2Option)
