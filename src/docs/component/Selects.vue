@@ -47,7 +47,7 @@
 
     <aui-tabs>
       <aui-tab name="Example">
-        <p>
+        <h5>With predefined set of options</h5>
         <form class="aui">
           <aui-select2-multi v-model="selectValues" class="custom-class2">
             <aui-select2-option value="value1">Value 1</aui-select2-option>
@@ -57,6 +57,7 @@
         </form>
         <span>{{selectValues}}</span>
 
+        <h5>Tags mode - options are created dynamically</h5>
         <form class="aui">
           <aui-select2-multi v-model="selectTags" tags-mode sortable>
             <aui-select2-option value="tag1">Tag 1</aui-select2-option>
@@ -64,7 +65,6 @@
           </aui-select2-multi>
         </form>
         <span>{{selectTags}}</span>
-        </p>
       </aui-tab>
       <aui-tab name="Code">
         <pre v-highlightjs><code class="xml" v-text='code2'></code></pre>
