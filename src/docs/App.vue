@@ -2,8 +2,24 @@
   <div>
     <nav class="aui-header aui-dropdown2-trigger-group" role="navigation" data-aui-responsive="true">
       <div class="aui-header-primary">
-        <h1 id="logo" class="aui-header-logo aui-header-logo-aui">
-          <a href="http://example.com/"><span class="aui-header-logo-device">AUI</span></a></h1>
+        <h1 class="aui-header-logo aui-header-logo-aui">
+          <a href="#">
+            <span class="aui-header-logo-device"></span>
+          </a>
+        </h1>
+      </div>
+      <div class="aui-header-secondary">
+        <ul class="aui-nav">
+          <li>
+            <a href="https://github.com/spartez/vue-aui">
+              <div class="aui-avatar aui-avatar-small">
+                <div class="aui-avatar-inner">
+                  <img src="http://oi65.tinypic.com/sm9g76.jpg">
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
 
@@ -50,4 +66,8 @@
 </script>
 
 <style scoped>
+  .aui-header .aui-header-logo-aui .aui-header-logo-device {
+    background-image: url(http://oi66.tinypic.com/2r7at6s.jpg);
+    width: 90px;
+  }
 </style>

@@ -2,7 +2,6 @@
   <div>
     <h1>Welcome to vue-aui!
       <a href="https://badge.fury.io/js/vue-aui"><img src="https://badge.fury.io/js/vue-aui.svg"/></a>
-      <a href="https://github.com/spartez/vue-aui"><img class="gh-mark" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width="24"></a>
     </h1>
     <p>
       vue-aui is <a href="https://github.com/vuejs/vue">Vuejs</a> 2 wrapper over <a href="https://docs.atlassian.com/aui/">Atlassian User Interface</a>.
