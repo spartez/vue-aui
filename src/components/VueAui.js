@@ -6,6 +6,7 @@ import AuiSelect2Multi from './select2/AuiSelect2Multi.vue'
 import AuiSelect2Option from './select2/AuiSelect2Option.vue'
 
 import AuiDialog from './AuiDialog.vue'
+import AuiLozenge from './AuiLozenge.vue'
 
 import AuiTabs from './tabs/AuiTabs.vue'
 import AuiTab from './tabs/AuiTab.vue'
@@ -24,6 +25,7 @@ export default {
     Vue.component('aui-select2-option', AuiSelect2Option)
     Vue.component('aui-toggle-button', AuiToggleButton)
     Vue.component('aui-dialog', AuiDialog)
+    Vue.component('aui-lozenge', AuiLozenge)
     Vue.component('aui-tabs', AuiTabs)
     Vue.component('aui-tab', AuiTab)
     Vue.component('aui-nav-item', AuiNavItem)
