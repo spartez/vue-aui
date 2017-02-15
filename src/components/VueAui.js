@@ -12,6 +12,7 @@ import AuiSelect2Option from './select2/AuiSelect2Option.vue'
 import AuiSelect2Single from './select2/AuiSelect2Single.vue'
 
 import AuiDialog from './AuiDialog.vue'
+import AuiIcon from './AuiIcon'
 import AuiLozenge from './AuiLozenge.vue'
 
 import AuiTab from './tabs/AuiTab.vue'
@@ -35,6 +36,7 @@ export default {
     Vue.component('aui-select2-single', AuiSelect2Single)
 
     Vue.component('aui-dialog', AuiDialog)
+    Vue.component('aui-icon', AuiIcon)
     Vue.component('aui-lozenge', AuiLozenge)
   }
 }

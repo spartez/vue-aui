@@ -10,6 +10,7 @@ import Welcome from './docs/Welcome.vue'
 import Buttons from './docs/component/Buttons.vue'
 import Select2 from './docs/component/Select2.vue'
 import Dialog2 from './docs/component/Dialog2.vue'
+import Icons from './docs/component/Icons.vue'
 import Lozenges from './docs/component/Lozenges.vue'
 import Navigation from './docs/component/Navigation.vue'
 import Tabs from './docs/component/Tabs.vue'
@@ -28,6 +29,7 @@ const router = new VueRouter({
     {path: '/components/buttons', component: Buttons, meta: {docsName: "Buttons"}},
     {path: '/components/select2', component: Select2, meta: {docsName: "AUI Select2"}},
     {path: '/components/dialog2', component: Dialog2, meta: {docsName: "Dialog 2"}},
+    {path: '/components/icons', component: Icons, meta: {docsName: "Icons"}},
     {path: '/components/lozenges', component: Lozenges, meta: {docsName: "Lozenges"}},
     {path: '/components/navigation', component: Navigation, meta: {docsName: "Navigation"}},
     {path: '/components/tabs', component: Tabs, meta: {docsName: "Tabs"}},
