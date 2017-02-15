@@ -1,18 +1,18 @@
-import AuiToggleButton from './AuiToggleButton.vue'
-import AuiSelect2Single from './AuiSelect2Single.vue'
-import AuiSelect2Multi from './AuiSelect2Multi.vue'
-import AuiSelect2Option from './AuiSelect2Option.vue'
+import AuiToggleButton from './buttons/AuiToggleButton.vue'
+import AuiSelect2Single from './select2/AuiSelect2Single.vue'
+import AuiSelect2Multi from './select2/AuiSelect2Multi.vue'
+import AuiSelect2Option from './select2/AuiSelect2Option.vue'
 
 import AuiDialog from './AuiDialog.vue'
 
-import AuiTabs from './AuiTabs.vue'
-import AuiTab from './AuiTab.vue'
+import AuiTabs from './tabs/AuiTabs.vue'
+import AuiTab from './tabs/AuiTab.vue'
 
-import AuiNavItem from './AuiNavItem.vue'
-import AuiNavHeader from './AuiNavHeader.vue'
-import AuiNavGroup from './AuiNavGroup.vue'
-import AuiNavTab from './AuiNavTab.vue'
-import AuiNavVerticalRouter from './AuiNavVerticalRouter.js'
+import AuiNavItem from './navigation/AuiNavItem.vue'
+import AuiNavHeader from './navigation/AuiNavHeader.vue'
+import AuiNavGroup from './navigation/AuiNavGroup.vue'
+import AuiNavTab from './navigation/AuiNavTab.vue'
+import AuiNavVerticalRouter from './navigation/AuiNavVerticalRouter.js'
 
 export default {
   install(Vue, options) {
