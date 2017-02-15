@@ -5,7 +5,7 @@
     <aui-tabs>
       <aui-tab name="Example">
 
-        <aui-dialog title="Example dialog" :show-close-button="'true'" width="600px" height="100px" max-height="300px"
+        <aui-dialog title="Example dialog" show-close-button width="600px" height="100px" max-height="300px"
                     @onClose="alert('Close clicked')">
           Dialog content
           <div slot="header-actions">
@@ -21,7 +21,7 @@
       </aui-tab>
 
       <aui-tab name="Code">
-        <pre v-highlightjs><code class="xml" v-text='code2'></code></pre>
+        <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
       </aui-tab>
     </aui-tabs>
   </div>
@@ -31,7 +31,7 @@
   export default {
     data() {
       return {
-        code2: `<aui-dialog title="Example dialog" :show-close-button="'true'" width="600px" height="100px" max-height="300px"
+        code: `<aui-dialog title="Example dialog" show-close-button width="600px" height="100px" max-height="300px"
             @onClose="alert('Close clicked')">
   Dialog content
   <div slot="header-actions">

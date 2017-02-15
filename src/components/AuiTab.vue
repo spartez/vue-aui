@@ -6,7 +6,9 @@
 
 <script>
   export default {
-    props: ['tabId'],
+    props: {
+      tabId: String
+    },
 
     data() {
       return {

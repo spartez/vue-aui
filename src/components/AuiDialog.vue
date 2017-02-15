@@ -8,8 +8,7 @@
         <slot name="header-actions"></slot>
       </div>
 
-      <a class="aui-dialog2-header-close" @click.stop="closeDialogHandler"
-         v-show="showCloseButton === true || showCloseButton === 'true'">
+      <a class="aui-dialog2-header-close" @click.stop="closeDialogHandler" v-show="showCloseButton">
         <span class="aui-icon aui-icon-small aui-iconfont-close-dialog">Close</span>
       </a>
     </header>
@@ -31,7 +30,14 @@
 
 <script>
   export default {
-    props: ['title', 'width', 'height', 'maxHeight', 'showCloseButton', 'cancelButton'],
+    props: {
+      title: String,
+      width: String,
+      height: String,
+      maxHeight: String,
+      showCloseButton: Boolean,
+      cancelButton: String
+    },
 
     mounted: function () {
       AJS.whenIType("Esc").execute(() => {

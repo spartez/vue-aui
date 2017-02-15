@@ -10,11 +10,17 @@
 
 <script>
   export default {
-    props: ['value', 'id', 'label', 'tooltipOn', 'tooltipOff'],
+    props: {
+      value: Boolean,
+      id: String,
+      label: String,
+      tooltipOn: String,
+      tooltipOff: String
+    },
 
     mounted: function () {
       if (this.label && !this.id) {
-            throw "You need to define aui-toggle-button id attribute to properly match label to the toggle"
+        throw "You need to define aui-toggle-button id attribute to properly match label to the toggle"
       }
       this.$refs.toggle.addEventListener('change', this.emitChange);
     },
