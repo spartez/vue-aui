@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Select2 Single</h2>
+    <h3>Single select</h3>
 
     <aui-tabs>
       <aui-tab name="Example">
@@ -43,7 +43,7 @@
 
     </aui-tabs>
 
-    <h2>Select2 Multi</h2>
+    <h3>Multi select</h3>
 
     <aui-tabs>
       <aui-tab name="Example">

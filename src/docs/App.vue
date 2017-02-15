@@ -35,12 +35,13 @@
 
               <aui-nav-header name="Components"></aui-nav-header>
               <aui-nav-group>
-                <aui-nav-item v-for="page in pages" :name="page.docsName" :href="'#' + page.path"
+                <aui-nav-item v-for="page in pages" :name="page.meta.docsName" :href="'#' + page.path"
                               :selected="$route.path === page.path"></aui-nav-item>
               </aui-nav-group>
             </aui-nav-vertical>
           </div>
           <section class="aui-page-panel-content">
+            <h2 class="class-header" v-if="$route.path !== '/'">{{$route.meta.docsName}}</h2>
             <router-view></router-view>
           </section>
         </div>
@@ -54,7 +55,7 @@
   export default {
     data() {
       return {
-        pages: this.$router.options.routes.filter(page => page.docsName)
+        pages: this.$router.options.routes.filter(page => page.meta && page.meta.docsName)
       }
     }
   }
@@ -64,5 +65,9 @@
   .aui-header .aui-header-logo-aui .aui-header-logo-device {
     background-image: url(http://oi66.tinypic.com/2r7at6s.jpg);
     width: 90px;
+  }
+
+  .class-header {
+    margin-bottom: 30px;
   }
 </style>

@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h2>Toggle button</h2>
-
+    <h3>Toggle button</h3>
     <aui-tabs>
       <aui-tab name="Example">
         <p>
@@ -9,8 +8,8 @@
           <span>{{toggle1}}</span>
         </p>
         <p>
-          <aui-toggle-button v-model="toggle2" id="example-toggle" label="Switch me" tooltip-on="On"
-                             tooltip-off="Off"></aui-toggle-button>
+          <aui-toggle-button v-model="toggle2" id="example-toggle" label="Switch me" tooltip-on="On" tooltip-off="Off">
+          </aui-toggle-button>
         </p>
       </aui-tab>
       <aui-tab name="Code">

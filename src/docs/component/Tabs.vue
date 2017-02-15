@@ -1,8 +1,6 @@
 `
 <template>
   <div>
-    <h2>Tabs</h2>
-
     <aui-tabs>
       <aui-tab name="Example">
         <aui-tabs>

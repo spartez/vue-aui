@@ -1,7 +1,5 @@
 <template>
   <div>
-    <h2>Dialog</h2>
-
     <aui-tabs>
       <aui-tab name="Example">
 

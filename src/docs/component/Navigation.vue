@@ -1,8 +1,5 @@
 <template>
   <div>
-    <h2>Navigation</h2>
-
-    <h3>Vertical</h3>
     <aui-tabs>
       <aui-tab name="Example">
         <aui-nav-vertical class="wrapped bordered short-width">
@@ -22,7 +19,7 @@
       </aui-tab>
     </aui-tabs>
 
-    <h3>Vertical with automatic tabs switching</h3>
+    <h3>Automatic tabs mode</h3>
     <aui-tabs>
       <aui-tab name="Example">
         <aui-nav-vertical class="bordered" tabs-mode>
@@ -58,7 +55,7 @@
     <aui-nav-item name="Item 4"></aui-nav-item>
   </aui-nav-group>
 </aui-nav-vertical>`,
-        code2: `<aui-nav-vertical class="bordered" tabs-mode>
+        code2: `<aui-nav-vertical tabs-mode>
   <aui-nav-group>
     <aui-nav-item name="Selected Item" selected>Content</aui-nav-item>
   </aui-nav-group>
@@ -80,7 +77,6 @@
 
   .bordered {
     border: #ccc solid 1px;
-    margin-top: 10px;
     border-radius: 3px;
   }
 
