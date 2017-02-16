@@ -3,7 +3,8 @@ export default {
   render(createComponent) {
     const attrs = {
       disabled: this.disabled,
-      href: this.href
+      href: this.href,
+      target: this.target
     };
     const elementType = this.href ? 'a' : 'button'
     return createComponent(elementType, {
@@ -18,6 +19,7 @@ export default {
     href: String,
     light: Boolean,
     subtle: Boolean,
+    target: String,
     type: {
       type: String,
       validator(value) {
