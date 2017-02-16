@@ -12,6 +12,12 @@
         <p>
           <aui-button type="link">Button link</aui-button>
         </p>
+        <p>
+          <aui-buttons>
+            <aui-button>Edit</aui-button>
+            <aui-button>Delete</aui-button>
+          </aui-buttons>
+        </p>
       </aui-tab>
       <aui-tab name="Code">
         <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
@@ -64,7 +70,12 @@
       return {
         code: `<aui-button>Button</aui-button>
 <aui-button type="primary">Primary button</aui-button>
-<aui-button type="link">Button link</aui-button>`,
+<aui-button type="link">Button link</aui-button>
+
+<aui-buttons>
+  <aui-button>Edit</aui-button>
+  <aui-button>Delete</aui-button>
+</aui-buttons>`,
         code2: `<aui-button disabled>Button</aui-button>
 <aui-button light>Light</aui-button>
 <aui-button subtle>Subtle</aui-button>
