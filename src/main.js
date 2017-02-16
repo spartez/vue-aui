@@ -26,14 +26,70 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   routes: [
     {path: '/', component: Welcome},
-    {path: '/components/buttons', component: Buttons, meta: {docsName: "Buttons"}},
-    {path: '/components/select2', component: Select2, meta: {docsName: "AUI Select2"}},
-    {path: '/components/dialog2', component: Dialog2, meta: {docsName: "Dialog 2"}},
-    {path: '/components/icons', component: Icons, meta: {docsName: "Icons"}},
-    {path: '/components/lozenges', component: Lozenges, meta: {docsName: "Lozenges"}},
-    {path: '/components/navigation', component: Navigation, meta: {docsName: "Navigation"}},
-    {path: '/components/tabs', component: Tabs, meta: {docsName: "Tabs"}},
-    {path: '/components/toggle-button', component: ToggleButton, meta: {docsName: "Toggle Button"}}
+    {
+      path: '/components/buttons', component: Buttons,
+      meta: {
+        componentName: 'Buttons',
+        docsName: 'Buttons',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/buttons.html'
+      }
+    },
+    {
+      path: '/components/select2', component: Select2,
+      meta: {
+        componentName: 'Select2',
+        docsName: 'AUI Select2',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/auiselect2.html'
+      }
+    },
+    {
+      path: '/components/dialog2', component: Dialog2,
+      meta: {
+        componentName: 'Dialog2',
+        docsName: 'Dialog 2',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/dialog2.html'
+      }
+    },
+    {
+      path: '/components/icons', component: Icons,
+      meta: {
+        componentName: 'Icons',
+        docsName: 'Icons',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/icons.html'
+      }
+    },
+    {
+      path: '/components/lozenges', component: Lozenges,
+      meta: {
+        componentName: 'Lozenges',
+        docsName: 'Lozenges',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/lozenges.html'
+      }
+    },
+    {
+      path: '/components/navigation', component: Navigation,
+      meta: {
+        componentName: 'Navigation',
+        docsName: 'Navigation',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/navigation.html'
+      }
+    },
+    {
+      path: '/components/tabs', component: Tabs,
+      meta: {
+        componentName: 'Tabs',
+        docsName: 'Tabs',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/tabs.html'
+      }
+    },
+    {
+      path: '/components/toggle-button', component: ToggleButton,
+      meta: {
+        componentName: 'ToggleButton',
+        docsName: 'Toggle Button',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/toggle-button.html'
+      }
+    }
   ]
 })
 

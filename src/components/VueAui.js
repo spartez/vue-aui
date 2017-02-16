@@ -1,4 +1,5 @@
 import AuiButton from './buttons/AuiButton'
+import AuiButtons from './buttons/AuiButtons.vue'
 import AuiToggleButton from './buttons/AuiToggleButton.vue'
 
 import AuiNavGroup from './navigation/AuiNavGroup.vue'
@@ -21,6 +22,7 @@ import AuiTabs from './tabs/AuiTabs.vue'
 export default {
   install(Vue, options) {
     Vue.component('aui-button', AuiButton)
+    Vue.component('aui-buttons', AuiButtons)
     Vue.component('aui-toggle-button', AuiToggleButton)
 
     Vue.component('aui-nav-group', AuiNavGroup)

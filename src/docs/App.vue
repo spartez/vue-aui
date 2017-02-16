@@ -41,7 +41,25 @@
             </aui-nav-vertical>
           </div>
           <section class="aui-page-panel-content">
-            <h2 class="class-header" v-if="$route.path !== '/'">{{$route.meta.docsName}}</h2>
+            <div class="aui-toolbar2" role="toolbar">
+              <div class="aui-toolbar2-inner">
+                <div class="aui-toolbar2-group">
+                  <div class="aui-toolbar2-primary">
+                    <h2 class="class-header" v-if="$route.path !== '/'">{{$route.meta.docsName}}</h2>
+                  </div>
+                  <div class="aui-toolbar2-secondary">
+                    <aui-buttons>
+                      <aui-button v-if="$route.meta.auiLink" :href="$route.meta.auiLink" target="_blank">
+                        <aui-icon>link</aui-icon>
+                      </aui-button>
+                      <aui-button v-if="$route.meta.componentName" :href="githubLink" target="_blank">
+                        <aui-icon>file-code</aui-icon>
+                      </aui-button>
+                    </aui-buttons>
+                  </div>
+                </div>
+              </div>
+            </div>
             <router-view></router-view>
           </section>
         </div>
@@ -56,6 +74,12 @@
     data() {
       return {
         pages: this.$router.options.routes.filter(page => page.meta && page.meta.docsName)
+      }
+    },
+
+    computed: {
+      githubLink() {
+        return `https://github.com/spartez/vue-aui/blob/master/src/docs/component/${this.$route.meta.componentName}.vue`
       }
     }
   }
