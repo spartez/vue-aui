@@ -7,6 +7,7 @@ import VueAui from './components/VueAui'
 
 import Welcome from './docs/Welcome.vue'
 
+import Badges from './docs/component/Badges.vue'
 import Buttons from './docs/component/Buttons.vue'
 import Select2 from './docs/component/Select2.vue'
 import Dialog2 from './docs/component/Dialog2.vue'
@@ -32,6 +33,14 @@ const router = new VueRouter({
         componentName: 'Buttons',
         docsName: 'Buttons',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/buttons.html'
+      }
+    },
+    {
+      path: '/components/badges', component: Badges,
+      meta: {
+        componentName: 'Badges',
+        docsName: 'Badges',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/badges.html'
       }
     },
     {
