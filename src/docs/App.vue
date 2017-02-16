@@ -91,6 +91,10 @@
     width: 90px;
   }
 
+  .aui-header .aui-header-logo-aui a {
+    padding: 0 20px;
+  }
+
   .class-header {
     margin-bottom: 30px;
   }
