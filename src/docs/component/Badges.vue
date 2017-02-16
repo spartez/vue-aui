@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h3>Button types</h3>
     <aui-tabs>
       <aui-tab name="Example">
         <p>

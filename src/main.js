@@ -7,6 +7,7 @@ import VueAui from './components/VueAui'
 
 import Welcome from './docs/Welcome.vue'
 
+import Avatars from './docs/component/Avatars.vue'
 import Badges from './docs/component/Badges.vue'
 import Buttons from './docs/component/Buttons.vue'
 import Select2 from './docs/component/Select2.vue'
@@ -27,6 +28,14 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   routes: [
     {path: '/', component: Welcome},
+    {
+      path: '/components/avatars', component: Avatars,
+      meta: {
+        componentName: 'Avatars',
+        docsName: 'Avatars',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/avatars.html'
+      }
+    },
     {
       path: '/components/buttons', component: Buttons,
       meta: {

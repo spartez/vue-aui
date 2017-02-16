@@ -12,12 +12,13 @@ import AuiSelect2Multi from './select2/AuiSelect2Multi.vue'
 import AuiSelect2Option from './select2/AuiSelect2Option.vue'
 import AuiSelect2Single from './select2/AuiSelect2Single.vue'
 
+import AuiTab from './tabs/AuiTab.vue'
+import AuiTabs from './tabs/AuiTabs.vue'
+
+import AuiAvatar from './AuiAvatar.vue'
 import AuiDialog from './AuiDialog.vue'
 import AuiIcon from './AuiIcon'
 import AuiLozenge from './AuiLozenge.vue'
-
-import AuiTab from './tabs/AuiTab.vue'
-import AuiTabs from './tabs/AuiTabs.vue'
 
 export default {
   install(Vue, options) {
@@ -37,6 +38,7 @@ export default {
     Vue.component('aui-tab', AuiTab)
     Vue.component('aui-select2-single', AuiSelect2Single)
 
+    Vue.component('aui-avatar', AuiAvatar)
     Vue.component('aui-dialog', AuiDialog)
     Vue.component('aui-icon', AuiIcon)
     Vue.component('aui-lozenge', AuiLozenge)
