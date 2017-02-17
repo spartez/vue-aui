@@ -19,7 +19,7 @@
           <button class="aui-button aui-button-link" @click="selectValue2 = undefined">Clear value</button>
         </p>
 
-        <h5>Single select with default value and options loaded asynchronously</h5>
+        <h5>Default value and options loaded asynchronously</h5>
         <p>
           <aui-select2-single v-model="selectInitialValue" class="custom-class">
             <aui-select2-option :value="value" v-for="value in asyncValues">{{ value }}</aui-select2-option>
@@ -29,7 +29,7 @@
           ({{selectInitialValue}})
         </p>
 
-        <h5>Single select with asynchronous query for options</h5>
+        <h5>Query for options</h5>
         <p>
           <aui-select2-single v-model="selectValueAsync" class="custom-class"
                               :query="queryValues"
@@ -161,8 +161,9 @@
       },
 
       initialValue(element, callback) {
-        setTimeout(() => callback({id: "initialValue", text: "Initial Value"}), 300)
-
+        if (element.val() === "initialValue") {
+          setTimeout(() => callback({id: "initialValue", text: "Initial Value"}), 300)
+        }
       }
     }
   }
