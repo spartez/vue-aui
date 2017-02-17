@@ -9,7 +9,7 @@ import AuiNavTab from './navigation/AuiNavTab.vue'
 import AuiNavVerticalRouter from './navigation/AuiNavVerticalRouter.js'
 
 import AuiSelect2Multi from './select2/AuiSelect2Multi.vue'
-import AuiSelect2Option from './select2/AuiSelect2Option.vue'
+import AuiSelect2Option from './select2/AuiSelect2Option'
 import AuiSelect2Single from './select2/AuiSelect2Single.vue'
 
 import AuiTab from './tabs/AuiTab.vue'

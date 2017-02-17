@@ -1,5 +1,5 @@
 <template>
-    <span>
+    <span class="vue-aui-multi-select2">
         <input type="hidden" ref="input">
         <slot></slot>
     </span>
@@ -12,7 +12,9 @@
     props: {
       value: Array,
       tagsMode: Boolean,
-      sortable: Boolean
+      sortable: Boolean,
+      query: Function,
+      initSelection: Function
     },
 
     data() {
@@ -33,7 +35,10 @@
       this.$input = AJS.$(this.$refs.input)
       this.setSelectValue(this.value)
 
-      const options = {}
+      const options = {
+        query: this.query,
+        initSelection: this.initSelection
+      }
 
       if (this.tagsMode) {
         options.formatNoMatches = () => "Type to add a value"
@@ -81,3 +86,10 @@
     }
   }
 </script>
+
+<style>
+  /* Override AUI too high locked items*/
+  .vue-aui-multi-select2 .select2-search-choice.select2-locked {
+    padding: 1px 5px !important;
+  }
+</style>

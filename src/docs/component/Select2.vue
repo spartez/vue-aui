@@ -65,6 +65,12 @@
           </aui-select2-multi>
         </form>
         <span>{{selectTags}}</span>
+        <h5>Query for options</h5>
+        <form class="aui">
+          <aui-select2-multi v-model="queryExample" :query="queryValues" :init-selection="initialMultiValues">
+          </aui-select2-multi>
+        </form>
+        <span>{{queryExample}}</span>
       </aui-tab>
       <aui-tab name="Code">
         <pre v-highlightjs><code class="xml" v-text='code2'></code></pre>
@@ -84,6 +90,7 @@
         selectValueAsync: "initialValue",
         selectValues: ['value1'],
         selectTags: ["tag1"],
+        queryExample: ["tag1", "tag2"],
 
         code1: `<p>
   <aui-select2-single v-model="selectValue" placeholder="Select value" allow-clear>
@@ -134,6 +141,15 @@
   </aui-select2-multi>
 </form>
 <span>{{selectTags}}</span>
+
+<h5>Query for options</h5>
+<form class="aui">
+  <aui-select2-multi v-model="queryExample" :query="queryValues" :init-selection="initialMultiValues">
+    <aui-select2-option value="tag1">Tag 1</aui-select2-option>
+    <aui-select2-option value="tag2">Tag 2</aui-select2-option>
+  </aui-select2-multi>
+</form>
+<span>{{queryExample}}</span>
 `
       }
     },
@@ -154,7 +170,7 @@
             query.callback({
               results: [
                 {id: query.term, text: query.term},
-                {id: query.term + 3, text: query.term + 3},
+                {id: query.term + 2, text: query.term + " copy"},
               ]
             }), 200);
         }
@@ -164,6 +180,21 @@
         if (element.val() === "initialValue") {
           setTimeout(() => callback({id: "initialValue", text: "Initial Value"}), 300)
         }
+      },
+
+      initialMultiValues(element, callback) {
+        const lockedItems = ["tag1", "tag2"]
+        const namesMap = {
+          me: "Me",
+          tag1: 'Tag 1',
+          tag2: 'Tag 2',
+        }
+        const items = element.val().split(',').map(value => ({
+          id: value,
+          text: namesMap[value] || value,
+          locked: lockedItems.indexOf(value) >= 0
+        }))
+        setTimeout(() => callback(items), 300)
       }
     }
   }
