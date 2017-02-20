@@ -67,7 +67,7 @@
         <span>{{selectTags}}</span>
         <h5>Query for options</h5>
         <form class="aui">
-          <aui-select2-multi v-model="queryExample" :query="queryValues" :init-selection="initialMultiValues">
+          <aui-select2-multi ref="asyncSelect" v-model="queryExample" :query="queryValues" :init-selection="initialMultiValues">
           </aui-select2-multi>
         </form>
         <span>{{queryExample}}</span>
@@ -91,6 +91,7 @@
         selectValues: ['value1'],
         selectTags: ["tag1"],
         queryExample: ["tag1", "tag2"],
+        queryExampleLocked: ["tag1"],
 
         code1: `<p>
   <aui-select2-single v-model="selectValue" placeholder="Select value" allow-clear>
@@ -158,6 +159,13 @@
       setTimeout(() => {
         this.asyncValues = ["value1", "value2"]
       }, 1000)
+      setTimeout(() => this.queryExampleLocked.push('tag2'), 1000)
+    },
+
+    watch: {
+      queryExampleLocked() {
+        this.$refs.asyncSelect.$emit('dataChanged');
+      }
     },
 
     methods: {
@@ -183,7 +191,6 @@
       },
 
       initialMultiValues(element, callback) {
-        const lockedItems = ["tag1", "tag2"]
         const namesMap = {
           me: "Me",
           tag1: 'Tag 1',
@@ -192,7 +199,7 @@
         const items = element.val().split(',').map(value => ({
           id: value,
           text: namesMap[value] || value,
-          locked: lockedItems.indexOf(value) >= 0
+          locked: this.queryExampleLocked.indexOf(value) >= 0
         }))
         setTimeout(() => callback(items), 300)
       }

@@ -26,6 +26,9 @@
     created () {
       this.updateOptions()
       this.$on('optionsChanged', this.updateOptions)
+      this.$on('dataChanged', () => {
+        this.$input.auiSelect2("val", this.value)
+      })
     },
 
     mounted () {
