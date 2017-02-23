@@ -32,8 +32,8 @@
     },
 
     mounted () {
-      this.$refs.input.classList = this.$el.classList
-      this.$el.classList = []
+      this.$refs.input.className = this.$el.className
+      this.$el.className = ''
 
       this.$input = AJS.$(this.$refs.input)
       this.setSelectValue(this.value)
