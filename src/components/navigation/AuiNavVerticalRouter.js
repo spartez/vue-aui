@@ -6,11 +6,13 @@ export default {
     tabsMode: Boolean
   },
 
-  render(createComponent) {
-    if (this.tabsMode) {
-      return createComponent(AuiNavVerticalTabs, this.$slots.default)
+  functional: true,
+
+  render(createComponent, context) {
+    if (context.props.tabsMode) {
+      return createComponent(AuiNavVerticalTabs, context.data, context.children)
     } else {
-      return createComponent(AuiNavVertical, this.$slots.default)
+      return createComponent(AuiNavVertical, context.data, context.children)
     }
   }
 }

@@ -24,7 +24,7 @@
       <aui-tab name="Example">
         <aui-nav-vertical class="bordered" tabs-mode>
           <aui-nav-group>
-            <aui-nav-item name="Selected Item" selected>Content</aui-nav-item>
+            <aui-nav-item name="Selected Item" selected>Reactive counter: {{counter}}</aui-nav-item>
           </aui-nav-group>
           <aui-nav-header name="Header"></aui-nav-header>
           <aui-nav-group>
@@ -44,6 +44,7 @@
   export default {
     data() {
       return {
+        counter: 0,
         code: `<aui-nav-vertical>
   <aui-nav-group>
     <aui-nav-item name="Selected Item" href="https://example.com" selected></aui-nav-item>
@@ -57,7 +58,8 @@
 </aui-nav-vertical>`,
         code2: `<aui-nav-vertical tabs-mode>
   <aui-nav-group>
-    <aui-nav-item name="Selected Item" selected>Content</aui-nav-item>
+    <aui-nav-item name="Selected Item" selected>Reactive counter: {{counter}}</aui-nav-item>
+  </aui-nav-group>
   </aui-nav-group>
   <aui-nav-header name="Header"></aui-nav-header>
   <aui-nav-group>
@@ -66,6 +68,10 @@
   </aui-nav-group>
 </aui-nav-vertical>`
       }
+    },
+
+    mounted() {
+      setInterval(() => this.counter++, 1000)
     }
   }
 </script>

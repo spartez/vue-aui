@@ -3,7 +3,7 @@ import AuiNavTab from "./AuiNavTab.vue"
 
 export default {
   render(createElement) {
-    const auiNavGroups = this.groupsAndHeaders.map(groupOrHeader => {
+    const auiNavGroups = this.getGroupsAndHeaders().map(groupOrHeader => {
       if (groupOrHeader.componentOptions.tag === 'aui-nav-group') {
         const children = groupOrHeader.componentOptions && groupOrHeader.componentOptions.children || [];
         children
@@ -18,8 +18,8 @@ export default {
       return groupOrHeader
     });
 
-    const selectedItem = this.items
-      .filter(item => item.componentOptions.propsData.name === this.selectedTab)[0];
+    const selectedItem = this.getItems().filter(item => item.componentOptions.propsData.name === this.selectedTab)[0]
+      || this.getItems()[0];
 
     const tabElement = createElement(AuiNavTab, selectedItem && selectedItem.componentOptions.children)
     const auiNavVertical = createElement(AuiNavVertical, [auiNavGroups]);
@@ -33,29 +33,27 @@ export default {
     }
   },
 
-  computed: {
-    groupsAndHeaders() {
-      return this.$slots.default
-        .filter(item => item.componentOptions)
-        .filter(item => item.componentOptions.tag === 'aui-nav-group' || item.componentOptions.tag === 'aui-nav-header')
-    },
-
-    items() {
-      return this.groupsAndHeaders
-        .reduce((items, group) => group.componentOptions.children ? items.concat(group.componentOptions.children) : items, [])
-        .filter(item => item.componentOptions)
-        .filter(item => item.componentOptions.tag === 'aui-nav-item')
-    }
-  },
-
   created() {
-    const firstItem = this.items[0]
+    const firstItem = this.getItems()[0]
     this.selectedTab = firstItem.componentOptions.propsData.name;
   },
 
   methods: {
     clicked(tab) {
       this.selectedTab = tab.data.attrs.name
+    },
+
+    getGroupsAndHeaders() {
+      return this.$slots.default
+        .filter(item => item.componentOptions)
+        .filter(item => item.componentOptions.tag === 'aui-nav-group' || item.componentOptions.tag === 'aui-nav-header')
+    },
+
+    getItems() {
+      return this.getGroupsAndHeaders()
+        .reduce((items, group) => group.componentOptions.children ? items.concat(group.componentOptions.children) : items, [])
+        .filter(item => item.componentOptions)
+        .filter(item => item.componentOptions.tag === 'aui-nav-item')
     }
-  }
+  },
 }
