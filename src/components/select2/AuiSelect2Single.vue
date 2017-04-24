@@ -1,6 +1,6 @@
 <template>
     <span>
-        <input type="hidden" ref="input">
+        <input :disabled="disabled" type="hidden" ref="input">
         <slot></slot>
     </span>
 </template>
@@ -8,13 +8,14 @@
 <script>
   export default{
     props: {
-      value: String,
-      placeholder: String,
-      width: String,
-      dropdownAutoWidth: Boolean,
       allowClear: Boolean,
+      disabled: Boolean,
+      dropdownAutoWidth: Boolean,
+      initSelection: Function,
+      placeholder: String,
       query: Function,
-      initSelection: Function
+      value: String,
+      width: String
     },
 
     data: function () {

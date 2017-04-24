@@ -36,6 +36,11 @@
                               :init-selection="initialValue"></aui-select2-single>
           ({{selectValueAsync}})
         </p>
+
+        <h5>Disabled with placeholder</h5>
+        <p>
+          <aui-select2-single placeholder="Disabled select" disabled></aui-select2-single>
+        </p>
       </aui-tab>
       <aui-tab name="Code">
         <pre v-highlightjs><code class="xml" v-text='code1'></code></pre>
@@ -67,10 +72,17 @@
         <span>{{selectTags}}</span>
         <h5>Query for options</h5>
         <form class="aui">
-          <aui-select2-multi ref="asyncSelect" v-model="queryExample" :query="queryValues" :init-selection="initialMultiValues">
+          <aui-select2-multi ref="asyncSelect" v-model="queryExample" :query="queryValues"
+                             :init-selection="initialMultiValues">
           </aui-select2-multi>
         </form>
         <span>{{queryExample}}</span>
+
+        <h5>Disabled with placeholder</h5>
+        <form class="aui">
+          <aui-select2-multi disabled placeholder="Disabled select">
+          </aui-select2-multi>
+        </form>
       </aui-tab>
       <aui-tab name="Code">
         <pre v-highlightjs><code class="xml" v-text='code2'></code></pre>

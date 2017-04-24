@@ -1,6 +1,6 @@
 <template>
     <span class="vue-aui-multi-select2">
-        <input type="hidden" ref="input">
+        <input :disabled="disabled" type="hidden" ref="input">
         <slot></slot>
     </span>
 </template>
@@ -10,13 +10,14 @@
 
   export default {
     props: {
-      value: Array,
+      disabled: Boolean,
+      initSelection: Function,
       placeholder: String,
-      width: String,
-      tagsMode: Boolean,
-      sortable: Boolean,
       query: Function,
-      initSelection: Function
+      sortable: Boolean,
+      tagsMode: Boolean,
+      value: Array,
+      width: String
     },
 
     data() {
