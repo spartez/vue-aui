@@ -49,7 +49,7 @@
       <aui-tab name="Example">
         <h5>With predefined set of options</h5>
         <form class="aui">
-          <aui-select2-multi v-model="selectValues" class="custom-class2">
+          <aui-select2-multi v-model="selectValues" class="custom-class2" placeholder="Select any value">
             <aui-select2-option value="value1">Value 1</aui-select2-option>
             <aui-select2-option value="value2">Value 2</aui-select2-option>
             <aui-select2-option value="value3">Value 3</aui-select2-option>
@@ -59,7 +59,7 @@
 
         <h5>Tags mode - options are created dynamically</h5>
         <form class="aui">
-          <aui-select2-multi v-model="selectTags" tags-mode sortable>
+          <aui-select2-multi v-model="selectTags" tags-mode sortable width="auto">
             <aui-select2-option value="tag1">Tag 1</aui-select2-option>
             <aui-select2-option value="tag2">Tag 2</aui-select2-option>
           </aui-select2-multi>

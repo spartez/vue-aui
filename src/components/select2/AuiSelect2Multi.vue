@@ -11,6 +11,8 @@
   export default {
     props: {
       value: Array,
+      placeholder: String,
+      width: String,
       tagsMode: Boolean,
       sortable: Boolean,
       query: Function,
@@ -40,7 +42,9 @@
 
       const options = {
         query: this.query,
-        initSelection: this.initSelection
+        initSelection: this.initSelection,
+        placeholder: this.placeholder,
+        width: this.width
       }
 
       if (this.tagsMode) {
