@@ -50,6 +50,9 @@
     watch: {
       value: function (value) {
         this.$input.auiSelect2('val', value)
+      },
+      disabled() {
+        this.$input.auiSelect2('val', this.value)
       }
     },
 

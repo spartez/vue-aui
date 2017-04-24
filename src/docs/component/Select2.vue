@@ -5,7 +5,7 @@
     <aui-tabs>
       <aui-tab name="Example">
         <p>
-          <aui-select2-single v-model="selectValue" placeholder="Select value" allow-clear>
+          <aui-select2-single v-model="selectValue" placeholder="Select value" allow-clear :disabled="initiallyDisabled">
             <aui-select2-option value="value1">Option 1</aui-select2-option>
             <aui-select2-option value="value2">Option 2</aui-select2-option>
           </aui-select2-single>
@@ -36,11 +36,6 @@
                               :init-selection="initialValue"></aui-select2-single>
           ({{selectValueAsync}})
         </p>
-
-        <h5>Disabled with placeholder</h5>
-        <p>
-          <aui-select2-single placeholder="Disabled select" disabled></aui-select2-single>
-        </p>
       </aui-tab>
       <aui-tab name="Code">
         <pre v-highlightjs><code class="xml" v-text='code1'></code></pre>
@@ -54,7 +49,7 @@
       <aui-tab name="Example">
         <h5>With predefined set of options</h5>
         <form class="aui">
-          <aui-select2-multi v-model="selectValues" class="custom-class2" placeholder="Select any value">
+          <aui-select2-multi v-model="selectValues" class="custom-class2" placeholder="Select any value" :disabled="initiallyDisabled">
             <aui-select2-option value="value1">Value 1</aui-select2-option>
             <aui-select2-option value="value2">Value 2</aui-select2-option>
             <aui-select2-option value="value3">Value 3</aui-select2-option>
@@ -104,6 +99,7 @@
         selectTags: ["tag1"],
         queryExample: ["tag1", "tag2"],
         queryExampleLocked: ["tag1"],
+        initiallyDisabled: true,
 
         code1: `<p>
   <aui-select2-single v-model="selectValue" placeholder="Select value" allow-clear>
@@ -172,6 +168,7 @@
         this.asyncValues = ["value1", "value2"]
       }, 1000)
       setTimeout(() => this.queryExampleLocked.push('tag2'), 1000)
+      setTimeout(() => this.initiallyDisabled = false, 1000)
     },
 
     watch: {
