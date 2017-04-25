@@ -3,6 +3,7 @@
         <aui-label v-if="label" :for="id">{{ label }}</aui-label>
         <aui-toggle ref="toggle" :id="id"
                     :tooltip-on="tooltipOn || 'Enabled'" :tooltip-off="tooltipOff || 'Disabled'"
+                    :disabled="disabled"
                     :label="label || ''"
                     :checked="value"></aui-toggle>
     </span>
@@ -11,6 +12,7 @@
 <script>
   export default {
     props: {
+      disabled: Boolean,
       value: Boolean,
       id: String,
       label: String,
