@@ -54,18 +54,6 @@ Full components reference: https://spartez.github.io/vue-aui/
 
 CodePen demo starter: http://codepen.io/damienix/pen/woXRpP
 
-### Versioning
-This package is **NOT** considered as stable. 
-
-Before 1.X release any minor version can break the API but patch version will not.
-Therefore it's not recommended to use dashes but rather fixed versions or tildas as below:
-
-```
-  "vue-aui", "0.1.0",
-  "vue-aui", "~0.1.0",
-  "vue-aui", "^0.1.0", // NOT recommended - can break with minor release
-```
-
 ## Publishing
 
 1. `./build/publish.js patch` (use `minor` or `major` to use release those versions))
