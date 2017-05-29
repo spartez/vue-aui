@@ -12,6 +12,7 @@
 <script>
   export default {
     props: {
+      busy: Boolean,
       disabled: Boolean,
       value: Boolean,
       id: String,
@@ -25,11 +26,18 @@
         throw "You need to define aui-toggle-button id attribute to properly match label to the toggle"
       }
       this.$refs.toggle.addEventListener('change', this.emitChange);
+      this.$nextTick(() => this.$refs.toggle.busy = this.busy);
     },
 
     methods: {
       emitChange() {
         this.$emit('input', this.$refs.toggle.checked)
+      }
+    },
+
+    watch: {
+      busy(value) {
+        this.$refs.toggle.busy = value;
       }
     }
   }
