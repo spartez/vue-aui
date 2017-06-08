@@ -94,6 +94,14 @@ const router = new VueRouter({
       }
     },
     {
+      path: '/components/progress-indicator', component: ProgressIndicator,
+      meta: {
+        componentName: 'ProgressIndicator',
+        docsName: 'Progress Indicator',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/progress-indicator.html'
+      }
+    },
+    {
       path: '/components/tabs', component: Tabs,
       meta: {
         componentName: 'Tabs',
@@ -107,14 +115,6 @@ const router = new VueRouter({
         componentName: 'ToggleButton',
         docsName: 'Toggle Button',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/toggle-button.html'
-      }
-    },
-    {
-      path: '/components/progress-indicator', component: ProgressIndicator,
-      meta: {
-        componentName: 'ProgressIndicator',
-        docsName: 'Progress Indicator',
-        auiLink: 'https://docs.atlassian.com/aui/latest/docs/progress-indicator.html'
       }
     }
   ]
