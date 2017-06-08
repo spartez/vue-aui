@@ -7,39 +7,41 @@
 <script>
   export default {
     props: {
-      percentage: {
-        type: Number,
-        default: 0,
-        validator(value) {
-          return value >= 0 && value <= 100
-        }
-      },
-
       indeterminate: {
         type: Boolean,
         default: false
+      },
+
+      progress: {
+        type: Number,
+        default: 0,
+        validator(value) {
+          return value >= 0 && value <= 1
+        }
       }
     },
 
     watch: {
-      percentage() {
-        if (!this.indeterminate) {
-          this.setProgerssIndicator()
-        }
+      progress() {
+        this.setProgerssIndicator()
+      },
+
+      indeterminate() {
+        this.setProgerssIndicator();
       }
     },
 
     mounted() {
-      if (this.indeterminate) {
-        AJS.progressBars.setIndeterminate(this.$refs.progressIndicator)
-      } else {
-        this.setProgerssIndicator()
-      }
+      this.setProgerssIndicator()
     },
 
     methods: {
       setProgerssIndicator() {
-        AJS.progressBars.update(this.$refs.progressIndicator, this.percentage / 100)
+        if (this.indeterminate) {
+          AJS.progressBars.setIndeterminate(this.$refs.progressIndicator)
+        } else {
+          AJS.progressBars.update(this.$refs.progressIndicator, this.progress)
+        }
       }
     }
   }

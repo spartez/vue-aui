@@ -3,10 +3,13 @@
     <aui-tabs>
       <aui-tab name="Example">
         <p>
-          <aui-progress-indicator :percentage='30'></aui-progress-indicator>
+          <aui-progress-indicator :progress='0.3'></aui-progress-indicator>
         </p>
         <p>
-          <aui-progress-indicator :indeterminate='true'></aui-progress-indicator>
+          <aui-progress-indicator indeterminate></aui-progress-indicator>
+        </p>
+        <p>
+          <aui-progress-indicator :indeterminate='indeterminate' :progress="0.5"></aui-progress-indicator>
         </p>
       </aui-tab>
       <aui-tab name="Code">
@@ -21,8 +24,15 @@
   export default {
     data() {
       return {
-        code: "<aui-progress-indicator :percentage='30'></aui-progress-indicator>\n<aui-progress-indicator :indeterminate='true'></aui-progress-indicator>",
+        indeterminate: true,
+        code: `<aui-progress-indicator :progress='0.3'></aui-progress-indicator>
+<aui-progress-indicator indeterminate></aui-progress-indicator>
+<aui-progress-indicator :indeterminate='indeterminate' :progress="0.5"></aui-progress-indicator>`,
       }
+    },
+
+    mounted() {
+      setTimeout(() => this.indeterminate = false, 1000)
     }
   }
 </script>
