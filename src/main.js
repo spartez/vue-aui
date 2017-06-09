@@ -17,6 +17,7 @@ import Lozenges from './docs/component/Lozenges.vue'
 import Navigation from './docs/component/Navigation.vue'
 import Tabs from './docs/component/Tabs.vue'
 import ToggleButton from './docs/component/ToggleButton.vue'
+import ProgressIndicator from './docs/component/ProgressIndicator.vue'
 
 import VueHighlightJS from 'vue-highlightjs'
 import VueRouter from 'vue-router'
@@ -90,6 +91,14 @@ const router = new VueRouter({
         componentName: 'Navigation',
         docsName: 'Navigation',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/navigation.html'
+      }
+    },
+    {
+      path: '/components/progress-indicator', component: ProgressIndicator,
+      meta: {
+        componentName: 'ProgressIndicator',
+        docsName: 'Progress Indicator',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/progress-indicator.html'
       }
     },
     {

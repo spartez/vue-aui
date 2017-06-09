@@ -19,6 +19,7 @@ import AuiAvatar from './AuiAvatar.vue'
 import AuiDialog from './AuiDialog.vue'
 import AuiIcon from './AuiIcon'
 import AuiLozenge from './AuiLozenge.vue'
+import AuiProgressIndicator from './AuiProgressIndicator.vue'
 
 export default {
   install(Vue, options) {
@@ -42,5 +43,6 @@ export default {
     Vue.component('aui-dialog', AuiDialog)
     Vue.component('aui-icon', AuiIcon)
     Vue.component('aui-lozenge', AuiLozenge)
+    Vue.component('aui-progress-indicator', AuiProgressIndicator)
   }
 }
