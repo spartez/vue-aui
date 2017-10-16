@@ -1,16 +1,32 @@
-export default{
+export default {
   props: {
+    text: String,
     value: String
+  },
+
+  watch: {
+    text() {
+      this.optionsChanged();
+    },
+    value() {
+      this.optionsChanged();
+    }
   },
 
   render() {
   },
 
-  mounted () {
-    this.$parent.$emit('optionsChanged');
+  mounted() {
+    this.optionsChanged();
   },
 
   destroyed() {
-    this.$parent.$emit('optionsChanged');
+    this.optionsChanged();
+  },
+
+  methods: {
+    optionsChanged() {
+      this.$parent.$emit('optionsChanged');
+    }
   }
 }

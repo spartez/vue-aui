@@ -5,16 +5,17 @@
     <aui-tabs>
       <aui-tab name="Example">
         <p>
-          <aui-select2-single v-model="selectValue" placeholder="Select value" allow-clear :disabled="initiallyDisabled">
-            <aui-select2-option value="value1">Option 1</aui-select2-option>
-            <aui-select2-option value="value2">Option 2</aui-select2-option>
+          <aui-select2-single v-model="selectValue" placeholder="Select value" allow-clear
+                              :disabled="initiallyDisabled">
+            <aui-select2-option value="value1" text="Option 1"></aui-select2-option>
+            <aui-select2-option value="value2" text="Option 2"></aui-select2-option>
           </aui-select2-single>
           <span>{{selectValue}}</span>
         </p>
 
         <p>
           <aui-select2-single v-model="selectValue2" placeholder="Select value" class="custom-class">
-            <aui-select2-option value="value1">Any value</aui-select2-option>
+            <aui-select2-option value="value1" text="Any value"></aui-select2-option>
           </aui-select2-single>
           <button class="aui-button aui-button-link" @click="selectValue2 = undefined">Clear value</button>
         </p>
@@ -22,7 +23,7 @@
         <h5>Default value and options loaded asynchronously</h5>
         <p>
           <aui-select2-single v-model="selectInitialValue" class="custom-class">
-            <aui-select2-option :value="value" v-for="value in asyncValues">{{ value }}</aui-select2-option>
+            <aui-select2-option v-for="value in asyncValues" :value="value" :text="value"></aui-select2-option>
           </aui-select2-single>
           <button class="aui-button aui-button-link" @click="selectInitialValue = undefined">Clear value</button>
           <button class="aui-button aui-button-link" @click="selectInitialValue = 'value1'">Set</button>
@@ -49,10 +50,11 @@
       <aui-tab name="Example">
         <h5>With predefined set of options</h5>
         <form class="aui">
-          <aui-select2-multi v-model="selectValues" class="custom-class2" placeholder="Select any value" :disabled="initiallyDisabled">
-            <aui-select2-option value="value1">Value 1</aui-select2-option>
-            <aui-select2-option value="value2">Value 2</aui-select2-option>
-            <aui-select2-option value="value3">Value 3</aui-select2-option>
+          <aui-select2-multi v-model="selectValues" class="custom-class2" placeholder="Select any value"
+                             :disabled="initiallyDisabled">
+            <aui-select2-option value="value1" text="Value 1"></aui-select2-option>
+            <aui-select2-option value="value2" text="Value 2"></aui-select2-option>
+            <aui-select2-option value="value3" text="Value 3"></aui-select2-option>
           </aui-select2-multi>
         </form>
         <span>{{selectValues}}</span>
@@ -60,11 +62,12 @@
         <h5>Tags mode - options are created dynamically</h5>
         <form class="aui">
           <aui-select2-multi v-model="selectTags" tags-mode sortable width="auto">
-            <aui-select2-option value="tag1">Tag 1</aui-select2-option>
-            <aui-select2-option value="tag2">Tag 2</aui-select2-option>
+            <aui-select2-option value="tag1" text="Tag 1"></aui-select2-option>
+            <aui-select2-option value="tag2" text="Tag 2"></aui-select2-option>
           </aui-select2-multi>
         </form>
         <span>{{selectTags}}</span>
+
         <h5>Query for options</h5>
         <form class="aui">
           <aui-select2-multi ref="asyncSelect" v-model="queryExample" :query="queryValues"
@@ -102,31 +105,31 @@
         initiallyDisabled: true,
 
         code1: `<p>
-  <aui-select2-single v-model="selectValue" placeholder="Select value" allow-clear>
-    <aui-select2-option value="value1">Option 1</aui-select2-option>
-    <aui-select2-option value="value2">Option 2</aui-select2-option>
+  <aui-select2-single v-model="selectValue" placeholder="Select value" allow-clear :disabled="initiallyDisabled">
+    <aui-select2-option value="value1" text="Option 1"></aui-select2-option>
+    <aui-select2-option value="value2" text="Option 2"></aui-select2-option>
   </aui-select2-single>
   <span>{{selectValue}}</span>
 </p>
 
 <p>
   <aui-select2-single v-model="selectValue2" placeholder="Select value" class="custom-class">
-    <aui-select2-option value="value1">Any value</aui-select2-option>
+    <aui-select2-option value="value1" text="Any value"></aui-select2-option>
   </aui-select2-single>
   <button class="aui-button aui-button-link" @click="selectValue2 = undefined">Clear value</button>
 </p>
 
-<h5>Single select with default value and options loaded asynchronously</h5>
+<h5>Default value and options loaded asynchronously</h5>
 <p>
   <aui-select2-single v-model="selectInitialValue" class="custom-class">
-    <aui-select2-option :value="value" v-for="value in asyncValues">{{ value }}</aui-select2-option>
+    <aui-select2-option v-for="value in asyncValues" :value="value" :text="value"></aui-select2-option>
   </aui-select2-single>
   <button class="aui-button aui-button-link" @click="selectInitialValue = undefined">Clear value</button>
   <button class="aui-button aui-button-link" @click="selectInitialValue = 'value1'">Set</button>
   ({{selectInitialValue}})
 </p>
 
-<h5>Single select with asynchronous query for options</h5>
+<h5>Query for options</h5>
 <p>
   <aui-select2-single v-model="selectValueAsync" class="custom-class"
                       :query="queryValues"
@@ -134,31 +137,38 @@
   ({{selectValueAsync}})
 </p>
 `,
-        code2: `<form class="aui">
-  <aui-select2-multi v-model="selectValues" class="custom-class2">
-    <aui-select2-option value="value1">Value 1</aui-select2-option>
-    <aui-select2-option value="value2">Value 2</aui-select2-option>
-    <aui-select2-option value="value3">Value 3</aui-select2-option>
+        code2: `<h5>With predefined set of options</h5>
+<form class="aui">
+  <aui-select2-multi v-model="selectValues" class="custom-class2" placeholder="Select any value" :disabled="initiallyDisabled">
+    <aui-select2-option value="value1" text="Value 1"></aui-select2-option>
+    <aui-select2-option value="value2" text="Value 2"></aui-select2-option>
+    <aui-select2-option value="value3" text="Value 3"></aui-select2-option>
   </aui-select2-multi>
 </form>
 <span>{{selectValues}}</span>
 
+<h5>Tags mode - options are created dynamically</h5>
 <form class="aui">
-  <aui-select2-multi v-model="selectTags" tags-mode sortable>
-    <aui-select2-option value="tag1">Tag 1</aui-select2-option>
-    <aui-select2-option value="tag2">Tag 2</aui-select2-option>
+  <aui-select2-multi v-model="selectTags" tags-mode sortable width="auto">
+    <aui-select2-option value="tag1" text="Tag 1"></aui-select2-option>
+    <aui-select2-option value="tag2" text="Tag 2"></aui-select2-option>
   </aui-select2-multi>
 </form>
 <span>{{selectTags}}</span>
 
 <h5>Query for options</h5>
 <form class="aui">
-  <aui-select2-multi v-model="queryExample" :query="queryValues" :init-selection="initialMultiValues">
-    <aui-select2-option value="tag1">Tag 1</aui-select2-option>
-    <aui-select2-option value="tag2">Tag 2</aui-select2-option>
+  <aui-select2-multi ref="asyncSelect" v-model="queryExample" :query="queryValues"
+                     :init-selection="initialMultiValues">
   </aui-select2-multi>
 </form>
 <span>{{queryExample}}</span>
+
+<h5>Disabled with placeholder</h5>
+<form class="aui">
+  <aui-select2-multi disabled placeholder="Disabled select">
+  </aui-select2-multi>
+</form>
 `
       }
     },
@@ -167,6 +177,10 @@
       setTimeout(() => {
         this.asyncValues = ["value1", "value2"]
       }, 1000)
+      // If watching text or value is not reactive - the refresh will not happen at all (reusing previous components)
+      setTimeout(() => {
+        this.asyncValues = ["value0", "value1"]
+      }, 2000)
       setTimeout(() => this.queryExampleLocked.push('tag2'), 1000)
       setTimeout(() => this.initiallyDisabled = false, 1000)
     },

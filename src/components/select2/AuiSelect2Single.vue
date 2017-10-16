@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  export default{
+  export default {
     props: {
       allowClear: Boolean,
       disabled: Boolean,
@@ -64,7 +64,7 @@
       updateOptions() {
         this.options = this.$children.map(child => {
           const id = child.value
-          const text = child.$slots.default[0].text
+          const text = child.text
           return {id, text}
         })
         if (this.$input) {
