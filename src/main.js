@@ -1,12 +1,13 @@
 import './main.css'
 
 import Vue from 'vue'
-import App from './docs/App'
+import App from './docs/App.vue'
 
 import VueAui from './components/VueAui'
 
 import Welcome from './docs/Welcome.vue'
 
+import AuiSpinner from './docs/component/Spinner.vue'
 import Avatars from './docs/component/Avatars.vue'
 import Badges from './docs/component/Badges.vue'
 import Buttons from './docs/component/Buttons.vue'
@@ -99,6 +100,14 @@ const router = new VueRouter({
         componentName: 'ProgressIndicator',
         docsName: 'Progress Indicator',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/progress-indicator.html'
+      }
+    },
+    {
+      path: '/components/spinner', component: AuiSpinner,
+      meta: {
+        componentName: 'AuiSpinner',
+        docsName: 'Spinner',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/spinner.html'
       }
     },
     {
