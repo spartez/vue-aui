@@ -12,7 +12,7 @@ https://spartez.github.io/vue-aui/
 
 ##### Requirements
 
-* NPM 3.10.8+
+* NPM 5+
 * AUI 6.0+ - you need to attach this yourself to the page
 
 ##### Using npm
@@ -33,30 +33,27 @@ This will register all the components.
 <script src="path/to/dist/vue-aui.js"></script>
 ```
 
-### Supported components
-
-* aui-dialog
-* aui-select2-single
-* aui-select2-multi
-* aui-tabs
-* aui-toggle-button
-
 ### Examples
 In any .vue component just use
 ```html
 <aui-select2-multi v-model="myModel">
-  <aui-select2-option value="value1">Option 1</aui-select2-option>
-  <aui-select2-option if="shouldShow" value="value2">Option 2</aui-select2-option>
+  <aui-select2-option value="value1" text="Option 1"></aui-select2-option>
+  <aui-select2-option v-if="shouldShow" value="value2" text="Option 2"></aui-select2-option>
 </aui-select2-multi>
 ```
 
-Full components reference: https://spartez.github.io/vue-aui/
+### Supported components
 
-CodePen demo starter: http://codepen.io/damienix/pen/woXRpP
+https://spartez.github.io/vue-aui/
+
+### CodePen demo starter:
+http://codepen.io/damienix/pen/woXRpP
 
 ## Publishing
 
 1. `./build/publish.js patch` (use `minor` or `major` to use release those versions))
+
+In pre 1.0 versions any minor version can be braking. Braking changes though will be listed on release notes page. Patches won't be braking.
 
 ## Build Setup
 
@@ -66,21 +63,7 @@ npm install
 
 # serve with hot reload at localhost:8080
 npm run dev
-
-# build for production with minification
-npm run build
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 ## License
 [MIT](LICENSE.md)
