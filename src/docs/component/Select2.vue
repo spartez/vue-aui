@@ -30,6 +30,16 @@
           ({{selectInitialValue}})
         </p>
 
+        <h5>Values added asynchronously with :key provided. Should be in sorted order in the dropdown.</h5>
+        <aui-select2-single v-model="selectedSortedValue">
+          <aui-select2-option v-for="value in sortedValues" :key="value.id" :value="value.id" :text="value.text">
+          </aui-select2-option>
+        </aui-select2-single>
+        <button class="aui-button aui-button-link" @click="simulateFetchingOfSortedValues">Simulate fetch again</button>
+        <p>
+          Compare with fetched values rendered via <em>span</em>: <span v-for="value in sortedValues" :key="value.id">{{value.text}}&nbsp</span>
+        </p>
+
         <h5>Query for options</h5>
         <p>
           <aui-select2-single v-model="selectValueAsync" class="custom-class"
@@ -103,6 +113,8 @@
         queryExample: ["tag1", "tag2"],
         queryExampleLocked: ["tag1"],
         initiallyDisabled: true,
+        unsortedValues: [],
+        selectedSortedValue: undefined,
 
         code1: `<p>
   <aui-select2-single v-model="selectValue" placeholder="Select value" allow-clear :disabled="initiallyDisabled">
@@ -183,11 +195,18 @@
       }, 2000)
       setTimeout(() => this.queryExampleLocked.push('tag2'), 1000)
       setTimeout(() => this.initiallyDisabled = false, 1000)
+      setTimeout(() => this.simulateFetchingOfSortedValues(), 1000)
     },
 
     watch: {
       queryExampleLocked() {
         this.$refs.asyncSelect.$emit('dataChanged');
+      }
+    },
+
+    computed: {
+      sortedValues() {
+        return _.sortBy(this.unsortedValues.map(value => ({id: value, text: value})), "text");
       }
     },
 
@@ -225,6 +244,19 @@
           locked: this.queryExampleLocked.indexOf(value) >= 0
         }))
         setTimeout(() => callback(items), 300)
+      },
+
+      simulateFetchingOfSortedValues() {
+        this.unsortedValues = [];
+        setTimeout(() => {
+          this.unsortedValues.push.apply(this.unsortedValues, ["c"]);
+        }, 1000)
+        setTimeout(() => {
+          this.unsortedValues.push.apply(this.unsortedValues, ["b"]);
+        }, 1500)
+        setTimeout(() => {
+          this.unsortedValues.push.apply(this.unsortedValues, ["a"]);
+        }, 2000)
       }
     }
   }
