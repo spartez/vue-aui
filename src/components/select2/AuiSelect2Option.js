@@ -26,7 +26,7 @@ export default {
 
   methods: {
     optionsChanged() {
-      this.$parent.$emit('optionsChanged');
+      this.$nextTick(_ => this.$parent.$emit('optionsChanged'))
     }
   }
 }
