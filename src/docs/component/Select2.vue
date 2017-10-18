@@ -30,16 +30,6 @@
           ({{selectInitialValue}})
         </p>
 
-        <h5>Values added asynchronously with :key provided. Should be in sorted order in the dropdown.</h5>
-        <aui-select2-single v-model="selectedSortedValue">
-          <aui-select2-option v-for="value in sortedValues" :key="value.id" :value="value.id" :text="value.text">
-          </aui-select2-option>
-        </aui-select2-single>
-        <button class="aui-button aui-button-link" @click="simulateFetchingOfSortedValues">Simulate fetch again</button>
-        <p>
-          Compare with fetched values rendered via <em>span</em>: <span v-for="value in sortedValues" :key="value.id">{{value.text}}&nbsp</span>
-        </p>
-
         <h5>Query for options</h5>
         <p>
           <aui-select2-single v-model="selectValueAsync" class="custom-class"
@@ -113,8 +103,7 @@
         queryExample: ["tag1", "tag2"],
         queryExampleLocked: ["tag1"],
         initiallyDisabled: true,
-        unsortedValues: [],
-        selectedSortedValue: undefined,
+
         code1: `<p>
   <aui-select2-single v-model="selectValue" placeholder="Select value" allow-clear :disabled="initiallyDisabled">
     <aui-select2-option value="value1" text="Option 1"></aui-select2-option>
@@ -122,12 +111,14 @@
   </aui-select2-single>
   <span>{{selectValue}}</span>
 </p>
+
 <p>
   <aui-select2-single v-model="selectValue2" placeholder="Select value" class="custom-class">
     <aui-select2-option value="value1" text="Any value"></aui-select2-option>
   </aui-select2-single>
   <button class="aui-button aui-button-link" @click="selectValue2 = undefined">Clear value</button>
 </p>
+
 <h5>Default value and options loaded asynchronously</h5>
 <p>
   <aui-select2-single v-model="selectInitialValue" class="custom-class">
@@ -137,6 +128,7 @@
   <button class="aui-button aui-button-link" @click="selectInitialValue = 'value1'">Set</button>
   ({{selectInitialValue}})
 </p>
+
 <h5>Query for options</h5>
 <p>
   <aui-select2-single v-model="selectValueAsync" class="custom-class"
@@ -154,6 +146,7 @@
   </aui-select2-multi>
 </form>
 <span>{{selectValues}}</span>
+
 <h5>Tags mode - options are created dynamically</h5>
 <form class="aui">
   <aui-select2-multi v-model="selectTags" tags-mode sortable width="auto">
@@ -162,6 +155,7 @@
   </aui-select2-multi>
 </form>
 <span>{{selectTags}}</span>
+
 <h5>Query for options</h5>
 <form class="aui">
   <aui-select2-multi ref="asyncSelect" v-model="queryExample" :query="queryValues"
@@ -169,6 +163,7 @@
   </aui-select2-multi>
 </form>
 <span>{{queryExample}}</span>
+
 <h5>Disabled with placeholder</h5>
 <form class="aui">
   <aui-select2-multi disabled placeholder="Disabled select">
@@ -177,6 +172,7 @@
 `
       }
     },
+
     mounted() {
       setTimeout(() => {
         this.asyncValues = ["value1", "value2"]
@@ -187,18 +183,14 @@
       }, 2000)
       setTimeout(() => this.queryExampleLocked.push('tag2'), 1000)
       setTimeout(() => this.initiallyDisabled = false, 1000)
-      setTimeout(() => this.simulateFetchingOfSortedValues(), 1000)
     },
+
     watch: {
       queryExampleLocked() {
         this.$refs.asyncSelect.$emit('dataChanged');
       }
     },
-    computed: {
-      sortedValues() {
-        return _.sortBy(this.unsortedValues.map(value => ({id: value, text: value})), "text");
-      }
-    },
+
     methods: {
       queryValues(query) {
         if (query.term === undefined) {
@@ -214,11 +206,13 @@
             }), 200);
         }
       },
+
       initialValue(element, callback) {
         if (element.val() === "initialValue") {
           setTimeout(() => callback({id: "initialValue", text: "Initial Value"}), 300)
         }
       },
+
       initialMultiValues(element, callback) {
         const namesMap = {
           me: "Me",
@@ -231,18 +225,6 @@
           locked: this.queryExampleLocked.indexOf(value) >= 0
         }))
         setTimeout(() => callback(items), 300)
-      },
-      simulateFetchingOfSortedValues() {
-        this.unsortedValues = [];
-        setTimeout(() => {
-          this.unsortedValues.push.apply(this.unsortedValues, ["c"]);
-        }, 1000)
-        setTimeout(() => {
-          this.unsortedValues.push.apply(this.unsortedValues, ["b"]);
-        }, 1500)
-        setTimeout(() => {
-          this.unsortedValues.push.apply(this.unsortedValues, ["a"]);
-        }, 2000)
       }
     }
   }
