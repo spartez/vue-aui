@@ -18,18 +18,18 @@
       width: String
     },
 
-    data: function () {
+    data() {
       return {
         options: []
       }
     },
 
-    created: function () {
+    created() {
       this.updateOptions()
       this.$on('optionsChanged', this.updateOptions)
     },
 
-    mounted: function () {
+    mounted() {
       this.$refs.input.className = this.$el.className
       this.$el.className = ''
 
@@ -48,7 +48,7 @@
     },
 
     watch: {
-      value: function (value) {
+      value(value) {
         this.$input.auiSelect2('val', value)
       },
       disabled() {
@@ -57,16 +57,17 @@
     },
 
     methods: {
-      onSelect2ValueChanged: function (event) {
+      onSelect2ValueChanged(event) {
         this.$emit('input', event.val)
       },
 
       updateOptions() {
-        this.options = this.$children.map(child => {
-          const id = child.value
-          const text = child.text
-          return {id, text}
-        })
+        this.options = this.$slots.default && this.$slots.default
+          .filter(vnode => vnode.tag && vnode.tag.match(/aui-select2-option$/))
+          .map(vnode => ({
+            id: vnode.componentOptions.propsData.value,
+            text: vnode.componentOptions.propsData.text
+          }))
         if (this.$input) {
           this.$input.auiSelect2('val', this.value);
         }
