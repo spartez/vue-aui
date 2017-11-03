@@ -22,6 +22,8 @@ import AuiLozenge from './AuiLozenge.vue'
 import AuiProgressIndicator from './AuiProgressIndicator.vue'
 import AuiSpinner from './AuiSpinner.vue'
 
+export { AuiButton, AuiButtons, AuiToggleButton };
+
 export default {
   install(Vue, options) {
     Vue.component('aui-button', AuiButton)
