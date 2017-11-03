@@ -80,8 +80,4 @@
   .aui-select2-container.select2-container.select2-allowclear .select2-choice abbr {
     display: block;
   }
-
-  .aui-select2-container.select2-container .select2-choice abbr.select2-search-choice-close {
-    display: block;
-  }
 </style>
