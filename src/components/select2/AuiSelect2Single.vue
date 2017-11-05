@@ -15,7 +15,8 @@
       placeholder: String,
       query: Function,
       value: String,
-      width: String
+      width: String,
+      optionRenderer: Function
     },
 
     data: function () {
@@ -42,7 +43,9 @@
         data: () => ({results: this.options}),
         placeholder: this.placeholder,
         width: this.width,
-        dropdownAutoWidth: this.dropdownAutoWidth
+        dropdownAutoWidth: this.dropdownAutoWidth,
+        formatResult: (state) => state.text,
+        formatSelection: (state) => state.text
       });
       this.$input.on('change', this.onSelect2ValueChanged)
     },
@@ -64,8 +67,11 @@
       updateOptions() {
         this.options = this.$children.map(child => {
           const id = child.value
-          const text = child.$slots.default[0].text
-          return {id, text}
+          let text = child.$slots.default[0].text
+          if (this.optionRenderer) {
+            text = this.optionRenderer( text )
+          }
+          return { id, text }
         })
         if (this.$input) {
           this.$input.auiSelect2('val', this.value);
