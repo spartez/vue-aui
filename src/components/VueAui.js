@@ -22,7 +22,27 @@ import AuiLozenge from './AuiLozenge.vue'
 import AuiProgressIndicator from './AuiProgressIndicator.vue'
 import AuiSpinner from './AuiSpinner.vue'
 
-export { AuiButton, AuiButtons, AuiToggleButton };
+export {
+  AuiButton,
+  AuiButtons,
+  AuiToggleButton,
+  AuiNavGroup,
+  AuiNavHeader,
+  AuiNavItem,
+  AuiNavTab,
+  AuiNavVerticalRouter,
+  AuiSelect2Multi,
+  AuiSelect2Option,
+  AuiSelect2Single,
+  AuiTab,
+  AuiTabs,
+  AuiAvatar,
+  AuiDialog,
+  AuiIcon,
+  AuiLozenge,
+  AuiProgressIndicator,
+  AuiSpinner
+};
 
 export default {
   install(Vue, options) {
