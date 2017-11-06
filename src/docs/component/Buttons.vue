@@ -4,19 +4,19 @@
     <aui-tabs>
       <aui-tab name="Example">
         <p>
-          <AuiButton>Button</AuiButton>
+          <aui-button>Button</aui-button>
         </p>
         <p>
-          <AuiButton type="primary">Primary button</AuiButton>
+          <aui-button type="primary">Primary button</aui-button>
         </p>
         <p>
-          <AuiButton type="link">Button link</AuiButton>
+          <aui-button type="link">Button link</aui-button>
         </p>
         <p>
-          <AuiButtons>
-            <AuiButton>Edit</AuiButton>
-            <AuiButton>Delete</AuiButton>
-          </AuiButtons>
+          <aui-buttons>
+            <aui-button>Edit</aui-button>
+            <aui-button>Delete</aui-button>
+          </aui-buttons>
         </p>
       </aui-tab>
       <aui-tab name="Code">
@@ -28,16 +28,16 @@
     <aui-tabs>
       <aui-tab name="Example">
         <p>
-          <AuiButton disabled>Button</AuiButton>
+          <aui-button disabled>Button</aui-button>
         </p>
         <p>
-          <AuiButton light>Light</AuiButton>
+          <aui-button light>Light</aui-button>
         </p>
         <p>
-          <AuiButton subtle>Subtle</AuiButton>
+          <aui-button subtle>Subtle</aui-button>
         </p>
         <p>
-          <AuiButton compact>Compact</AuiButton>
+          <aui-button compact>Compact</aui-button>
         </p>
       </aui-tab>
       <aui-tab name="Code">
@@ -52,8 +52,8 @@
           Just add href to the button.
         </p>
         <p>
-          <AuiButton type="link" href="#">Link 1</AuiButton>
-          <AuiButton type="link" href="#">Link 2</AuiButton>
+          <aui-button type="link" href="#">Link 1</aui-button>
+          <aui-button type="link" href="#">Link 2</aui-button>
         </p>
       </aui-tab>
       <aui-tab name="Code">
@@ -65,26 +65,23 @@
 </template>
 
 <script>
-  import { AuiButton, AuiButtons } from '../../components/VueAui';
-
   export default {
-    components: { AuiButton, AuiButtons },
     data() {
       return {
-        code: `<AuiButton>Button</AuiButton>
-<AuiButton type="primary">Primary button</AuiButton>
-<AuiButton type="link">Button link</AuiButton>
+        code: `<aui-button>Button</aui-button>
+<aui-button type="primary">Primary button</aui-button>
+<aui-button type="link">Button link</aui-button>
 
-<AuiButtons>
-  <AuiButton>Edit</AuiButton>
-  <AuiButton>Delete</AuiButton>
-</AuiButtons>`,
-        code2: `<AuiButton disabled>Button</AuiButton>
-<AuiButton light>Light</AuiButton>
-<AuiButton subtle>Subtle</AuiButton>
-<AuiButton compact>Compact</AuiButton>`,
-        code3: `<AuiButton type="link" href="#">Link 1</AuiButton>
-<AuiButton type="link" href="#">Link 2</AuiButton>`,
+<aui-buttons>
+  <aui-button>Edit</aui-button>
+  <aui-button>Delete</aui-button>
+</aui-buttons>`,
+        code2: `<aui-button disabled>Button</aui-button>
+<aui-button light>Light</aui-button>
+<aui-button subtle>Subtle</aui-button>
+<aui-button compact>Compact</aui-button>`,
+        code3: `<aui-button type="link" href="#">Link 1</aui-button>
+<aui-button type="link" href="#">Link 2</aui-button>`,
       }
     }
   }
