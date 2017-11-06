@@ -63,7 +63,7 @@
 
       updateOptions() {
         this.options = this.$slots.default && this.$slots.default
-          .filter(vnode => vnode.tag && vnode.tag.match(/aui-select2-option$/))
+          .filter(vnode => vnode.tag && (vnode.tag.match(/aui-select2-option$/) || vnode.tag.match(/AuiSelect2Option$/)))
           .map(vnode => ({
             id: vnode.componentOptions.propsData.value,
             text: vnode.componentOptions.propsData.text
