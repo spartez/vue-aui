@@ -22,10 +22,28 @@ npm install vue-aui --save
 
 and finally install vuejs plugin using
 
-```ecmascript
+```js
 Vue.use(VueAui)
 ```
+
 This will register all the components.
+
+Alternatively, you can import and use a single component:
+
+```html
+<template>
+  <AuiButton>Click me</AuiButton>
+</template>
+
+<script>
+import { AuiButton } from 'vue-aui';
+
+export default {
+  components: { AuiButton }
+  // ...
+};
+</script>
+```
 
 ##### Or directly onto page
 
