@@ -23,7 +23,7 @@
         <h5>Default value and options loaded asynchronously</h5>
         <p>
           <aui-select2-single v-model="selectInitialValue" class="custom-class">
-            <aui-select2-option v-for="value in asyncValues" :value="value"  :key="value" :text="value"></aui-select2-option>
+            <aui-select2-option v-for="value in asyncValues" :value="value" :key="value" :text="value"></aui-select2-option>
           </aui-select2-single>
           <button class="aui-button aui-button-link" @click="selectInitialValue = undefined">Clear value</button>
           <button class="aui-button aui-button-link" @click="selectInitialValue = 'value1'">Set</button>
@@ -42,6 +42,46 @@
         <pre v-highlightjs><code class="xml" v-text='code1'></code></pre>
       </aui-tab>
 
+    </aui-tabs>
+
+    <h4>Custom templating</h4>
+    <aui-tabs>
+      <aui-tab name="Example">
+        <aui-select2-single v-model="color">
+          <span slot="formatResult" slot-scope="option" style="display: flex">
+            <span :style="{backgroundColor: option.data.rgb}" class="color-picker-item"></span>
+            <span style="padding: 6px">{{option.data.name}}</span>
+          </span>
+          <span slot="formatSelection" slot-scope="option" style="display: flex">
+            <span :style="{backgroundColor: option.data.rgb}" class="color-picker-item-selected"></span>
+            <span style="padding-left: 8px">{{option.data.name}}</span>
+          </span>
+          <aui-select2-option value="blue" :data="{name: 'Blue', rgb: '#3572b0'}"></aui-select2-option>
+          <aui-select2-option value="green" :data="{name: 'Green', rgb: '#14892c'}"></aui-select2-option>
+          <aui-select2-option value="red" :data="{name: 'Red', rgb: '#d04437'}"></aui-select2-option>
+          <aui-select2-option value="yellow" :data="{name: 'Yellow', rgb: '#f6c342'}"></aui-select2-option>
+        </aui-select2-single>
+
+        <form class="aui">
+          <aui-select2-multi v-model="users">
+            <span slot="formatResult" slot-scope="option" style="display: flex">
+              <aui-avatar size="small" :src="option.data.url"></aui-avatar>
+              <span style="margin: 4px 8px">{{option.data.fullname}} ({{option.value}})</span>
+            </span>
+            <span slot="formatSelection" slot-scope="option">
+              <aui-avatar size="xsmall" :src="option.data.url"></aui-avatar>
+              {{option.data.fullname}}
+            </span>
+            <aui-select2-option value="alice"
+                                :data="{fullname: 'Alice', url:'https://randomuser.me/api/portraits/women/14.jpg'}"></aui-select2-option>
+            <aui-select2-option value="bob"
+                                :data="{fullname: 'Bob', url:'https://randomuser.me/api/portraits/men/52.jpg'}"></aui-select2-option>
+          </aui-select2-multi>
+        </form>
+      </aui-tab>
+      <aui-tab name="Code">
+        <pre v-highlightjs><code class="xml" v-text='codeCustomTemplates'></code></pre>
+      </aui-tab>
     </aui-tabs>
 
     <h3>Multi select</h3>
@@ -103,6 +143,8 @@
         queryExample: ["tag1", "tag2"],
         queryExampleLocked: ["tag1"],
         initiallyDisabled: true,
+        users: ['alice'],
+        color: 'red',
 
         code1: `<p>
   <aui-select2-single v-model="selectValue" placeholder="Select value" allow-clear :disabled="initiallyDisabled">
@@ -137,6 +179,38 @@
   ({{selectValueAsync}})
 </p>
 `,
+
+        codeCustomTemplates: `<aui-select2-single v-model="color">
+  <span slot="formatResult" slot-scope="option" style="display: flex">
+    <span :style="{backgroundColor: option.data.rgb}" class="color-picker-item"></span>
+    <span style="padding: 6px">{{option.data.name}}</span>
+  </span>
+  <span slot="formatSelection" slot-scope="option" style="display: flex">
+    <span :style="{backgroundColor: option.data.rgb}" class="color-picker-item-selected"></span>
+    <span style="padding-left: 8px">{{option.data.name}}</span>
+  </span>
+  <aui-select2-option value="blue" :data="{name: 'Blue', rgb: '#3572b0'}"></aui-select2-option>
+  <aui-select2-option value="green" :data="{name: 'Green', rgb: '#14892c'}"></aui-select2-option>
+  <aui-select2-option value="red" :data="{name: 'Red', rgb: '#d04437'}"></aui-select2-option>
+  <aui-select2-option value="yellow" :data="{name: 'Yellow', rgb: '#f6c342'}"></aui-select2-option>
+</aui-select2-single>
+
+<form class="aui">
+  <aui-select2-multi v-model="users">
+    <span slot="formatResult" slot-scope="option" style="display: flex">
+      <aui-avatar size="small" :src="option.data.url"></aui-avatar>
+      <span style="margin: 4px 8px">{{option.data.fullname}} ({{option.value}})</span>
+    </span>
+    <span slot="formatSelection" slot-scope="option">
+      <aui-avatar size="xsmall" :src="option.data.url"></aui-avatar>
+      {{option.data.fullname}}
+    </span>
+    <aui-select2-option value="alice"
+                        :data="{fullname: 'Alice', url:'https://randomuser.me/api/portraits/women/14.jpg'}"></aui-select2-option>
+    <aui-select2-option value="bob"
+                        :data="{fullname: 'Bob', url:'https://randomuser.me/api/portraits/men/52.jpg'}"></aui-select2-option>
+  </aui-select2-multi>
+</form>`,
         code2: `<h5>With predefined set of options</h5>
 <form class="aui">
   <aui-select2-multi v-model="selectValues" class="custom-class2" placeholder="Select any value" :disabled="initiallyDisabled">
@@ -233,5 +307,19 @@
 <style scoped>
   .custom-class {
     width: 300px;
+  }
+
+  .color-picker-item {
+    border-radius: 3px;
+    width: 24px;
+    height: 24px;
+    margin: 4px 0;
+  }
+
+  .color-picker-item-selected {
+    border-radius: 2px;
+    width: 16px;
+    height: 16px;
+    margin: 2px 0;
   }
 </style>

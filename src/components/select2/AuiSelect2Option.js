@@ -1,7 +1,8 @@
 export default {
   props: {
     text: String,
-    value: String
+    value: String,
+    data: Object
   },
 
   watch: {
@@ -9,6 +10,9 @@ export default {
       this.optionsChanged();
     },
     value() {
+      this.optionsChanged();
+    },
+    data() {
       this.optionsChanged();
     }
   },

@@ -6,7 +6,11 @@
 </template>
 
 <script>
+  import auiSelect2Mixin from './auiSelect2Mixin'
+
   export default {
+    mixins: [auiSelect2Mixin],
+
     props: {
       allowClear: Boolean,
       disabled: Boolean,
@@ -21,44 +25,31 @@
       width: String
     },
 
-    data() {
-      return {
-        options: []
-      }
-    },
-
-    created() {
-      this.updateOptions()
-      this.$on('optionsChanged', this.updateOptions)
-    },
-
     mounted() {
-      this.$refs.input.className = this.$el.className
-      this.$el.className = ''
-
-      this.$input = AJS.$(this.$refs.input)
       this.$input.val(this.value)
       this.$input.auiSelect2({
         allowClear: this.allowClear,
-        query: this.query,
-        initSelection: this.initSelection,
         data: () => ({results: this.options}),
+        dropdownAutoWidth: this.dropdownAutoWidth,
+        formatResult: option => this.renderTemplate(option, this.$scopedSlots.formatResult),
+        formatSelection: option => this.renderTemplate(option, this.$scopedSlots.formatSelection),
+        initSelection: this.initSelection,
         maximumInputLength: this.maximumInputLength,
         minimumInputLength: this.minimumInputLength,
         minimumResultsForSearch: this.minimumResultsForSearch,
         placeholder: this.placeholder,
-        width: this.width,
-        dropdownAutoWidth: this.dropdownAutoWidth
+        query: this.query,
+        width: this.width
       });
       this.$input.on('change', this.onSelect2ValueChanged)
     },
 
     watch: {
-      value(value) {
-        this.$input.auiSelect2('val', value)
+      value() {
+        this.updateValue();
       },
       disabled() {
-        this.$input.auiSelect2('val', this.value)
+        this.updateValue();
       }
     },
 
@@ -66,18 +57,6 @@
       onSelect2ValueChanged(event) {
         this.$emit('input', event.val)
       },
-
-      updateOptions() {
-        this.options = this.$slots.default && this.$slots.default
-          .filter(vnode => vnode.tag && (vnode.tag.match(/aui-select2-option$/) || vnode.tag.match(/AuiSelect2Option$/)))
-          .map(vnode => ({
-            id: vnode.componentOptions.propsData.value,
-            text: vnode.componentOptions.propsData.text
-          }))
-        if (this.$input) {
-          this.$input.auiSelect2('val', this.value);
-        }
-      }
     }
   }
 </script>

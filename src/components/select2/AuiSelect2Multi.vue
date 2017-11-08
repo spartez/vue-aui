@@ -5,10 +5,14 @@
     </span>
 </template>
 
-<script type="es6">
+<script>
+  import auiSelect2Mixin from './auiSelect2Mixin'
+
   const SEPARATOR = ',';
 
   export default {
+    mixins: [auiSelect2Mixin],
+
     props: {
       disabled: Boolean,
       initSelection: Function,
@@ -22,28 +26,16 @@
       width: String
     },
 
-    data() {
-      return {
-        options: []
-      }
-    },
-
     created() {
-      this.updateOptions()
-      this.$on('optionsChanged', this.updateOptions)
-      this.$on('dataChanged', () => {
-        this.$input.auiSelect2("val", this.value)
-      })
+      this.$on('dataChanged', this.updateValue)
     },
 
     mounted() {
-      this.$refs.input.className = this.$el.className
-      this.$el.className = ''
-
-      this.$input = AJS.$(this.$refs.input)
       this.setSelectValue(this.value)
 
       const options = {
+        formatResult: option => this.renderTemplate(option, this.$scopedSlots.formatResult),
+        formatSelection: option => this.renderTemplate(option, this.$scopedSlots.formatSelection),
         initSelection: this.initSelection,
         maximumInputLength: this.maximumInputLength,
         minimumInputLength: this.minimumInputLength,
@@ -89,15 +81,6 @@
 
       setSelectValue(values) {
         this.$input.val(values && values.join(SEPARATOR))
-      },
-
-      updateOptions() {
-        this.options = this.$slots.default && this.$slots.default
-          .filter(vnode => vnode.tag && (vnode.tag.match(/aui-select2-option$/) || vnode.tag.match(/AuiSelect2Option$/)))
-          .map(vnode => ({
-            id: vnode.componentOptions.propsData.value,
-            text: vnode.componentOptions.propsData.text
-          }))
       }
     }
   }
