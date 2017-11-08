@@ -12,6 +12,8 @@
     props: {
       disabled: Boolean,
       initSelection: Function,
+      maximumInputLength: Number,
+      minimumInputLength: Number,
       placeholder: String,
       query: Function,
       sortable: Boolean,
@@ -42,9 +44,11 @@
       this.setSelectValue(this.value)
 
       const options = {
-        query: this.query,
         initSelection: this.initSelection,
+        maximumInputLength: this.maximumInputLength,
+        minimumInputLength: this.minimumInputLength,
         placeholder: this.placeholder,
+        query: this.query,
         width: this.width
       }
 
