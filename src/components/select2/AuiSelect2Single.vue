@@ -13,50 +13,21 @@
 
     props: {
       allowClear: Boolean,
-      disabled: Boolean,
-      dropdownAutoWidth: Boolean,
-      initSelection: Function,
-      maximumInputLength: Number,
-      minimumInputLength: Number,
       minimumResultsForSearch: Number,
-      placeholder: String,
-      query: Function,
       value: String,
-      width: String
     },
 
     mounted() {
       this.$input.val(this.value)
-      this.$input.auiSelect2({
+
+      const options = {
+        ...this.commonOptions,
         allowClear: this.allowClear,
         data: () => ({results: this.options}),
-        dropdownAutoWidth: this.dropdownAutoWidth,
-        formatResult: option => this.renderTemplate(option, this.$scopedSlots.formatResult),
-        formatSelection: option => this.renderTemplate(option, this.$scopedSlots.formatSelection),
-        initSelection: this.initSelection,
-        maximumInputLength: this.maximumInputLength,
-        minimumInputLength: this.minimumInputLength,
         minimumResultsForSearch: this.minimumResultsForSearch,
-        placeholder: this.placeholder,
-        query: this.query,
-        width: this.width
-      });
-      this.$input.on('change', this.onSelect2ValueChanged)
-    },
+      };
 
-    watch: {
-      value() {
-        this.updateValue();
-      },
-      disabled() {
-        this.updateValue();
-      }
-    },
-
-    methods: {
-      onSelect2ValueChanged(event) {
-        this.$emit('input', event.val)
-      },
+      this.$input.auiSelect2(options);
     }
   }
 </script>

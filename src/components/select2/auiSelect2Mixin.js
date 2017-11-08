@@ -2,9 +2,36 @@ import Vue from 'vue'
 
 export default {
 
+  props: {
+    disabled: Boolean,
+    dropdownAutoWidth: Boolean,
+    initSelection: Function,
+    maximumInputLength: Number,
+    minimumInputLength: Number,
+    placeholder: String,
+    query: Function,
+    width: String,
+  },
+
   data() {
     return {
       options: []
+    }
+  },
+
+  computed: {
+    commonOptions() {
+      return {
+        dropdownAutoWidth: this.dropdownAutoWidth,
+        formatResult: option => this.renderTemplate(option, this.$scopedSlots.formatResult),
+        formatSelection: option => this.renderTemplate(option, this.$scopedSlots.formatSelection),
+        initSelection: this.initSelection,
+        maximumInputLength: this.maximumInputLength,
+        minimumInputLength: this.minimumInputLength,
+        placeholder: this.placeholder,
+        query: this.query,
+        width: this.width,
+      }
     }
   },
 
@@ -18,6 +45,16 @@ export default {
     this.$el.className = ''
 
     this.$input = AJS.$(this.$refs.input)
+    this.$input.on('change', this.onSelect2ValueChanged)
+  },
+
+  watch: {
+    value() {
+      this.updateValue();
+    },
+    disabled() {
+      this.updateValue();
+    }
   },
 
   methods: {
@@ -33,6 +70,10 @@ export default {
         .map(vnode => vnode.componentOptions.propsData)
         .map(props => ({...props, id: props.value}))
       this.updateValue()
+    },
+
+    onSelect2ValueChanged(event) {
+      this.$emit('input', event.val)
     },
 
     renderTemplate(option, render) {

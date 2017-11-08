@@ -14,16 +14,9 @@
     mixins: [auiSelect2Mixin],
 
     props: {
-      disabled: Boolean,
-      initSelection: Function,
-      maximumInputLength: Number,
-      minimumInputLength: Number,
-      placeholder: String,
-      query: Function,
       sortable: Boolean,
       tagsMode: Boolean,
-      value: Array,
-      width: String
+      value: Array
     },
 
     created() {
@@ -31,19 +24,9 @@
     },
 
     mounted() {
-      this.setSelectValue(this.value)
+      this.$input.val(this.value && this.value.join(SEPARATOR))
 
-      const options = {
-        formatResult: option => this.renderTemplate(option, this.$scopedSlots.formatResult),
-        formatSelection: option => this.renderTemplate(option, this.$scopedSlots.formatSelection),
-        initSelection: this.initSelection,
-        maximumInputLength: this.maximumInputLength,
-        minimumInputLength: this.minimumInputLength,
-        placeholder: this.placeholder,
-        query: this.query,
-        width: this.width
-      }
-
+      const options = {...this.commonOptions}
       if (this.tagsMode) {
         options.formatNoMatches = () => "Type to add a value"
         options.tags = () => this.options
@@ -55,32 +38,17 @@
       this.$input.auiSelect2(options)
 
       if (this.sortable) {
+        this.setupSorting();
+      }
+    },
+
+    methods: {
+      setupSorting() {
         this.$input.prev('div').find('.select2-choices').sortable({
           containment: 'parent',
           start: () => this.$input.auiSelect2("onSortStart"),
           update: () => this.$input.auiSelect2("onSortEnd")
         });
-      }
-
-      this.$input.on('change', this.onSelect2ValueChanged)
-    },
-
-    watch: {
-      value(value) {
-        this.$input.auiSelect2("val", value)
-      },
-      disabled() {
-        this.$input.auiSelect2('val', this.value)
-      }
-    },
-
-    methods: {
-      onSelect2ValueChanged(event) {
-        this.$emit('input', event.val)
-      },
-
-      setSelectValue(values) {
-        this.$input.val(values && values.join(SEPARATOR))
       }
     }
   }
