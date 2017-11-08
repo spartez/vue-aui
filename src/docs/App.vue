@@ -35,7 +35,10 @@
 
               <aui-nav-header name="Components"></aui-nav-header>
               <aui-nav-group>
-                <aui-nav-item v-for="page in pages" :name="page.meta.docsName" :href="'#' + page.path"
+                <aui-nav-item v-for="page in pages"
+                              :key="page.path"
+                              :name="page.meta.docsName"
+                              :href="'#' + page.path"
                               :selected="$route.path === page.path"></aui-nav-item>
               </aui-nav-group>
             </aui-nav-vertical>

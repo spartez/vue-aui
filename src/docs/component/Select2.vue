@@ -23,7 +23,7 @@
         <h5>Default value and options loaded asynchronously</h5>
         <p>
           <aui-select2-single v-model="selectInitialValue" class="custom-class">
-            <aui-select2-option v-for="value in asyncValues" :value="value" :text="value"></aui-select2-option>
+            <aui-select2-option v-for="value in asyncValues" :value="value"  :key="value" :text="value"></aui-select2-option>
           </aui-select2-single>
           <button class="aui-button aui-button-link" @click="selectInitialValue = undefined">Clear value</button>
           <button class="aui-button aui-button-link" @click="selectInitialValue = 'value1'">Set</button>
