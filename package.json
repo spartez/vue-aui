@@ -25,6 +25,7 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e"
   },
+  "main": "dist/static/js/vue-aui.js",
   "dependencies": {
     "gfm-code-blocks": "^0.3.0",
     "marked": "^0.3.6",
