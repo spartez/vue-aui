@@ -76,10 +76,15 @@ export default {
       this.$emit('input', event.val)
     },
 
-    renderTemplate(option, render) {
-      return render
-        ? new Vue({render: h => render(option)}).$mount().$el.outerHTML
-        : option.text;
+    renderTemplate(option, renderOption) {
+      if (renderOption) {
+        // For some reason directly returning VNode rendered by render function from different project doesn't work
+        const rendererComponent = new Vue({render: h => h('wrapper', [renderOption(option)])});
+        const optionElement = rendererComponent.$mount().$el.firstChild;
+        return optionElement.outerHTML;
+      } else {
+        return option.text;
+      }
     }
   }
 }
