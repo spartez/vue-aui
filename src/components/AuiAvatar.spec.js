@@ -1,7 +1,6 @@
-import AuiAvatar from '@/components/AuiAvatar.vue'
+import AuiAvatar from './AuiAvatar.vue'
 
 import {shallow} from 'vue-test-utils'
-import expect from 'expect'
 
 describe('AuiAvatar.vue', () => {
   it('should render correct contents', () => {
