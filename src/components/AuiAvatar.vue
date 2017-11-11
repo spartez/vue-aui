@@ -11,7 +11,10 @@
         type: String,
         default: 'medium'
       },
-      src: String
+      src: {
+        type: String,
+        required: true,
+      }
     }
   }
 </script>
