@@ -4,9 +4,9 @@
       <aui-tab name="Example">
         <p>
           <aui-badge>1</aui-badge>
-          <aui-badge>2</aui-badge>
+          <aui-badge class="aui-badge-primary">2</aui-badge>
           <aui-badge>3</aui-badge>
-          <aui-badge>4</aui-badge>
+          <aui-badge class="aui-badge-primary">4</aui-badge>
           <aui-badge>5</aui-badge>
         </p>
       </aui-tab>
@@ -23,9 +23,9 @@
     data() {
       return {
         code: `<aui-badge>1</aui-badge>
-<aui-badge>2</aui-badge>
+<aui-badge class="aui-badge-primary">2</aui-badge>
 <aui-badge>3</aui-badge>
-<aui-badge>4</aui-badge>
+<aui-badge class="aui-badge-primary">4</aui-badge>
 <aui-badge>5</aui-badge>`,
       }
     }
