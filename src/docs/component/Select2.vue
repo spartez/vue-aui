@@ -7,10 +7,10 @@
         <p>
           <aui-select2-single v-model="selectValue" placeholder="Select value" allow-clear
                               :disabled="initiallyDisabled">
-            <aui-select2-option value="value1" text="Option 1"></aui-select2-option>
-            <aui-select2-option value="value2" text="Option 2"></aui-select2-option>
+            <aui-select2-option :value="1" text="Option 1"></aui-select2-option>
+            <aui-select2-option :value="2" text="Option 2"></aui-select2-option>
           </aui-select2-single>
-          <span>{{selectValue}}</span>
+          <span>{{({selectValue})}}</span>
         </p>
 
         <p>
@@ -92,9 +92,9 @@
         <form class="aui">
           <aui-select2-multi v-model="selectValues" class="custom-class2" placeholder="Select any value"
                              :disabled="initiallyDisabled">
-            <aui-select2-option value="value1" text="Value 1"></aui-select2-option>
-            <aui-select2-option value="value2" text="Value 2"></aui-select2-option>
-            <aui-select2-option value="value3" text="Value 3"></aui-select2-option>
+            <aui-select2-option :value="1" text="Value 1"></aui-select2-option>
+            <aui-select2-option :value="2" text="Value 2"></aui-select2-option>
+            <aui-select2-option :value="3" text="Value 3"></aui-select2-option>
           </aui-select2-multi>
         </form>
         <span>{{selectValues}}</span>
@@ -133,12 +133,12 @@
   export default {
     data() {
       return {
-        selectValue: 'value1',
+        selectValue: 1,
         selectInitialValue: 'value1',
         asyncValues: [],
         selectValue2: undefined,
         selectValueAsync: "initialValue",
-        selectValues: ['value1'],
+        selectValues: [1],
         selectTags: ["tag1"],
         queryExample: ["tag1", "tag2"],
         queryExampleLocked: ["tag1"],

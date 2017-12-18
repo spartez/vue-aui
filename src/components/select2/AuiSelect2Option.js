@@ -1,7 +1,7 @@
 export default {
   props: {
     text: String,
-    value: String,
+    value: [String, Number],
     data: Object
   },
 

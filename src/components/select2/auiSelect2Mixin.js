@@ -72,8 +72,16 @@ export default {
       this.updateValue()
     },
 
+    mapToOriginalVal(stringValue) {
+      const original = this.options.find(option => `${option.value}` === stringValue);
+      return original && original.value
+    },
+
     onSelect2ValueChanged(event) {
-      this.$emit('input', event.val)
+      const original = typeof event.val === 'string'
+        ? this.mapToOriginalVal(event.val)
+        : event.val.map(this.mapToOriginalVal)
+      this.$emit('input', original)
     },
 
     renderTemplate(option, renderOption) {
