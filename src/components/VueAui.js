@@ -21,6 +21,7 @@ import AuiIcon from './AuiIcon'
 import AuiLozenge from './AuiLozenge.vue'
 import AuiProgressIndicator from './AuiProgressIndicator.vue'
 import AuiSpinner from './AuiSpinner.vue'
+import AuiTooltip from './AuiTooltip'
 
 export {
   AuiButton,
@@ -41,7 +42,8 @@ export {
   AuiIcon,
   AuiLozenge,
   AuiProgressIndicator,
-  AuiSpinner
+  AuiSpinner,
+  AuiTooltip
 };
 
 export default {
@@ -68,5 +70,7 @@ export default {
     Vue.component('aui-lozenge', AuiLozenge)
     Vue.component('aui-progress-indicator', AuiProgressIndicator)
     Vue.component('aui-spinner', AuiSpinner)
+
+    Vue.directive('aui-tooltip', AuiTooltip)
   }
 }

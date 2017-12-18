@@ -23,9 +23,10 @@ import Dialog2 from './docs/component/Dialog2.vue'
 import Icons from './docs/component/Icons.vue'
 import Lozenges from './docs/component/Lozenges.vue'
 import Navigation from './docs/component/Navigation.vue'
+import ProgressIndicator from './docs/component/ProgressIndicator.vue'
 import Tabs from './docs/component/Tabs.vue'
 import ToggleButton from './docs/component/ToggleButton.vue'
-import ProgressIndicator from './docs/component/ProgressIndicator.vue'
+import Tooltip from './docs/component/Tooltip'
 
 import VueHighlightJS from 'vue-highlightjs'
 import VueRouter from 'vue-router'
@@ -133,6 +134,14 @@ const router = new VueRouter({
         componentName: 'ToggleButton',
         docsName: 'Toggle Button',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/toggle-button.html'
+      }
+    },
+    {
+      path: '/components/tooltip', component: Tooltip,
+      meta: {
+        componentName: 'Tooltip',
+        docsName: 'Tooltips',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/tooltips.html'
       }
     }
   ]
