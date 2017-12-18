@@ -59,4 +59,11 @@
   .vue-aui-multi-select2 .select2-search-choice.select2-locked {
     padding: 1px 5px !important;
   }
+
+  [data-aui-version^="7"] .vue-aui-multi-select2.aui-select2-container .select2-search-choice-close {
+    width: 12px;
+    height: 12px;
+    top: 2px;
+    right: 2px;
+  }
 </style>

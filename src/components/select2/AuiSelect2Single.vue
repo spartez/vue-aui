@@ -36,4 +36,9 @@
   .aui-select2-container.select2-container.select2-allowclear .select2-choice abbr {
     display: block;
   }
+
+  [data-aui-version^="7"] .aui-select2-container.select2-container.select2-allowclear .select2-choice abbr {
+    padding-top: 0;
+    top: 8px;
+  }
 </style>
