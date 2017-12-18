@@ -30,7 +30,7 @@
             <aui-nav-vertical>
 
               <aui-nav-group>
-                <aui-nav-item name="Gettings started" href="#" :selected="$route.path === '/'"></aui-nav-item>
+                <aui-nav-item name="Gettings started" href="#/" :selected="$route.path === '/'"></aui-nav-item>
               </aui-nav-group>
 
               <aui-nav-header name="Components"></aui-nav-header>
