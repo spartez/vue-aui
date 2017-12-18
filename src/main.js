@@ -1,7 +1,14 @@
-import './main.css'
-
 import Vue from 'vue'
 import App from './docs/App.vue'
+
+import './main.css'
+
+import "@atlassian/aui/dist/aui/css/aui.min.css"
+import "@atlassian/aui/dist/aui/css/aui-experimental.min.css"
+import "@atlassian/aui/dist/aui/js/aui.min"
+import "@atlassian/aui/dist/aui/js/aui-experimental.min"
+import "@atlassian/aui/dist/aui/js/aui-datepicker.min"
+import "@atlassian/aui/dist/aui/js/aui-soy.min"
 
 import VueAui from './components/VueAui'
 
@@ -26,6 +33,8 @@ import VueRouter from 'vue-router'
 Vue.use(VueHighlightJS)
 Vue.use(VueAui)
 Vue.use(VueRouter)
+
+Vue.config.ignoredElements = ['wrapper', 'aui-badge']
 
 const router = new VueRouter({
   routes: [
