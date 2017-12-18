@@ -53,4 +53,4 @@ export default {
 ```
 
 ### CodePen demo starter:
-http://codepen.io/damienix/pen/woXRpP
+https://codepen.io/dskrodzki/pen/LeGBme
