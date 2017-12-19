@@ -22,6 +22,7 @@ import Select2 from './docs/component/Select2.vue'
 import Dialog2 from './docs/component/Dialog2.vue'
 import Icons from './docs/component/Icons.vue'
 import Lozenges from './docs/component/Lozenges.vue'
+import Messages from './docs/component/Messages'
 import Navigation from './docs/component/Navigation.vue'
 import ProgressIndicator from './docs/component/ProgressIndicator.vue'
 import Tabs from './docs/component/Tabs.vue'
@@ -94,6 +95,14 @@ const router = new VueRouter({
         componentName: 'Lozenges',
         docsName: 'Lozenges',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/lozenges.html'
+      }
+    },
+    {
+      path: '/components/messages', component: Messages,
+      meta: {
+        componentName: 'Messages',
+        docsName: 'Messages',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/messages.html'
       }
     },
     {

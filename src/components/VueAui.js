@@ -19,6 +19,7 @@ import AuiAvatar from './AuiAvatar.vue'
 import AuiDialog from './AuiDialog.vue'
 import AuiIcon from './AuiIcon'
 import AuiLozenge from './AuiLozenge.vue'
+import AuiMessage from './AuiMessage'
 import AuiProgressIndicator from './AuiProgressIndicator.vue'
 import AuiSpinner from './AuiSpinner.vue'
 import AuiTooltip from './AuiTooltip'
@@ -41,6 +42,7 @@ export {
   AuiDialog,
   AuiIcon,
   AuiLozenge,
+  AuiMessage,
   AuiProgressIndicator,
   AuiSpinner,
   AuiTooltip
@@ -68,6 +70,7 @@ export default {
     Vue.component('aui-dialog', AuiDialog)
     Vue.component('aui-icon', AuiIcon)
     Vue.component('aui-lozenge', AuiLozenge)
+    Vue.component('aui-message', AuiMessage)
     Vue.component('aui-progress-indicator', AuiProgressIndicator)
     Vue.component('aui-spinner', AuiSpinner)
 
