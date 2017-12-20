@@ -23,6 +23,7 @@ import AuiMessage from './AuiMessage'
 import AuiProgressIndicator from './AuiProgressIndicator.vue'
 import AuiSpinner from './AuiSpinner.vue'
 import AuiTooltip from './AuiTooltip'
+import AuiInlineDialog from './AuiInlineDialog'
 
 export {
   AuiButton,
@@ -45,7 +46,8 @@ export {
   AuiMessage,
   AuiProgressIndicator,
   AuiSpinner,
-  AuiTooltip
+  AuiTooltip,
+  AuiInlineDialog
 };
 
 export default {
@@ -73,6 +75,7 @@ export default {
     Vue.component('aui-message', AuiMessage)
     Vue.component('aui-progress-indicator', AuiProgressIndicator)
     Vue.component('aui-spinner', AuiSpinner)
+    Vue.component('va-inline-dialog', AuiInlineDialog)
 
     Vue.directive('aui-tooltip', AuiTooltip)
   }

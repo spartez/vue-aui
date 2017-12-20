@@ -21,6 +21,7 @@ import Buttons from './docs/component/Buttons.vue'
 import Select2 from './docs/component/Select2.vue'
 import Dialog2 from './docs/component/Dialog2.vue'
 import Icons from './docs/component/Icons.vue'
+import InlineDialog from './docs/component/InlineDialog.vue'
 import Lozenges from './docs/component/Lozenges.vue'
 import Messages from './docs/component/Messages'
 import Navigation from './docs/component/Navigation.vue'
@@ -87,6 +88,14 @@ const router = new VueRouter({
         componentName: 'Icons',
         docsName: 'Icons',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/icons.html'
+      }
+    },
+    {
+      path: '/components/inline-dialog', component: InlineDialog,
+      meta: {
+        componentName: 'InlineDialog',
+        docsName: 'Inline Dialog',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/inline-dialog.html'
       }
     },
     {

@@ -27,6 +27,7 @@
   "main": "dist/static/js/vue-aui.js",
   "dependencies": {
     "@atlassian/aui": "^7.4.0",
+    "common-tags": "^1.5.1",
     "gfm-code-blocks": "^0.3.0",
     "highlightjs": "^9.8.0",
     "marked": "^0.3.6",
