@@ -73,8 +73,8 @@ export default {
     },
 
     mapToOriginalVal(stringValue) {
-      const original = this.options.find(option => `${option.value}` === stringValue);
-      return original && original.value
+      const original = this.options && this.options.find(option => `${option.value}` === stringValue);
+      return original && original.value || stringValue;
     },
 
     onSelect2ValueChanged(event) {
