@@ -21,7 +21,7 @@
     "start": "npm run dev",
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
-    "unit": "mocha-webpack --webpack-config build/webpack.test.conf.js --require test/setup.js --glob '*.spec.js' src --recursive",
+    "unit": "mocha-webpack --webpack-config build/webpack.test.conf.js --require test/setup.js --glob '*.spec.js' src test --recursive",
     "test": "npm run unit"
   },
   "main": "dist/static/js/vue-aui.js",
@@ -59,6 +59,7 @@
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
     "http-proxy-middleware": "^0.17.3",
+    "jquery": "1.8.3",
     "jsdom": "^11.3.0",
     "jsdom-global": "^3.0.2",
     "mocha": "^4.0.1",
