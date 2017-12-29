@@ -33,5 +33,9 @@
         }
       }
     },
+
+    mounted() {
+      AJS.messages.makeCloseable();
+    }
   }
 </script>
