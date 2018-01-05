@@ -65,16 +65,18 @@ export default {
     },
 
     updateOptions() {
-      this.options = this.$slots.default && this.$slots.default
-        .filter(vnode => vnode.tag && (vnode.tag.match(/aui-select2-option$/) || vnode.tag.match(/AuiSelect2Option$/)))
-        .map(vnode => vnode.componentOptions.propsData)
-        .map(props => ({...props, id: props.value}))
+      if (this.$slots.default) {
+        this.options = this.$slots.default
+          .filter(vnode => vnode.tag && (vnode.tag.match(/aui-select2-option$/) || vnode.tag.match(/AuiSelect2Option$/)))
+          .map(vnode => vnode.componentOptions.propsData)
+          .map(props => ({...props, id: props.value}))
+      }
       this.updateValue()
     },
 
     mapToOriginalVal(stringValue) {
       const original = this.options.find(option => `${option.value}` === stringValue);
-      return original && original.value
+      return original && original.value || stringValue;
     },
 
     onSelect2ValueChanged(event) {
