@@ -8,13 +8,15 @@ export default {
     destroyTooltip(el)
   },
   update(el, binding) {
-    updateTooltip(el, binding);
+    if (binding.value !== binding.oldValue) {
+      updateTooltip(el, binding);
+    }
   }
 };
 
 function destroyTooltip(el) {
   AJS.$(el).attr('data-tooltip', '');
-  AJS.$(el).tooltip('hide');
+  AJS.$(el).tooltip('disable').tooltip('destroy');
 }
 
 function updateTooltip(el, {value, modifiers}) {
