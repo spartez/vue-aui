@@ -16,6 +16,9 @@
         <p>
           <a href="#" v-aui-tooltip.html="`<b>Bold</b>`">I'm bold!</a>
         </p>
+        <p>
+          <a href="#" v-aui-tooltip="{title: `Current value is ${value}`, delayIn: 50}">I'm changing!</a>
+        </p>
       </aui-tab>
 
       <aui-tab name="Code">
@@ -52,6 +55,7 @@
     },
     data() {
       return {
+        value: 0,
         code: `<a href="#" v-aui-tooltip="\`This is a simple tooltip\`">tooltip</a>
 
 <a href="#" v-aui-tooltip.e="\`left\`">left</a>
@@ -65,6 +69,9 @@
 <a href="#" v-aui-tooltip="{title: 'Text', delayIn: 0, fade: true}">I'm smooth!</a>
 <a href="#" v-aui-tooltip="{title: 'Text', delayIn: 100, fade: true, offset: 50, opacity: 0.7}">Custom</a>`
       }
+    },
+    mounted() {
+      setInterval(() => this.value++, 2000);
     }
   }
 </script>
