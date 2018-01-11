@@ -25,6 +25,9 @@
             return h('span', [
                 this.$slots.trigger,
                 h('aui-inline-dialog', {
+                    'class': {
+                        'vue-inline-dialog': true
+                    },
                     attrs: {
                         id: this.id,
                         open: this.open,
@@ -33,7 +36,13 @@
                         'responds-to': this.respondsTo !== 'none' ? this.respondsTo : null
                     },
                     ref: 'inlineDialogElement'
-                }, this.$slots.dialog)
+                }, [
+                    h('div', {
+                        'class': {
+                            'aui-inline-dialog-contents': true
+                        }
+                    }, this.$slots.dialog)
+                ])
             ]);
         },
 
@@ -49,18 +58,24 @@
         },
 
         mounted() {
-            // Fix for Chrome - elements are not added properly inside the wrapper
-            const dialogContents = document.querySelector(`#${this.id} .aui-inline-dialog-contents`);
-            if (dialogContents) {
-              let element = dialogContents.nextSibling;
-              while (element) {
-                  dialogContents.appendChild(element);
-                  element = element.nextSibling
-              }
-            }
-
             this.$refs.inlineDialogElement.addEventListener('aui-hide', () => this.$emit('aui-hide'));
             this.$refs.inlineDialogElement.addEventListener('aui-show', () => this.$emit('aui-show'));
         }
     };
 </script>
+
+<style>
+    /* Fix for Chrome - elements are not added properly inside the wrapper */
+    aui-inline-dialog.vue-inline-dialog .aui-inline-dialog-contents:nth-last-child(2) {
+        display: none;
+    }
+
+    aui-inline-dialog.vue-inline-dialog .aui-inline-dialog-contents .aui-inline-dialog-contents {
+        background: none;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        overflow: auto;
+        padding: 0;
+    }
+</style>
