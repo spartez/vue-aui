@@ -75,7 +75,17 @@ export default {
     },
 
     mapToOriginalVal(stringValue) {
-      const original = this.options.find(option => `${option.value}` === stringValue);
+
+      function getOption(options, stringValue){
+        for (let i = 0; i < options.length; i++) {
+          let option = options[i]
+          if (`${option.value}` === stringValue){
+            return option
+          }
+        }
+      }
+
+      const original = getOption(this.options, stringValue);
       return original && original.value || stringValue;
     },
 
