@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import find from 'lodash/find'
 
 export default {
 
@@ -75,7 +76,7 @@ export default {
     },
 
     mapToOriginalVal(stringValue) {
-      const original = this.options.find(option => `${option.value}` === stringValue);
+      const original = find(this.options, option => `${option.value}` === stringValue);
       return original && original.value || stringValue;
     },
 
