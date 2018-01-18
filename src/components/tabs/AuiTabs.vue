@@ -12,6 +12,8 @@
 </template>
 
 <script>
+  import {createUniqueId} from '../utils'
+
   export default {
     mounted() {
       const link = AJS.$(this.$el).find('.menu-item a')[0];
@@ -25,7 +27,7 @@
         const tabs = this.$slots.default.filter(slot => slot.componentOptions && slot.componentOptions.tag === "aui-tab");
         for (let obj of tabs) {
           if (!obj.tab_id) {
-            obj.tab_id = Math.random().toString().substring(2)
+            obj.tab_id = createUniqueId('tab')
             obj.componentOptions.propsData.tabId = obj.tab_id
           }
         }
