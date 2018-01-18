@@ -5,7 +5,7 @@
 
         <aui-dialog title="Example dialog" show-close-button width="600px" height="100px" max-height="300px"
                     @onClose="alert('Close clicked')">
-          Dialog content
+          Dialog 2 content
           <div slot="header-actions">
             <button class="aui-button aui-button-light">Settings</button>
           </div>
