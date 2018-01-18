@@ -21,8 +21,10 @@
     "start": "npm run dev",
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
+    "release": "np",
     "unit": "mocha-webpack --webpack-config build/webpack.test.conf.js --require test/setup.js --glob '*.spec.js' src test --recursive",
-    "test": "npm run unit"
+    "test": "npm run unit",
+    "version": "npm run build"
   },
   "main": "dist/static/js/vue-aui.js",
   "dependencies": {
