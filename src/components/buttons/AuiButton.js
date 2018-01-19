@@ -6,9 +6,17 @@ export default {
       href: this.href,
       target: this.target
     };
-    const elementType = this.href ? 'a' : 'button'
+    const elementType = this.href ? 'a' : 'button';
+    const eventsDelegators = {
+      click: () => this.$emit('click'),
+      dbclick: () => this.$emit('dbclick'),
+      mousedown: () => this.$emit('mousedown'),
+      mouseup: () => this.$emit('mouseup'),
+    };
+
     return createComponent(elementType, {
       class: this.classObject,
+      on: eventsDelegators,
       attrs
     }, this.$slots.default)
   },

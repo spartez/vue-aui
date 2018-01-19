@@ -63,24 +63,24 @@
     <aui-tabs>
       <aui-tab name="Example">
         <p>
-          <aui-button @click.native="showFloatingDialog = true">Show dialog 1</aui-button>
+          <aui-button @click="showFloatingDialog = true">Show dialog 1</aui-button>
           Is visible? {{showFloatingDialog}}
           <aui-dialog title="Are you sure?" @onClose="alert('Close clicked')" floating
                       :is-visible.sync="showFloatingDialog">
             <div>I'm dialog 1.</div>
             <div slot="footer-actions">
-              <aui-button type="primary" @click.native="showFloatingDialog = false">Ok</aui-button>
+              <aui-button type="primary" @click="showFloatingDialog = false">Ok</aui-button>
             </div>
           </aui-dialog>
         </p>
         <p>
-          <aui-button @click.native="showFloatingDialog2 = true">Show dialog 2</aui-button>
+          <aui-button @click="showFloatingDialog2 = true">Show dialog 2</aui-button>
           Is visible? {{showFloatingDialog2}}
           <aui-dialog title="Are you sure?" @onClose="alert('Close clicked')" floating
                       :is-visible.sync="showFloatingDialog2">
             <div>I'm dialog 2.</div>
             <div slot="footer-actions">
-              <aui-button type="primary" @click.native="showFloatingDialog2 = false">Ok</aui-button>
+              <aui-button type="primary" @click="showFloatingDialog2 = false">Ok</aui-button>
             </div>
           </aui-dialog>
         </p>
@@ -128,13 +128,13 @@
     <aui-button type="link">Cancel</aui-button>
   </div>
 </aui-dialog>`,
-        code3: `<aui-button @click.native="showFloatingDialog = true">Show dialog 1</aui-button>
+        code3: `<aui-button @click="showFloatingDialog = true">Show dialog 1</aui-button>
 Is visible? {{showFloatingDialog}}
 <aui-dialog title="Are you sure?" @onClose="alert('Close clicked')" floating
             :is-visible.sync="showFloatingDialog">
   <div>I'm dialog 1.</div>
   <div slot="footer-actions">
-    <aui-button type="primary" @click.native="showFloatingDialog = false">Ok</aui-button>
+    <aui-button type="primary" @click="showFloatingDialog = false">Ok</aui-button>
   </div>
 </aui-dialog>`
       }

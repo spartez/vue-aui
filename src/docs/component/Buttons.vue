@@ -4,7 +4,7 @@
     <aui-tabs>
       <aui-tab name="Example">
         <p>
-          <aui-button>Button</aui-button>
+          <aui-button @click="thanks">Click me!</aui-button>
         </p>
         <p>
           <aui-button type="primary">Primary button</aui-button>
@@ -68,7 +68,7 @@
   export default {
     data() {
       return {
-        code: `<aui-button>Button</aui-button>
+        code: `<aui-button @click="thanks">Button</aui-button>
 <aui-button type="primary">Primary button</aui-button>
 <aui-button type="link">Button link</aui-button>
 
@@ -82,6 +82,12 @@
 <aui-button compact>Compact</aui-button>`,
         code3: `<aui-button type="link" href="#">Link 1</aui-button>
 <aui-button type="link" href="#">Link 2</aui-button>`,
+      }
+    },
+
+    methods: {
+      thanks() {
+        alert('Thanks!')
       }
     }
   }
