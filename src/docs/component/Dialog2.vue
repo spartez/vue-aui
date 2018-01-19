@@ -39,11 +39,7 @@
     <aui-tabs>
       <aui-tab name="Example" class="with-dialog-overlay">
         <aui-dialog title="Are you sure?" @onClose="alert('Close clicked')" size="small" no-padding warning>
-          <div style="background: #FFBDAD; height: 100%">Fill without padding <br>
-            <br>
-            <br>
-            <br>
-            <br>
+          <div style="background: #FFBDAD; padding: 20px; height: 100%">Fill with custom padding<br>
             <br>
             End.
           </div>
@@ -115,11 +111,7 @@
 </aui-dialog>
 `,
         code2: `<aui-dialog title="Are you sure?" @onClose="alert('Close clicked')" size="small" no-padding warning>
-  <div style="background: #FFBDAD; height: 100%">Fill without padding <br>
-    <br>
-    <br>
-    <br>
-    <br>
+  <div style="background: #FFBDAD; padding: 20px; height: 100%">Fill with custom padding<br>
     <br>
     End.
   </div>
