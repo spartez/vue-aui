@@ -1,16 +1,28 @@
 <template>
   <div>
     <aui-tabs>
-      <aui-tab name="Example">
+      <aui-tab name="Example" class="with-dialog-overlay">
 
-        <aui-dialog title="Example dialog" show-close-button width="600px" height="100px" max-height="300px"
+        <aui-dialog title="Example dialog" show-close-button width="600px" height="200px" max-height="300px"
                     @onClose="alert('Close clicked')">
-          Dialog content
+          Start...<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          The end.<br>
           <div slot="header-actions">
-            <button class="aui-button aui-button-light">Settings</button>
+            <aui-button light>Settings</aui-button>
           </div>
           <div slot="footer-actions">
-            <button class="aui-button aui-button-primary">Confirm</button>
+            <aui-button type="primary">Confirm</aui-button>
+            <aui-button>Next</aui-button>
+            <aui-button type="link">Close</aui-button>
           </div>
           <div slot="footer-hint">
             Focus dialog and type ESC to close it.
@@ -33,10 +45,12 @@
             @onClose="alert('Close clicked')">
   Dialog content
   <div slot="header-actions">
-    <button class="aui-button aui-button-light">Settings</button>
+    <aui-button light>Settings</aui-button>
   </div>
   <div slot="footer-actions">
-    <button class="aui-button aui-button-primary">Confirm</button>
+    <aui-button type="primary">Confirm</aui-button>
+    <aui-button>Next</aui-button>
+    <aui-button type="link">Close</aui-button>
   </div>
   <div slot="footer-hint">
     Focus dialog and type ESC to close it.
@@ -52,3 +66,10 @@
     }
   }
 </script>
+
+<style scoped>
+  .with-dialog-overlay {
+    background: #999;
+    padding-bottom: 50px;
+  }
+</style>

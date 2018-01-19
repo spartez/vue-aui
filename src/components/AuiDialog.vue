@@ -1,5 +1,5 @@
 <template>
-  <section role="dialog" :style="{ width: width }" class="aui-dialog-view-container">
+  <section role="dialog" :style="{ width: width }" class="aui-dialog2">
     <header class="aui-dialog2-header">
       <h2 class="aui-dialog2-header-main">
         {{ title }}
@@ -12,7 +12,8 @@
         <span class="aui-icon aui-icon-small aui-iconfont-close-dialog">Close</span>
       </a>
     </header>
-    <div class="aui-dialog2-content aui-dialog-view-content" :style="{ height: height, 'max-height': maxHeight, }">
+    <div class="aui-dialog2-content" :class="{'no-padding': this.noPadding}"
+         :style="{ height: height, 'max-height': maxHeight, }">
       <slot></slot>
     </div>
     <footer class="aui-dialog2-footer">
@@ -35,6 +36,7 @@
       width: String,
       height: String,
       maxHeight: String,
+      noPadding: Boolean,
       showCloseButton: Boolean,
       cancelButton: String
     },
@@ -56,25 +58,21 @@
 </script>
 
 <style scoped>
-  .aui-dialog2-footer-hint a {
-    user-select: none;
+  .aui-dialog2-content.no-padding {
+    padding: 0;
   }
 
-  .aui-dialog-view-container {
-    box-sizing: border-box;
-    height: 100%;
+  [data-aui-version^="6"] .aui-dialog2 {
+    top: 109px;
     max-width: 1200px;
-    padding: 40px 10px 10px;
-    max-height: 100%;
-    margin: auto;
+    height: calc(100% - 120px);
   }
 
-  .aui-dialog-view-content {
-    overflow-y: auto;
-    height: calc(100% - 150px);
+  [data-aui-version^="6"] .aui-dialog2-content {
+    height: calc(100% - 70px);
   }
 
-  .dialog-header-actions {
+  [data-aui-version^="6"] .dialog-header-actions {
     display: table-cell;
     vertical-align: middle;
     text-align: right;
