@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>API</h3>
+    <aui-lozenge class="api-element" type="current">&lt;{{name}}&gt;</aui-lozenge>
     <aui-tabs>
       <aui-tab v-if="props && props.length" name="Props">
         <table class="aui">
@@ -37,7 +37,7 @@
             <td headers="event-name">
               <aui-lozenge class="name-lozenge" subtle type="current">{{prop.name}}</aui-lozenge>
             </td>
-            <td headers="event-description">{{prop.description}}</td>
+            <td headers="event-description"><aui-lozenge v-if="prop.isDeprecated" type="error" subtle>Deprecated</aui-lozenge> {{prop.description}}</td>
           </tr>
           </tbody>
         </table>
@@ -49,6 +49,11 @@
 <script>
   export default {
     props: {
+      isDeprecated: Boolean,
+      name: {
+        type: String,
+        required: true
+      },
       props: Array,
       events: Array,
     }
@@ -57,11 +62,17 @@
 
 <style scoped>
   h3 {
-    margin-top: 20px
+    /*margin-top: 20px*/
   }
 
   .name-lozenge {
     font-size: 13px;
+    text-transform: none;
+    white-space: nowrap;
+  }
+
+  .api-element {
+    font-size: 16px;
     text-transform: none;
   }
 </style>

@@ -54,19 +54,19 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/components/buttons', component: Buttons,
-      meta: {
-        componentName: 'Buttons',
-        docsName: 'Buttons',
-        auiLink: 'https://docs.atlassian.com/aui/latest/docs/buttons.html'
-      }
-    },
-    {
       path: '/components/badges', component: Badges,
       meta: {
         componentName: 'Badges',
         docsName: 'Badges',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/badges.html'
+      }
+    },
+    {
+      path: '/components/buttons', component: Buttons,
+      meta: {
+        componentName: 'Buttons',
+        docsName: 'Buttons',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/buttons.html'
       }
     },
     {

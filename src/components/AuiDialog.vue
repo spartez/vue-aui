@@ -33,14 +33,15 @@
   export default {
     props: {
       cancelButton: String,
+      floating: Boolean,
       height: String,
-      maxHeight: String,
-      noPadding: Boolean,
-      showCloseButton: Boolean,
       isVisible: {
         type: Boolean,
         default: true
       },
+      maxHeight: String,
+      noPadding: Boolean,
+      showCloseButton: Boolean,
       size: {
         type: String,
         validator(value) {
@@ -51,7 +52,6 @@
       title: String,
       warning: Boolean,
       width: String,
-      floating: Boolean,
     },
 
     computed: {
@@ -94,7 +94,8 @@
 
     methods: {
       closeDialogHandler: function closeDialogHandler() {
-        this.$emit('onClose')
+        this.$emit('onClose') // Deprecated, remove in 1.0
+        this.$emit('close')
       }
     }
   }

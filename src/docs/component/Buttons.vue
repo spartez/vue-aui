@@ -65,7 +65,7 @@
 
     </div>
     <div class="aui-item">
-      <api-table :props="[
+      <api-table name="aui-button" :props="[
       {name: 'compact', type: 'Boolean', default: 'false', description: 'Makes the button slightly smaller.'},
       {name: 'disabled', type: 'Boolean', default: 'false', description: 'Disables the button.'},
       {name: 'href', type: 'String', default: '-', description: 'Renders the button as a link with specified href.'},
