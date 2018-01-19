@@ -9,7 +9,6 @@ export default {
     const elementType = this.href ? 'a' : 'button';
     const eventsDelegators = {
       click: () => this.$emit('click'),
-      dbclick: () => this.$emit('dbclick'),
       mousedown: () => this.$emit('mousedown'),
       mouseup: () => this.$emit('mouseup'),
     };

@@ -14,6 +14,7 @@ import VueAui from './components/VueAui'
 
 import Welcome from './docs/Welcome.vue'
 
+import ApiTable from './docs/ApiTable'
 import AuiSpinner from './docs/component/Spinner.vue'
 import Avatars from './docs/component/Avatars.vue'
 import Badges from './docs/component/Badges.vue'
@@ -36,6 +37,8 @@ import VueRouter from 'vue-router'
 Vue.use(VueHighlightJS)
 Vue.use(VueAui)
 Vue.use(VueRouter)
+
+Vue.component('api-table', ApiTable);
 
 Vue.config.ignoredElements = ['wrapper', 'aui-badge']
 
