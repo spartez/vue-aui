@@ -37,6 +37,10 @@
       maxHeight: String,
       noPadding: Boolean,
       showCloseButton: Boolean,
+      isVisible: {
+        type: Boolean,
+        default: true
+      },
       size: {
         type: String,
         validator(value) {
@@ -46,7 +50,8 @@
       },
       title: String,
       warning: Boolean,
-      width: String
+      width: String,
+      floating: Boolean,
     },
 
     computed: {
@@ -60,12 +65,31 @@
       }
     },
 
-    mounted: function () {
+    watch: {
+      isVisible: {
+        immediate: true,
+        handler() {
+          if (!this.floating) return;
+          if (this.isVisible) {
+            this.$nextTick(() => AJS.dialog2(this.$el).show());
+          } else {
+            this.$nextTick(() => AJS.dialog2(this.$el).hide());
+          }
+        }
+      }
+    },
+
+    mounted() {
       AJS.whenIType("Esc").execute(() => {
         if (this.$el.contains(document.activeElement)) {
           this.closeDialogHandler()
         }
       });
+
+      if (this.floating) {
+        AJS.dialog2(this.$el).on("hide", () => this.$emit("update:isVisible", false));
+        AJS.dialog2(this.$el).on("show", () => this.$emit("update:isVisible", true));
+      }
     },
 
     methods: {

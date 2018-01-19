@@ -58,6 +58,37 @@
         <pre v-highlightjs><code class="xml" v-text='code2'></code></pre>
       </aui-tab>
     </aui-tabs>
+
+    <h3>Floating dialogs</h3>
+    <aui-tabs>
+      <aui-tab name="Example">
+        <p>
+          <aui-button @click.native="showFloatingDialog = true">Show dialog 1</aui-button>
+          Is visible? {{showFloatingDialog}}
+          <aui-dialog title="Are you sure?" @onClose="alert('Close clicked')" floating
+                      :is-visible.sync="showFloatingDialog">
+            <div>I'm dialog 1.</div>
+            <div slot="footer-actions">
+              <aui-button type="primary" @click.native="showFloatingDialog = false">Ok</aui-button>
+            </div>
+          </aui-dialog>
+        </p>
+        <p>
+          <aui-button @click.native="showFloatingDialog2 = true">Show dialog 2</aui-button>
+          Is visible? {{showFloatingDialog2}}
+          <aui-dialog title="Are you sure?" @onClose="alert('Close clicked')" floating
+                      :is-visible.sync="showFloatingDialog2">
+            <div>I'm dialog 2.</div>
+            <div slot="footer-actions">
+              <aui-button type="primary" @click.native="showFloatingDialog2 = false">Ok</aui-button>
+            </div>
+          </aui-dialog>
+        </p>
+      </aui-tab>
+      <aui-tab name="Code">
+        <pre v-highlightjs><code class="xml" v-text='code3'></code></pre>
+      </aui-tab>
+    </aui-tabs>
   </div>
 </template>
 
@@ -65,6 +96,8 @@
   export default {
     data() {
       return {
+        showFloatingDialog: false,
+        showFloatingDialog2: false,
         code: `<aui-dialog title="Example dialog" show-close-button width="600px" height="100px" max-height="300px"
             @onClose="alert('Close clicked')">
   Dialog content
@@ -82,20 +115,28 @@
 </aui-dialog>
 `,
         code2: `<aui-dialog title="Are you sure?" @onClose="alert('Close clicked')" size="small" no-padding warning>
-    <div style="background: #FFBDAD; height: 100%">Fill without padding <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      End.
-    </div>
-    <div slot="footer-actions">
-      <aui-button type="primary">Yes</aui-button>
-      <aui-button type="link">Cancel</aui-button>
-    </div>
-  </aui-dialog>
-</aui-tab>`
+  <div style="background: #FFBDAD; height: 100%">Fill without padding <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    End.
+  </div>
+  <div slot="footer-actions">
+    <aui-button type="primary">Yes</aui-button>
+    <aui-button type="link">Cancel</aui-button>
+  </div>
+</aui-dialog>`,
+        code3: `<aui-button @click.native="showFloatingDialog = true">Show dialog 1</aui-button>
+Is visible? {{showFloatingDialog}}
+<aui-dialog title="Are you sure?" @onClose="alert('Close clicked')" floating
+            :is-visible.sync="showFloatingDialog">
+  <div>I'm dialog 1.</div>
+  <div slot="footer-actions">
+    <aui-button type="primary" @click.native="showFloatingDialog = false">Ok</aui-button>
+  </div>
+</aui-dialog>`
       }
     },
     methods: {
