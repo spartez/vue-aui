@@ -16,6 +16,7 @@
           <br>
           <br>
           The end.<br>
+
           <div slot="header-actions">
             <aui-button light>Settings</aui-button>
           </div>
@@ -32,6 +33,29 @@
 
       <aui-tab name="Code">
         <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
+      </aui-tab>
+    </aui-tabs>
+
+    <aui-tabs>
+      <aui-tab name="Example" class="with-dialog-overlay">
+        <aui-dialog title="Are you sure?" @onClose="alert('Close clicked')" size="small" no-padding warning>
+          <div style="background: #FFBDAD; height: 100%">Fill without padding <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            End.
+          </div>
+          <div slot="footer-actions">
+            <aui-button type="primary">Yes</aui-button>
+            <aui-button type="link">Cancel</aui-button>
+          </div>
+        </aui-dialog>
+      </aui-tab>
+
+      <aui-tab name="Code">
+        <pre v-highlightjs><code class="xml" v-text='code2'></code></pre>
       </aui-tab>
     </aui-tabs>
   </div>
@@ -56,7 +80,22 @@
     Focus dialog and type ESC to close it.
   </div>
 </aui-dialog>
-`
+`,
+        code2: `<aui-dialog title="Are you sure?" @onClose="alert('Close clicked')" size="small" no-padding warning>
+    <div style="background: #FFBDAD; height: 100%">Fill without padding <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      End.
+    </div>
+    <div slot="footer-actions">
+      <aui-button type="primary">Yes</aui-button>
+      <aui-button type="link">Cancel</aui-button>
+    </div>
+  </aui-dialog>
+</aui-tab>`
       }
     },
     methods: {

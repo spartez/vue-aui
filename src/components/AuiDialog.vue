@@ -1,5 +1,5 @@
 <template>
-  <section role="dialog" :style="{ width: width }" class="aui-dialog2">
+  <section role="dialog" :style="{ width: width }" :class="classObject">
     <header class="aui-dialog2-header">
       <h2 class="aui-dialog2-header-main">
         {{ title }}
@@ -12,7 +12,7 @@
         <span class="aui-icon aui-icon-small aui-iconfont-close-dialog">Close</span>
       </a>
     </header>
-    <div class="aui-dialog2-content" :class="{'no-padding': this.noPadding}"
+    <div class="aui-dialog2-content" :class="{'no-padding': noPadding}"
          :style="{ height: height, 'max-height': maxHeight, }">
       <slot></slot>
     </div>
@@ -32,13 +32,32 @@
 <script>
   export default {
     props: {
-      title: String,
-      width: String,
+      cancelButton: String,
       height: String,
       maxHeight: String,
       noPadding: Boolean,
       showCloseButton: Boolean,
-      cancelButton: String
+      size: {
+        type: String,
+        validator(value) {
+          return ['small', 'medium', 'large', 'xlarge'].indexOf(value) >= 0
+        },
+        default: 'medium'
+      },
+      title: String,
+      warning: Boolean,
+      width: String
+    },
+
+    computed: {
+      classObject() {
+        const classObj = {
+          'aui-dialog2-warning': this.warning,
+          'aui-dialog2': true,
+        };
+        classObj[`aui-dialog2-${this.size}`] = true;
+        return classObj
+      }
     },
 
     mounted: function () {
