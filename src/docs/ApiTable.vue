@@ -1,6 +1,8 @@
 <template>
   <div class="api-table">
-    <aui-lozenge v-for="name in namesArray" class="api-element" type="current">&lt;{{name}}&gt;</aui-lozenge>
+    <aui-lozenge v-for="name in namesArray" class="api-element" type="current" :key="name">&lt;{{name}}&gt;</aui-lozenge>
+    <aui-lozenge v-if="directiveName" class="api-element" type="current">v-{{directiveName}}</aui-lozenge>
+
     <template v-if="props && props.length">
       <h4>Props</h4>
       <table class="aui">
@@ -70,18 +72,60 @@
         </tbody>
       </table>
     </template>
+
+    <template v-if="directiveValue">
+      <h4>Directive value</h4>
+      <table class="aui">
+        <thead>
+        <tr>
+          <th id="directive-value-type">Type</th>
+          <th id="directive-value-description">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td headers="directive-value-type">
+            <code>{{directiveValue.type}}</code>
+          </td>
+          <td headers="directive-value-description">{{directiveValue.description}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </template>
+
+    <template v-if="modifiers && modifiers.length">
+      <h4>Modifiers</h4>
+      <table class="aui">
+        <thead>
+        <tr>
+          <th id="modifier-name">Name</th>
+          <th id="modifier-description">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="modifier in modifiers">
+          <td headers="modifier-name">
+            <aui-lozenge class="name-lozenge" subtle type="current">{{modifier.name}}</aui-lozenge>
+          </td>
+          <td headers="modifier-description">{{modifier.description}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </template>
   </div>
 </template>
 
 <script>
   export default {
     props: {
+      directiveName: String,
+      directiveValue: Object,
       events: Array,
       isDeprecated: Boolean,
       name: {
         type: [String, Array],
-        required: true
       },
+      modifiers: Array,
       props: Array,
       slots: Array,
     },

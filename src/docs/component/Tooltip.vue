@@ -1,51 +1,67 @@
 <template>
-  <div>
-    <h3>Basic usage</h3>
+  <div class="aui-group">
+    <div class="aui-item">
+      <h3>Basic usage</h3>
 
-    <aui-tabs>
-      <aui-tab name="Example">
-        <p>
-          <a href="#" v-aui-tooltip="`This is a simple tooltip`">tooltip</a>
-        </p>
-        <p>
-          <a href="#" v-aui-tooltip.e="`left`">left</a>
-          <a href="#" v-aui-tooltip.s="`top`">top</a>
-          <a href="#" v-aui-tooltip.n="`bottom`">bottom</a>
-          <a href="#" v-aui-tooltip.w="`right`">right</a>
-        </p>
-        <p>
-          <a href="#" v-aui-tooltip.html="`<b>Bold</b>`">I'm bold!</a>
-        </p>
-        <p>
-          <a href="#" v-aui-tooltip="{title: `Current value is ${value}`, delayIn: 50}">I'm changing!</a>
-        </p>
-      </aui-tab>
+      <aui-tabs>
+        <aui-tab name="Example">
+          <p>
+            <a href="#" v-aui-tooltip="`This is a simple tooltip`">tooltip</a>
+          </p>
+          <p>
+            <a href="#" v-aui-tooltip.e="`left`">left</a>
+            <a href="#" v-aui-tooltip.s="`top`">top</a>
+            <a href="#" v-aui-tooltip.n="`bottom`">bottom</a>
+            <a href="#" v-aui-tooltip.w="`right`">right</a>
+          </p>
+          <p>
+            <a href="#" v-aui-tooltip.html="`<b>Bold</b>`">I'm bold!</a>
+          </p>
+          <p>
+            <a href="#" v-aui-tooltip="{title: `Current value is ${value}`, delayIn: 50}">I'm changing!</a>
+          </p>
+        </aui-tab>
 
-      <aui-tab name="Code">
-        <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
-      </aui-tab>
-    </aui-tabs>
+        <aui-tab name="Code">
+          <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
+        </aui-tab>
+      </aui-tabs>
 
-    <h3>Using tipsy options</h3>
+      <h3>Using tipsy options</h3>
 
-    <aui-tabs>
-      <aui-tab name="Example">
-        <p>Any options from original <a href="https://github.com/jaz303/tipsy/blob/master/docs/src/index.html.erb">
-          Tipsy documentation</a> can be passed using object notation.
-        </p>
-        <p>
-          <a href="#" v-aui-tooltip="{title: 'Wow', delayIn: 50}">I'm soo fast!</a>
-          <br>
-          <a href="#" v-aui-tooltip="{title: 'Text', delayIn: 0, fade: true}">I'm smooth!</a>
-          <br>
-          <a href="#" v-aui-tooltip="{title: 'Text', delayIn: 100, fade: true, offset: 50, opacity: 0.7}">Custom</a>
-        </p>
-      </aui-tab>
+      <aui-tabs>
+        <aui-tab name="Example">
+          <p>Any options from original <a href="https://github.com/jaz303/tipsy/blob/master/docs/src/index.html.erb">
+            Tipsy documentation</a> can be passed using object notation.
+          </p>
+          <p>
+            <a href="#" v-aui-tooltip="{title: 'Wow', delayIn: 50}">I'm soo fast!</a>
+            <br>
+            <a href="#" v-aui-tooltip="{title: 'Text', delayIn: 0, fade: true}">I'm smooth!</a>
+            <br>
+            <a href="#" v-aui-tooltip="{title: 'Text', delayIn: 100, fade: true, offset: 50, opacity: 0.7}">Custom</a>
+          </p>
+        </aui-tab>
 
-      <aui-tab name="Code">
-        <pre v-highlightjs><code class="xml" v-text='code2'></code></pre>
-      </aui-tab>
-    </aui-tabs>
+        <aui-tab name="Code">
+          <pre v-highlightjs><code class="xml" v-text='code2'></code></pre>
+        </aui-tab>
+      </aui-tabs>
+    </div>
+
+    <div class="aui-item">
+      <api-table directive-name="aui-tooltip" :directive-value="{type: 'String, Object', description: 'String sets the tooltip text and Object represents Tipsy options object.'}" :modifiers="[
+      {name: 'n', description: 'Sets tooltip direction to north.'},
+      {name: 'e', description: 'Sets tooltip direction to east.'},
+      {name: 's', description: 'Sets tooltip direction to south.'},
+      {name: 'w', description: 'Sets tooltip direction to west.'},
+      {name: 'html', type: 'Boolean', default: 'false', description: 'Disable HTML escaping allowing to pass HTML as tooltip content.'},
+    ]" >
+      </api-table>
+
+      AUI tooltip uses Tipsy under the hood. See <a target="_blank"
+      href="https://github.com/atlassian/tipsy/blob/master/docs/src/index.html.erb">https://github.com/atlassian/tipsy/blob/master/docs/src/index.html.erb</a> for full Tipsy reference.
+    </div>
   </div>
 </template>
 

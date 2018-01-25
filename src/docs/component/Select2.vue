@@ -168,7 +168,7 @@
     ]">
       </api-table>
       <p>All of the options are delegation to native Select2 features.
-        See <a href="http://select2.github.io/select2/">http://select2.github.io/select2/</a> for full reference.</p>
+        See <a href="http://select2.github.io/select2/" target="_blank">http://select2.github.io/select2/</a> for full reference.</p>
     </div>
   </div>
 </template>

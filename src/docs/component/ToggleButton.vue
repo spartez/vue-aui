@@ -1,29 +1,45 @@
 <template>
-  <div>
-    <h3>Toggle button</h3>
-    <aui-tabs>
-      <aui-tab name="Example">
-        <p>
-          <aui-toggle-button v-model="toggle1"></aui-toggle-button>
-          <span>{{toggle1}}</span>
-        </p>
-        <p>
-          <aui-toggle-button v-model="toggle2" id="example-toggle" label="Switch me" tooltip-on="On" tooltip-off="Off">
-          </aui-toggle-button>
-        </p>
-        <p>
-          <aui-toggle-button v-model="toggle2" id="example-toggle2" disabled></aui-toggle-button>
-        </p>
-        <h5>Busy</h5>
-        <p>
-          <aui-toggle-button v-model="toggle3" id="example-toggle3" :busy="busy"></aui-toggle-button>
-        </p>
-      </aui-tab>
-      <aui-tab name="Code">
-        <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
-      </aui-tab>
-    </aui-tabs>
+  <div class="aui-group">
+    <div class="aui-item"><h3>Toggle button</h3>
+      <aui-tabs>
+        <aui-tab name="Example">
+          <p>
+            <aui-toggle-button v-model5="toggle1"></aui-toggle-button>
+            <span>{{toggle1}}</span>
+          </p>
+          <p>
+            <aui-toggle-button v-model="toggle2" id="example-toggle" label="Switch me" tooltip-on="On"
+                               tooltip-off="Off">
+            </aui-toggle-button>
+          </p>
+          <p>
+            <aui-toggle-button v-model="toggle2" id="example-toggle2" disabled></aui-toggle-button>
+          </p>
+          <h5>Busy</h5>
+          <p>
+            <aui-toggle-button v-model="toggle3" id="example-toggle3" :busy="busy"></aui-toggle-button>
+          </p>
+        </aui-tab>
+        <aui-tab name="Code">
+          <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
+        </aui-tab>
+      </aui-tabs>
+    </div>
 
+    <div class="aui-item">
+      <api-table name="aui-toggle-button" :props="[
+        {name: 'busy', type: 'Boolean', default: 'false', description: 'Shows the spinner over the button.'},
+        {name: 'disabled', type: 'Boolean', default: 'false', description: 'Disable interactions.'},
+        {name: 'value', type: 'Boolean', default: 'false', description: 'Represents current button status, on or off.'},
+        {name: 'id', type: 'String', description: 'Used to match label to the toggle button.'},
+        {name: 'label', type: 'String', description: 'Adds aui-label with given text.'},
+        {name: 'tooltip-off', type: 'String', default: 'right middle', description: 'Sets the tooltip text when the toggle is set to the \'off\' state.'},
+        {name: 'tooltip-on', type: 'String', default: 'right middle', description: 'Sets the tooltip text when the toggle is set to the \'on\' state.'},
+      ]" :events="[
+        {name:'input', description: 'Emitted when toggle status is changed.'},
+      ]">
+      </api-table>
+    </div>
   </div>
 </template>
 
