@@ -7,6 +7,8 @@ describe('AuiAvatar.vue', () => {
     const wrapper = shallow(AuiAvatar, {propsData: {src: 'test'}})
     expect(wrapper.is('span')).toBe(true);
     expect(wrapper.hasClass('aui-avatar')).toBe(true);
-    expect(wrapper.html()).toEqual(`<span class="aui-avatar aui-avatar-medium"><span class="aui-avatar-inner"><img src="test"></span></span>`)
+    expect(wrapper.hasClass('aui-avatar-medium')).toBe(true);
+    expect(wrapper.find('.aui-avatar > .aui-avatar-inner').exists()).toBeTruthy();
+    expect(wrapper.find('.aui-avatar-inner > img').exists()).toBeTruthy();
   })
 })
