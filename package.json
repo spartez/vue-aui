@@ -1,6 +1,6 @@
 {
   "name": "vue-aui",
-  "version": "0.15.11",
+  "version": "0.15.12",
   "description": "Vue.js 2 wrapper over Atlassian User Interface (AUI)",
   "author": "dskrodzki <damian.skrodzki@spartez.com>",
   "license": "MIT",
