@@ -1,6 +1,7 @@
 <template>
   <div class="api-table">
-    <aui-lozenge v-for="name in namesArray" class="api-element" type="current" :key="name">&lt;{{name}}&gt;</aui-lozenge>
+    <aui-lozenge v-for="name in namesArray" class="api-element" type="current" :key="name">&lt;{{name}}&gt;
+    </aui-lozenge>
     <aui-lozenge v-if="directiveName" class="api-element" type="current">v-{{directiveName}}</aui-lozenge>
 
     <template v-if="props && props.length">
@@ -18,6 +19,7 @@
         <tr v-for="prop in props">
           <td headers="name">
             <aui-lozenge class="name-lozenge" subtle type="current">{{prop.name}}</aui-lozenge>
+            <aui-lozenge class="name-lozenge" v-if="prop.isSyncable" type="complete">.sync</aui-lozenge>
           </td>
           <td headers="type"><code>{{prop.type}}</code></td>
           <td headers="default"><code>{{prop.default || '-'}}</code></td>
@@ -43,7 +45,7 @@
             <aui-lozenge class="name-lozenge" subtle type="current">{{prop.name}}</aui-lozenge>
           </td>
           <td headers="event-description">
-            <aui-lozenge v-if="prop.isDeprecated" type="error" subtle>Deprecated</aui-lozenge>
+            <aui-lozenge v-if="prop.isDeprecated" type="error">Deprecated</aui-lozenge>
             {{prop.description}}
           </td>
         </tr>
@@ -122,6 +124,7 @@
       directiveValue: Object,
       events: Array,
       isDeprecated: Boolean,
+      isSyncable: Boolean,
       name: {
         type: [String, Array],
       },

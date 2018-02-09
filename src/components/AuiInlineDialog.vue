@@ -58,8 +58,16 @@
     },
 
     mounted() {
-      this.$refs.inlineDialogElement.addEventListener('aui-hide', () => this.$emit('aui-hide'));
-      this.$refs.inlineDialogElement.addEventListener('aui-show', () => this.$emit('aui-show'));
+      this.$refs.inlineDialogElement.addEventListener('aui-hide', () => {
+        this.$emit('aui-hide'); // Deprecated, remove in 1.0
+        this.$emit('hide');
+        this.$emit("update:open", false)
+      });
+      this.$refs.inlineDialogElement.addEventListener('aui-show', () => {
+        this.$emit('aui-show'); // Deprecated, remove in 1.0
+        this.$emit('show');
+        this.$emit("update:open", true)
+      });
     }
   };
 </script>

@@ -93,7 +93,7 @@
       {name: 'cancel-button', type: 'String', default: '-', description: 'Shows cencel button with given text.'},
       {name: 'floating', type: 'Boolean', default: 'false', description: 'Hides the dialog content and enables programmatic control via is-visible prop. Dialog will be over the page on the glass.'},
       {name: 'height', type: 'String', default: '-', description: 'Set fixed height for the dialog.'},
-      {name: 'is-visible', type: 'Boolean', default: 'true', description: 'Syncable. This param hides and shows the dialog in floating mode.'},
+      {name: 'is-visible', isSyncable: true, type: 'Boolean', default: 'true', description: 'Syncable. This param hides and shows the dialog in floating mode.'},
       {name: 'max-height', type: 'String', default: '-', description: 'Sets max dialog height.'},
       {name: 'no-padding', type: 'Boolean', default: 'false', description: 'Clears out default dialog content padding.'},
       {name: 'show-close-button', type: 'Boolean', default: 'false', description: 'Shows close button on the top right corner. It emits close event after click.'},
