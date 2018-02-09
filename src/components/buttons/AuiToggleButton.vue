@@ -10,12 +10,17 @@
 </template>
 
 <script>
+  import {createUniqueId} from '../utils'
+
   export default {
     props: {
       busy: Boolean,
       disabled: Boolean,
       value: Boolean,
-      id: String,
+      id: {
+        type: String,
+        default: () => createUniqueId('toggle_button')
+      },
       label: String,
       tooltipOn: String,
       tooltipOff: String
