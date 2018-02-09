@@ -1,27 +1,27 @@
 <template>
   <div class="aui-group">
     <div class="aui-item">
-      <aui-tabs>
-        <aui-tab name="Example">
+      <va-tabs>
+        <va-tab name="Example">
           <h3>Standard spinner similar to aui-wait</h3>
-          <aui-spinner></aui-spinner>
-          <aui-spinner :spin="isSpinning"></aui-spinner>
+          <va-spinner></va-spinner>
+          <va-spinner :spin="isSpinning"></va-spinner>
           <h3>Various spinners</h3>
           <p>
-            <aui-spinner :radius="40" :length="30" :width="16"></aui-spinner>
-            <aui-spinner :radius="30" :width="8" :length="15"></aui-spinner>
-            <aui-spinner :radius="15" :width="4" :length="8"></aui-spinner>
-            <aui-spinner :radius="8" :length="6" :width="2"></aui-spinner>
+            <va-spinner :radius="40" :length="30" :width="16"></va-spinner>
+            <va-spinner :radius="30" :width="8" :length="15"></va-spinner>
+            <va-spinner :radius="15" :width="4" :length="8"></va-spinner>
+            <va-spinner :radius="8" :length="6" :width="2"></va-spinner>
           </p>
-        </aui-tab>
-        <aui-tab name="Code">
+        </va-tab>
+        <va-tab name="Code">
           <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
-        </aui-tab>
-      </aui-tabs>
+        </va-tab>
+      </va-tabs>
     </div>
 
     <div class="aui-item">
-      <api-table name="aui-spinner" :props="[
+      <api-table name="va-spinner" :props="[
       {name: 'spin', type: 'Boolean', default: 'true', description: 'Controls visibility of the spinner.'},
       {name: 'radius', type: 'Number', default: '3', description: 'Radius of the empty circle between the lines.'},
       {name: 'width', type: 'Number', default: '2', description: 'Width of the line.'},
@@ -38,13 +38,13 @@
   export default {
     data() {
       return {
-        code: `<aui-spinner></aui-spinner>
-<aui-spinner :spin="isSpinning"></aui-spinner>
+        code: `<va-spinner></va-spinner>
+<va-spinner :spin="isSpinning"></va-spinner>
 
-<aui-spinner :radius="40" :length="30" :width="16"></aui-spinner>
-<aui-spinner :radius="30" :width="8" :length="15"></aui-spinner>
-<aui-spinner :radius="15" :width="4" :length="8"></aui-spinner>
-<aui-spinner :radius="8" :length="6" :width="2"></aui-spinner>`,
+<va-spinner :radius="40" :length="30" :width="16"></va-spinner>
+<va-spinner :radius="30" :width="8" :length="15"></va-spinner>
+<va-spinner :radius="15" :width="4" :length="8"></va-spinner>
+<va-spinner :radius="8" :length="6" :width="2"></va-spinner>`,
 
         isSpinning: true
       }

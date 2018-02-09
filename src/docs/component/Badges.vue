@@ -1,24 +1,26 @@
 <template>
   <div class="aui-group">
     <div class="aui-item">
-      <aui-tabs>
-        <aui-tab name="Example">
+      <va-tabs>
+        <va-tab name="Example">
           <p>
-            <aui-badge>1</aui-badge>
-            <aui-badge class="aui-badge-primary">2</aui-badge>
-            <aui-badge>3</aui-badge>
-            <aui-badge class="aui-badge-primary">4</aui-badge>
-            <aui-badge>5</aui-badge>
+            <va-badge>1</va-badge>
+            <va-badge primary>2</va-badge>
+            <va-badge>3</va-badge>
+            <va-badge primary>4</va-badge>
+            <va-badge>5</va-badge>
           </p>
-        </aui-tab>
-        <aui-tab name="Code">
+        </va-tab>
+        <va-tab name="Code">
           <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
-        </aui-tab>
-      </aui-tabs>
+        </va-tab>
+      </va-tabs>
     </div>
 
     <div class="aui-item">
-      <api-table name="aui-badge">
+      <api-table name="va-badge" :props="[
+      {name: 'primary', type: 'Boolean', default: 'false', description: 'Renders badge as primary.'},
+    ]">
       </api-table>
     </div>
   </div>
@@ -28,11 +30,11 @@
   export default {
     data() {
       return {
-        code: `<aui-badge>1</aui-badge>
-<aui-badge class="aui-badge-primary">2</aui-badge>
-<aui-badge>3</aui-badge>
-<aui-badge class="aui-badge-primary">4</aui-badge>
-<aui-badge>5</aui-badge>`,
+        code: `<va-badge>1</va-badge>
+<va-badge primary>2</va-badge>
+<va-badge>3</va-badge>
+<va-badge primary>4</va-badge>
+<va-badge>5</va-badge>`,
       }
     }
   }

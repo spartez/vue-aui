@@ -1,4 +1,4 @@
-import AuiAvatar from './AuiAvatar.vue'
+import AuiAvatar from './Avatar.vue'
 
 import {shallow} from 'vue-test-utils'
 

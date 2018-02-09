@@ -1,26 +1,26 @@
 <template>
   <div class="aui-group">
     <div class="aui-item">
-      <aui-tabs>
-        <aui-tab name="Example">
+      <va-tabs>
+        <va-tab name="Example">
           <p>
-            <aui-progress-indicator :progress='0.3'></aui-progress-indicator>
+            <va-progress-indicator :progress='0.3'></va-progress-indicator>
           </p>
           <p>
-            <aui-progress-indicator indeterminate></aui-progress-indicator>
+            <va-progress-indicator indeterminate></va-progress-indicator>
           </p>
           <p>
-            <aui-progress-indicator :indeterminate='indeterminate' :progress="0.5"></aui-progress-indicator>
+            <va-progress-indicator :indeterminate='indeterminate' :progress="0.5"></va-progress-indicator>
           </p>
-        </aui-tab>
-        <aui-tab name="Code">
+        </va-tab>
+        <va-tab name="Code">
           <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
-        </aui-tab>
-      </aui-tabs>
+        </va-tab>
+      </va-tabs>
     </div>
 
     <div class="aui-item">
-      <api-table name="aui-progress-indicator" :props="[
+      <api-table name="va-progress-indicator" :props="[
       {name: 'progress', type: 'Number', default: '0', description: 'Sets progress bar progress in scale 0-100.'},
       {name: 'indeterminate', type: 'Boolean', default: 'false', description: 'Renders infinite progress bar.'},
     ]">
@@ -34,9 +34,9 @@
     data() {
       return {
         indeterminate: true,
-        code: `<aui-progress-indicator :progress='0.3'></aui-progress-indicator>
-<aui-progress-indicator indeterminate></aui-progress-indicator>
-<aui-progress-indicator :indeterminate='indeterminate' :progress="0.5"></aui-progress-indicator>`,
+        code: `<va-progress-indicator :progress='0.3'></va-progress-indicator>
+<va-progress-indicator indeterminate></va-progress-indicator>
+<va-progress-indicator :indeterminate='indeterminate' :progress="0.5"></va-progress-indicator>`,
       }
     },
 

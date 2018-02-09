@@ -1,23 +1,23 @@
 <template>
   <div class="aui-group">
     <div class="aui-item">
-      <aui-tabs>
-        <aui-tab name="Example">
+      <va-tabs>
+        <va-tab name="Example">
           <p>
-            <aui-icon>wait</aui-icon>
-            <aui-icon>add</aui-icon>
-            <aui-icon>bitbucket</aui-icon>
+            <va-icon>wait</va-icon>
+            <va-icon>add</va-icon>
+            <va-icon>bitbucket</va-icon>
           </p>
           <p>
-            <aui-icon size="large">like</aui-icon>
-            <aui-icon size="large">user</aui-icon>
-            <aui-icon size="large">approve</aui-icon>
+            <va-icon size="large">like</va-icon>
+            <va-icon size="large">user</va-icon>
+            <va-icon size="large">approve</va-icon>
           </p>
-        </aui-tab>
-        <aui-tab name="Code">
+        </va-tab>
+        <va-tab name="Code">
           <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
-        </aui-tab>
-      </aui-tabs>
+        </va-tab>
+      </va-tabs>
     </div>
 
     <div class="aui-item">
@@ -33,13 +33,13 @@
   export default {
     data() {
       return {
-        code: `<aui-icon>wait</aui-icon>
-<aui-icon>add</aui-icon>
-<aui-icon>bitbucket</aui-icon>
+        code: `<va-icon>wait</va-icon>
+<va-icon>add</va-icon>
+<va-icon>bitbucket</va-icon>
 
-<aui-icon size="large">like</aui-icon>
-<aui-icon size="large">user</aui-icon>
-<aui-icon size="large">approve</aui-icon>`,
+<va-icon size="large">like</va-icon>
+<va-icon size="large">user</va-icon>
+<va-icon size="large">approve</va-icon>`,
       }
     }
   }

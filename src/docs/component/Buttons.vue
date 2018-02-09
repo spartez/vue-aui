@@ -3,69 +3,69 @@
     <div class="aui-item">
       <h3>Button types</h3>
 
-      <aui-tabs>
-        <aui-tab name="Example">
+      <va-tabs>
+        <va-tab name="Example">
           <p>
-            <aui-button @click="thanks">Click me!</aui-button>
+            <va-button @click="thanks">Click me!</va-button>
           </p>
           <p>
-            <aui-button type="primary">Primary button</aui-button>
+            <va-button type="primary">Primary button</va-button>
           </p>
           <p>
-            <aui-button type="link">Button link</aui-button>
+            <va-button type="link">Button link</va-button>
           </p>
           <p>
-            <aui-buttons>
-              <aui-button>Edit</aui-button>
-              <aui-button>Delete</aui-button>
-            </aui-buttons>
+            <va-buttons>
+              <va-button>Edit</va-button>
+              <va-button>Delete</va-button>
+            </va-buttons>
           </p>
-        </aui-tab>
-        <aui-tab name="Code">
+        </va-tab>
+        <va-tab name="Code">
           <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
-        </aui-tab>
-      </aui-tabs>
+        </va-tab>
+      </va-tabs>
       <h3>Button variations</h3>
 
-      <aui-tabs>
-        <aui-tab name="Example">
+      <va-tabs>
+        <va-tab name="Example">
           <p>
-            <aui-button disabled>Button</aui-button>
+            <va-button disabled>Button</va-button>
           </p>
           <p>
-            <aui-button light>Light</aui-button>
+            <va-button light>Light</va-button>
           </p>
           <p>
-            <aui-button subtle>Subtle</aui-button>
+            <va-button subtle>Subtle</va-button>
           </p>
           <p>
-            <aui-button compact>Compact</aui-button>
+            <va-button compact>Compact</va-button>
           </p>
-        </aui-tab>
-        <aui-tab name="Code">
+        </va-tab>
+        <va-tab name="Code">
           <pre v-highlightjs><code class="xml" v-text='code2'></code></pre>
-        </aui-tab>
-      </aui-tabs>
+        </va-tab>
+      </va-tabs>
       <h3>Button as link</h3>
 
-      <aui-tabs>
-        <aui-tab name="Example">
+      <va-tabs>
+        <va-tab name="Example">
           <p>
             Just add href to the button.
           </p>
           <p>
-            <aui-button type="link" href="#">Link 1</aui-button>
-            <aui-button type="link" href="#">Link 2</aui-button>
+            <va-button type="link" href="#">Link 1</va-button>
+            <va-button type="link" href="#">Link 2</va-button>
           </p>
-        </aui-tab>
-        <aui-tab name="Code">
+        </va-tab>
+        <va-tab name="Code">
           <pre v-highlightjs><code class="xml" v-text='code3'></code></pre>
-        </aui-tab>
-      </aui-tabs>
+        </va-tab>
+      </va-tabs>
 
     </div>
     <div class="aui-item">
-      <api-table name="aui-button" :props="[
+      <api-table name="va-button" :props="[
       {name: 'compact', type: 'Boolean', default: 'false', description: 'Makes the button slightly smaller.'},
       {name: 'disabled', type: 'Boolean', default: 'false', description: 'Disables the button.'},
       {name: 'href', type: 'String', default: '-', description: 'Renders the button as a link with specified href.'},
@@ -88,20 +88,20 @@
   export default {
     data() {
       return {
-        code: `<aui-button @click="thanks">Button</aui-button>
-<aui-button type="primary">Primary button</aui-button>
-<aui-button type="link">Button link</aui-button>
+        code: `<va-button @click="thanks">Button</va-button>
+<va-button type="primary">Primary button</va-button>
+<va-button type="link">Button link</va-button>
 
-<aui-buttons>
-  <aui-button>Edit</aui-button>
-  <aui-button>Delete</aui-button>
-</aui-buttons>`,
-        code2: `<aui-button disabled>Button</aui-button>
-<aui-button light>Light</aui-button>
-<aui-button subtle>Subtle</aui-button>
-<aui-button compact>Compact</aui-button>`,
-        code3: `<aui-button type="link" href="#">Link 1</aui-button>
-<aui-button type="link" href="#">Link 2</aui-button>`,
+<va-buttons>
+  <va-button>Edit</va-button>
+  <va-button>Delete</va-button>
+</va-buttons>`,
+        code2: `<va-button disabled>Button</va-button>
+<va-button light>Light</va-button>
+<va-button subtle>Subtle</va-button>
+<va-button compact>Compact</va-button>`,
+        code3: `<va-button type="link" href="#">Link 1</va-button>
+<va-button type="link" href="#">Link 2</va-button>`,
       }
     },
 

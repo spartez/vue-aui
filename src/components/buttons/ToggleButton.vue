@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  import {createUniqueId} from '../utils'
+  import {createUniqueId} from '../../utils'
 
   export default {
     props: {

@@ -10,7 +10,7 @@ import "@atlassian/aui/dist/aui/js/aui-experimental.min"
 import "@atlassian/aui/dist/aui/js/aui-datepicker.min"
 import "@atlassian/aui/dist/aui/js/aui-soy.min"
 
-import VueAui from './components/VueAui'
+import VueAui from './VueAui'
 
 import Welcome from './docs/Welcome.vue'
 

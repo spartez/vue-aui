@@ -11,7 +11,7 @@ function resolve (dir) {
 module.exports = {
   entry: {
     app: './src/main.js',
-    'vue-aui': ['./src/components/VueAui.js']
+    'vue-aui': ['./src/VueAui.js']
   },
   output: {
     path: config.build.assetsRoot,

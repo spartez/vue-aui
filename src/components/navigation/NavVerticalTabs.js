@@ -1,13 +1,13 @@
-import AuiNavVertical from "./AuiNavVertical.vue"
-import AuiNavTab from "./AuiNavTab.vue"
+import AuiNavVertical from "./NavVertical.vue"
+import AuiNavTab from "./NavTab.vue"
 
 export default {
   render(createElement) {
     const auiNavGroups = this.getGroupsAndHeaders().map(groupOrHeader => {
-      if (groupOrHeader.componentOptions.tag === 'aui-nav-group') {
+      if (groupOrHeader.componentOptions.tag === 'va-nav-group' || groupOrHeader.componentOptions.tag === 'aui-nav-group') {
         const children = groupOrHeader.componentOptions && groupOrHeader.componentOptions.children || [];
         children
-          .filter(s => (s.componentOptions && s.componentOptions.tag === 'aui-nav-item'))
+          .filter(s => (s.componentOptions && (s.componentOptions.tag === 'aui-nav-item' || s.componentOptions.tag === 'va-nav-item')))
           .forEach(tab => {
             tab.componentOptions.propsData.selected = tab.componentOptions.propsData.name === this.selectedTab
             tab.data.on = {
@@ -46,14 +46,15 @@ export default {
     getGroupsAndHeaders() {
       return this.$slots.default
         .filter(item => item.componentOptions)
-        .filter(item => item.componentOptions.tag === 'aui-nav-group' || item.componentOptions.tag === 'aui-nav-header')
+        .filter(item => item.componentOptions.tag === 'va-nav-group' || item.componentOptions.tag === 'va-nav-header'
+          || item.componentOptions.tag === 'aui-nav-group' || item.componentOptions.tag === 'aui-nav-header')
     },
 
     getItems() {
       return this.getGroupsAndHeaders()
         .reduce((items, group) => group.componentOptions.children ? items.concat(group.componentOptions.children) : items, [])
         .filter(item => item.componentOptions)
-        .filter(item => item.componentOptions.tag === 'aui-nav-item')
+        .filter(item => item.componentOptions.tag === 'va-nav-item' || item.componentOptions.tag === 'aui-nav-item')
     }
   },
 }

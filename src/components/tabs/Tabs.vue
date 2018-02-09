@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import {createUniqueId} from '../utils'
+  import {createUniqueId} from '../../utils'
 
   export default {
     mounted() {
@@ -23,8 +23,9 @@
     },
 
     computed: {
-      tabs(){
-        const tabs = this.$slots.default.filter(slot => slot.componentOptions && slot.componentOptions.tag === "aui-tab");
+      tabs() {
+        const tabs = this.$slots.default.filter(slot => slot.componentOptions
+          && (slot.componentOptions.tag === "va-tab" || slot.componentOptions.tag === "aui-tab"));
         for (let obj of tabs) {
           if (!obj.tab_id) {
             obj.tab_id = createUniqueId('tab')

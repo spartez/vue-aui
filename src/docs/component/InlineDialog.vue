@@ -2,36 +2,36 @@
   <div class="aui-group">
     <div class="aui-item">
       <h3>Opening on click</h3>
-      <aui-tabs>
-        <aui-tab name="Example">
+      <va-tabs>
+        <va-tab name="Example">
           <va-inline-dialog responds-to="toggle">
             <a slot="trigger">Click me</a>
             <template slot="dialog">
               Lorem ipsum.
             </template>
           </va-inline-dialog>
-        </aui-tab>
-        <aui-tab name="Code">
+        </va-tab>
+        <va-tab name="Code">
           <pre v-highlightjs><code class="xml" v-text='code1'></code></pre>
-        </aui-tab>
-      </aui-tabs>
+        </va-tab>
+      </va-tabs>
       <h3>Opening on hover</h3>
-      <aui-tabs>
-        <aui-tab name="Example">
+      <va-tabs>
+        <va-tab name="Example">
           <va-inline-dialog responds-to="hover">
             <a slot="trigger">Hover me</a>
             <template slot="dialog">
               Lorem ipsum.
             </template>
           </va-inline-dialog>
-        </aui-tab>
-        <aui-tab name="Code">
+        </va-tab>
+        <va-tab name="Code">
           <pre v-highlightjs><code class="xml" v-text='code2'></code></pre>
-        </aui-tab>
-      </aui-tabs>
+        </va-tab>
+      </va-tabs>
       <h3>Opening with prop</h3>
-      <aui-tabs>
-        <aui-tab name="Example">
+      <va-tabs>
+        <va-tab name="Example">
           <va-inline-dialog responds-to="toggle" alignment="top center" :open.sync="isOpenSync">
             <a slot="trigger">Open and sync open prop</a>
             <template slot="dialog">
@@ -42,14 +42,14 @@
             <a href @click.prevent="isOpenSync = !isOpenSync">Toggle syncable prop</a>:
             {{ isOpenSync }}
           </p>
-        </aui-tab>
-        <aui-tab name="Code">
+        </va-tab>
+        <va-tab name="Code">
           <pre v-highlightjs><code class="xml" v-text='code3'></code></pre>
-        </aui-tab>
-      </aui-tabs>
+        </va-tab>
+      </va-tabs>
       <h3>Alignment</h3>
-      <aui-tabs>
-        <aui-tab name="Example">
+      <va-tabs>
+        <va-tab name="Example">
           <p>
             <va-inline-dialog responds-to="toggle" alignment="top center">
               <a slot="trigger">Top center</a>
@@ -74,11 +74,11 @@
               </template>
             </va-inline-dialog>
           </p>
-        </aui-tab>
-        <aui-tab name="Code">
+        </va-tab>
+        <va-tab name="Code">
           <pre v-highlightjs><code class="xml" v-text='code4'></code></pre>
-        </aui-tab>
-      </aui-tabs>
+        </va-tab>
+      </va-tabs>
     </div>
 
     <div class="aui-item">

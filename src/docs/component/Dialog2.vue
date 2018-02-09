@@ -1,10 +1,10 @@
 <template>
   <div class="aui-group">
     <div class="aui-item">
-      <aui-tabs>
-        <aui-tab name="Example" class="with-dialog-overlay">
+      <va-tabs>
+        <va-tab name="Example" class="with-dialog-overlay">
 
-          <aui-dialog title="Example dialog" show-close-button width="600px" height="200px" max-height="300px"
+          <va-dialog title="Example dialog" show-close-button width="600px" height="200px" max-height="300px"
                       @onClose="alert('Close clicked')">
             Start...<br>
             <br>
@@ -29,17 +29,17 @@
             <div slot="footer-hint">
               Focus dialog and type ESC to close it.
             </div>
-          </aui-dialog>
-        </aui-tab>
+          </va-dialog>
+        </va-tab>
 
-        <aui-tab name="Code">
+        <va-tab name="Code">
           <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
-        </aui-tab>
-      </aui-tabs>
+        </va-tab>
+      </va-tabs>
 
-      <aui-tabs>
-        <aui-tab name="Example" class="with-dialog-overlay">
-          <aui-dialog title="Are you sure?" @onClose="alert('Close clicked')" size="small" no-padding warning>
+      <va-tabs>
+        <va-tab name="Example" class="with-dialog-overlay">
+          <va-dialog title="Are you sure?" @onClose="alert('Close clicked')" size="small" no-padding warning>
             <div style="background: #FFBDAD; padding: 20px; height: 100%">Fill with custom padding<br>
               <br>
               End.
@@ -48,48 +48,48 @@
               <aui-button type="primary">Yes</aui-button>
               <aui-button type="link">Cancel</aui-button>
             </div>
-          </aui-dialog>
-        </aui-tab>
+          </va-dialog>
+        </va-tab>
 
-        <aui-tab name="Code">
+        <va-tab name="Code">
           <pre v-highlightjs><code class="xml" v-text='code2'></code></pre>
-        </aui-tab>
-      </aui-tabs>
+        </va-tab>
+      </va-tabs>
 
       <h3>Floating dialogs</h3>
-      <aui-tabs>
-        <aui-tab name="Example">
+      <va-tabs>
+        <va-tab name="Example">
           <p>
             <aui-button @click="showFloatingDialog = true">Show dialog 1</aui-button>
             Is visible? {{showFloatingDialog}}
-            <aui-dialog title="Are you sure?" @onClose="alert('Close clicked')" floating
+            <va-dialog title="Are you sure?" @onClose="alert('Close clicked')" floating
                         :is-visible.sync="showFloatingDialog">
               <div>I'm dialog 1.</div>
               <div slot="footer-actions">
                 <aui-button type="primary" @click="showFloatingDialog = false">Ok</aui-button>
               </div>
-            </aui-dialog>
+            </va-dialog>
           </p>
           <p>
             <aui-button @click="showFloatingDialog2 = true">Show dialog 2</aui-button>
             Is visible? {{showFloatingDialog2}}
-            <aui-dialog title="Are you sure?" @close="alert('Close clicked')" floating
+            <va-dialog title="Are you sure?" @close="alert('Close clicked')" floating
                         :is-visible.sync="showFloatingDialog2">
               <div>I'm dialog 2.</div>
               <div slot="footer-actions">
                 <aui-button type="primary" @click="showFloatingDialog2 = false">Ok</aui-button>
               </div>
-            </aui-dialog>
+            </va-dialog>
           </p>
-        </aui-tab>
-        <aui-tab name="Code">
+        </va-tab>
+        <va-tab name="Code">
           <pre v-highlightjs><code class="xml" v-text='code3'></code></pre>
-        </aui-tab>
-      </aui-tabs>
+        </va-tab>
+      </va-tabs>
     </div>
 
     <div class="aui-item">
-      <api-table name="aui-dialog" :props="[
+      <api-table name="va-dialog" :props="[
       {name: 'cancel-button', type: 'String', default: '-', description: 'Shows cencel button with given text.'},
       {name: 'floating', type: 'Boolean', default: 'false', description: 'Hides the dialog content and enables programmatic control via is-visible prop. Dialog will be over the page on the glass.'},
       {name: 'height', type: 'String', default: '-', description: 'Set fixed height for the dialog.'},
@@ -118,7 +118,7 @@
       return {
         showFloatingDialog: false,
         showFloatingDialog2: false,
-        code: `<aui-dialog title="Example dialog" show-close-button width="600px" height="100px" max-height="300px"
+        code: `<va-dialog title="Example dialog" show-close-button width="600px" height="100px" max-height="300px"
             @close="alert('Close clicked')">
   Dialog content
   <div slot="header-actions">
@@ -132,9 +132,9 @@
   <div slot="footer-hint">
     Focus dialog and type ESC to close it.
   </div>
-</aui-dialog>
+</va-dialog>
 `,
-        code2: `<aui-dialog title="Are you sure?" @close="alert('Close clicked')" size="small" no-padding warning>
+        code2: `<va-dialog title="Are you sure?" @close="alert('Close clicked')" size="small" no-padding warning>
   <div style="background: #FFBDAD; padding: 20px; height: 100%">Fill with custom padding<br>
     <br>
     End.
@@ -143,16 +143,16 @@
     <aui-button type="primary">Yes</aui-button>
     <aui-button type="link">Cancel</aui-button>
   </div>
-</aui-dialog>`,
+</va-dialog>`,
         code3: `<aui-button @click="showFloatingDialog = true">Show dialog 1</aui-button>
 Is visible? {{showFloatingDialog}}
-<aui-dialog title="Are you sure?" @onClose="alert('Close clicked')" floating
+<va-dialog title="Are you sure?" @onClose="alert('Close clicked')" floating
             :is-visible.sync="showFloatingDialog">
   <div>I'm dialog 1.</div>
   <div slot="footer-actions">
     <aui-button type="primary" @click="showFloatingDialog = false">Ok</aui-button>
   </div>
-</aui-dialog>`
+</va-dialog>`
       }
     },
     methods: {

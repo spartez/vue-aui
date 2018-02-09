@@ -1,5 +1,5 @@
-import AuiNavVertical from './AuiNavVertical.vue'
-import AuiNavVerticalTabs from './AuiNavVerticalTabs'
+import AuiNavVertical from './NavVertical.vue'
+import AuiNavVerticalTabs from './NavVerticalTabs'
 
 export default {
   props: {
