@@ -169,10 +169,12 @@ const router = new VueRouter({
 })
 
 router.afterEach((to, from) => {
-  ga('send', 'pageview', {
-    'page': location.pathname + location.search + location.hash
-  });
-})
+  if (location.hostname !== 'localhost') {
+    ga('send', 'pageview', {
+      'page': location.pathname + location.search + location.hash
+    });
+  }
+});
 
 /* eslint-disable no-new */
 new Vue({
