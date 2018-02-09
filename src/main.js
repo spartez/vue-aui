@@ -15,21 +15,21 @@ import VueAui from './VueAui'
 import Welcome from './docs/Welcome.vue'
 
 import ApiTable from './docs/ApiTable'
-import AuiSpinner from './docs/component/Spinner.vue'
-import Avatars from './docs/component/Avatars.vue'
-import Badges from './docs/component/Badges.vue'
-import Buttons from './docs/component/Buttons.vue'
-import Select2 from './docs/component/Select2.vue'
-import Dialog2 from './docs/component/Dialog2.vue'
-import Icons from './docs/component/Icons.vue'
-import InlineDialog from './docs/component/InlineDialog.vue'
-import Lozenges from './docs/component/Lozenges.vue'
-import Messages from './docs/component/Messages'
-import Navigation from './docs/component/Navigation.vue'
-import ProgressIndicator from './docs/component/ProgressIndicator.vue'
-import Tabs from './docs/component/Tabs.vue'
-import ToggleButton from './docs/component/ToggleButton.vue'
-import Tooltip from './docs/component/Tooltip'
+import AuiSpinner from './docs/component/SpinnerDocs.vue'
+import Avatars from './docs/component/AvatarsDocs.vue'
+import Badges from './docs/component/BadgesDocs.vue'
+import Buttons from './docs/component/ButtonsDocs.vue'
+import Select2 from './docs/component/Select2Docs.vue'
+import Dialog2 from './docs/component/Dialog2Docs.vue'
+import Icons from './docs/component/IconsDocs.vue'
+import InlineDialog from './docs/component/InlineDialogDocs.vue'
+import Lozenges from './docs/component/LozengesDocs.vue'
+import Messages from './docs/component/MessagesDocs'
+import Navigation from './docs/component/NavigationDocs.vue'
+import ProgressIndicator from './docs/component/ProgressIndicatorDocs.vue'
+import Tabs from './docs/component/TabsDocs.vue'
+import ToggleButton from './docs/component/ToggleButtonDocs.vue'
+import Tooltip from './docs/component/TooltipDocs'
 
 import VueHighlightJS from 'vue-highlightjs'
 import VueRouter from 'vue-router'
@@ -48,7 +48,7 @@ const router = new VueRouter({
     {
       path: '/components/avatars', component: Avatars,
       meta: {
-        componentName: 'Avatars',
+        componentName: 'AvatarsDocs',
         docsName: 'Avatars',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/avatars.html'
       }
@@ -56,7 +56,7 @@ const router = new VueRouter({
     {
       path: '/components/badges', component: Badges,
       meta: {
-        componentName: 'Badges',
+        componentName: 'BadgesDocs',
         docsName: 'Badges',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/badges.html'
       }
@@ -64,7 +64,7 @@ const router = new VueRouter({
     {
       path: '/components/buttons', component: Buttons,
       meta: {
-        componentName: 'Buttons',
+        componentName: 'ButtonsDocs',
         docsName: 'Buttons',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/buttons.html'
       }
@@ -72,7 +72,7 @@ const router = new VueRouter({
     {
       path: '/components/select2', component: Select2,
       meta: {
-        componentName: 'Select2',
+        componentName: 'Select2Docs',
         docsName: 'AUI Select2',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/auiselect2.html'
       }
@@ -80,7 +80,7 @@ const router = new VueRouter({
     {
       path: '/components/dialog2', component: Dialog2,
       meta: {
-        componentName: 'Dialog2',
+        componentName: 'Dialog2Docs',
         docsName: 'Dialog 2',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/dialog2.html'
       }
@@ -88,7 +88,7 @@ const router = new VueRouter({
     {
       path: '/components/icons', component: Icons,
       meta: {
-        componentName: 'Icons',
+        componentName: 'IconsDocs',
         docsName: 'Icons',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/icons.html'
       }
@@ -96,7 +96,7 @@ const router = new VueRouter({
     {
       path: '/components/inline-dialog', component: InlineDialog,
       meta: {
-        componentName: 'InlineDialog',
+        componentName: 'InlineDialogDocs',
         docsName: 'Inline Dialog',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/inline-dialog.html'
       }
@@ -104,7 +104,7 @@ const router = new VueRouter({
     {
       path: '/components/lozenges', component: Lozenges,
       meta: {
-        componentName: 'Lozenges',
+        componentName: 'LozengesDocs',
         docsName: 'Lozenges',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/lozenges.html'
       }
@@ -112,7 +112,7 @@ const router = new VueRouter({
     {
       path: '/components/messages', component: Messages,
       meta: {
-        componentName: 'Messages',
+        componentName: 'MessagesDocs',
         docsName: 'Messages',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/messages.html'
       }
@@ -120,7 +120,7 @@ const router = new VueRouter({
     {
       path: '/components/navigation', component: Navigation,
       meta: {
-        componentName: 'Navigation',
+        componentName: 'NavigationDocs',
         docsName: 'Navigation',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/navigation.html'
       }
@@ -128,7 +128,7 @@ const router = new VueRouter({
     {
       path: '/components/progress-indicator', component: ProgressIndicator,
       meta: {
-        componentName: 'ProgressIndicator',
+        componentName: 'ProgressIndicatorDocs',
         docsName: 'Progress Indicator',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/progress-indicator.html'
       }
@@ -136,7 +136,7 @@ const router = new VueRouter({
     {
       path: '/components/spinner', component: AuiSpinner,
       meta: {
-        componentName: 'AuiSpinner',
+        componentName: 'AuiSpinnerDocs',
         docsName: 'Spinner',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/spinner.html'
       }
@@ -144,7 +144,7 @@ const router = new VueRouter({
     {
       path: '/components/tabs', component: Tabs,
       meta: {
-        componentName: 'Tabs',
+        componentName: 'TabsDocs',
         docsName: 'Tabs',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/tabs.html'
       }
@@ -152,7 +152,7 @@ const router = new VueRouter({
     {
       path: '/components/toggle-button', component: ToggleButton,
       meta: {
-        componentName: 'ToggleButton',
+        componentName: 'ToggleButtonDocs',
         docsName: 'Toggle Button',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/toggle-button.html'
       }
@@ -160,7 +160,7 @@ const router = new VueRouter({
     {
       path: '/components/tooltip', component: Tooltip,
       meta: {
-        componentName: 'Tooltip',
+        componentName: 'TooltipDocs',
         docsName: 'Tooltips',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/tooltips.html'
       }
