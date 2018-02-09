@@ -68,9 +68,10 @@ export default {
     updateOptions() {
       if (this.$slots.default) {
         this.options = this.$slots.default
-          .filter(vnode => vnode.tag && (vnode.tag.match(/aui-select2-option$/) || vnode.tag.match(/AuiSelect2Option$/)))
-          .map(vnode => vnode.componentOptions.propsData)
-          .map(props => ({...props, id: props.value}))
+          .filter(vnode => vnode.tag && (vnode.tag.match(/va-select2-option$/) || vnode.tag.match(/VaSelect2Option$/)
+            || vnode.tag.match(/aui-select2-option$/) || vnode.tag.match(/AuiSelect2Option$/)))
+            .map(vnode => vnode.componentOptions.propsData)
+            .map(props => ({...props, id: props.value}))
       }
       this.updateValue()
     },

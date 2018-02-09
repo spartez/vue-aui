@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import auiSelect2Mixin from './auiSelect2Mixin'
+  import auiSelect2Mixin from './select2Mixin'
 
   export default {
     mixins: [auiSelect2Mixin],

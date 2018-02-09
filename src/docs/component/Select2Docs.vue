@@ -7,7 +7,7 @@
         <va-tab name="Example">
           <p>
             <va-select2-single v-model="selectValue" placeholder="Select value" allow-clear
-                                :disabled="initiallyDisabled">
+                               :disabled="initiallyDisabled">
               <va-select2-option :value="1" text="Option 1"></va-select2-option>
               <va-select2-option :value="2" text="Option 2"></va-select2-option>
             </va-select2-single>
@@ -25,7 +25,7 @@
           <p>
             <va-select2-single v-model="selectInitialValue" class="custom-class">
               <va-select2-option v-for="value in asyncValues" :value="value" :key="value"
-                                  :text="value"></va-select2-option>
+                                 :text="value"></va-select2-option>
             </va-select2-single>
             <button class="aui-button aui-button-link" @click="selectInitialValue = undefined">Clear value</button>
             <button class="aui-button aui-button-link" @click="selectInitialValue = 'value1'">Set</button>
@@ -35,8 +35,8 @@
           <h5>Query for options</h5>
           <p>
             <va-select2-single v-model="selectValueAsync" class="custom-class"
-                                :query="queryValues"
-                                :init-selection="initialValue"></va-select2-single>
+                               :query="queryValues"
+                               :init-selection="initialValue"></va-select2-single>
             ({{selectValueAsync}})
           </p>
         </va-tab>
@@ -75,9 +75,9 @@
               {{option.data.fullname}}
             </span>
               <va-select2-option value="alice"
-                                  :data="{fullname: 'Alice', url:'https://randomuser.me/api/portraits/women/14.jpg'}"></va-select2-option>
+                                 :data="{fullname: 'Alice', url:'https://randomuser.me/api/portraits/women/14.jpg'}"></va-select2-option>
               <va-select2-option value="bob"
-                                  :data="{fullname: 'Bob', url:'https://randomuser.me/api/portraits/men/52.jpg'}"></va-select2-option>
+                                 :data="{fullname: 'Bob', url:'https://randomuser.me/api/portraits/men/52.jpg'}"></va-select2-option>
             </va-select2-multi>
           </form>
         </va-tab>
@@ -93,7 +93,7 @@
           <h5>With predefined set of options</h5>
           <form class="aui">
             <va-select2-multi v-model="selectValues" class="custom-class2" placeholder="Select any value"
-                               :disabled="initiallyDisabled">
+                              :disabled="initiallyDisabled">
               <va-select2-option :value="1" text="Value 1"></va-select2-option>
               <va-select2-option :value="2" text="Value 2"></va-select2-option>
               <va-select2-option :value="3" text="Value 3"></va-select2-option>
@@ -113,7 +113,7 @@
           <h5>Query for options</h5>
           <form class="aui">
             <va-select2-multi ref="asyncSelect" v-model="queryExample" :query="queryValues"
-                               :init-selection="initialMultiValues">
+                              :init-selection="initialMultiValues">
             </va-select2-multi>
           </form>
           <span>{{queryExample}}</span>
@@ -159,7 +159,7 @@
     ]"/>
 
       <api-table name="va-select2-option" :props="[
-      {name: 'text', type: 'String', description: 'String used to render option.'},
+      {name: 'text', type: 'String', description: 'String used to render option. It\'s also used to query when using render slots.'},
       {name: 'value', type: 'String, Number', description: 'The actual unique value used in the model.'},
       {name: 'data', type: 'Object', description: 'Extra data used by renderering slots formatSelection and formatResult.'},
     ]" :slots="[
@@ -167,8 +167,12 @@
       {name: 'formatSelection', scope: 'value, data', description: 'Template used to format selected option.'},
     ]">
       </api-table>
+      <va-message type="warning">Because of Select2 limitations custom render slots render dead components. They are
+        passed as a String and won't handle any Vue.js events.
+      </va-message>
       <p>All of the options are delegation to native Select2 features.
-        See <a href="http://select2.github.io/select2/" target="_blank">http://select2.github.io/select2/</a> for full reference.</p>
+        See <a href="http://select2.github.io/select2/" target="_blank">http://select2.github.io/select2/</a> for full
+        reference.</p>
     </div>
   </div>
 </template>
