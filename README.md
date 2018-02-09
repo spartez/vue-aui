@@ -37,10 +37,10 @@ Alternatively, you can import and use a single component:
 </template>
 
 <script>
-import { AuiButton } from 'vue-aui';
+import { Button } from 'vue-aui';
 
 export default {
-  components: { AuiButton }
+  components: { AuiButton: Button }
   // ...
 };
 </script>

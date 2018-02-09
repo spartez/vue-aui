@@ -27,34 +27,33 @@ import AuiTooltip from './directives/Tooltip'
 import AuiInlineDialog from './components/InlineDialog'
 // end of deprecated imports
 
-// Deprecated imports
-import VaBadge from './components/buttons/Badge'
-import VaButton from './components/buttons/Button'
-import VaButtons from './components/buttons/Buttons.vue'
-import VaToggleButton from './components/buttons/ToggleButton.vue'
+import Badge from './components/buttons/Badge'
+import Button from './components/buttons/Button'
+import Buttons from './components/buttons/Buttons.vue'
+import ToggleButton from './components/buttons/ToggleButton.vue'
 
-import VaNavGroup from './components/navigation/NavGroup.vue'
-import VaNavHeader from './components/navigation/NavHeader.vue'
-import VaNavItem from './components/navigation/NavItem.vue'
-import VaNavTab from './components/navigation/NavTab.vue'
-import VaNavVerticalRouter from './components/navigation/NavVerticalRouter.js'
+import NavGroup from './components/navigation/NavGroup.vue'
+import NavHeader from './components/navigation/NavHeader.vue'
+import NavItem from './components/navigation/NavItem.vue'
+import NavTab from './components/navigation/NavTab.vue'
+import NavVerticalRouter from './components/navigation/NavVerticalRouter.js'
 
-import VaSelect2Multi from './components/select2/Select2Multi.vue'
-import VaSelect2Option from './components/select2/Select2Option'
-import VaSelect2Single from './components/select2/select2Single.vue'
+import Select2Multi from './components/select2/Select2Multi.vue'
+import Select2Option from './components/select2/Select2Option'
+import Select2Single from './components/select2/select2Single.vue'
 
-import VaTab from './components/tabs/Tab.vue'
-import VaTabs from './components/tabs/Tabs.vue'
+import Tab from './components/tabs/Tab.vue'
+import Tabs from './components/tabs/Tabs.vue'
 
-import VaAvatar from './components/Avatar.vue'
-import VaDialog from './components/Dialog.vue'
-import VaIcon from './components/Icon'
-import VaLozenge from './components/Lozenge.vue'
-import VaMessage from './components/Message'
-import VaProgressIndicator from './components/ProgressIndicator.vue'
-import VaSpinner from './components/Spinner.vue'
-import VaTooltip from './directives/Tooltip'
-import VaInlineDialog from './components/InlineDialog'
+import Avatar from './components/Avatar.vue'
+import Dialog from './components/Dialog.vue'
+import Icon from './components/Icon'
+import Lozenge from './components/Lozenge.vue'
+import Message from './components/Message'
+import ProgressIndicator from './components/ProgressIndicator.vue'
+import Spinner from './components/Spinner.vue'
+import Tooltip from './directives/Tooltip'
+import InlineDialog from './components/InlineDialog'
 
 export {
   // Deprecated start
@@ -82,29 +81,29 @@ export {
   AuiInlineDialog,
   // Deprecated end
 
-  VaBadge,
-  VaButton,
-  VaButtons,
-  VaToggleButton,
-  VaNavGroup,
-  VaNavHeader,
-  VaNavItem,
-  VaNavTab,
-  VaNavVerticalRouter,
-  VaSelect2Multi,
-  VaSelect2Option,
-  VaSelect2Single,
-  VaTab,
-  VaTabs,
-  VaAvatar,
-  VaDialog,
-  VaIcon,
-  VaLozenge,
-  VaMessage,
-  VaProgressIndicator,
-  VaSpinner,
-  VaTooltip,
-  VaInlineDialog
+  Badge,
+  Button,
+  Buttons,
+  ToggleButton,
+  NavGroup,
+  NavHeader,
+  NavItem,
+  NavTab,
+  NavVerticalRouter,
+  Select2Multi,
+  Select2Option,
+  Select2Single,
+  Tab,
+  Tabs,
+  Avatar,
+  Dialog,
+  Icon,
+  Lozenge,
+  Message,
+  ProgressIndicator,
+  Spinner,
+  Tooltip,
+  InlineDialog
 };
 
 export default {
@@ -137,31 +136,31 @@ export default {
     Vue.directive('aui-tooltip', AuiTooltip)
     // end of deprecated
 
-    Vue.component('va-badge', VaBadge)
-    Vue.component('va-button', VaButton)
-    Vue.component('va-buttons', VaButtons)
-    Vue.component('va-toggle', VaToggleButton)
+    Vue.component('va-badge', Badge)
+    Vue.component('va-button', Button)
+    Vue.component('va-buttons', Buttons)
+    Vue.component('va-toggle', ToggleButton)
 
-    Vue.component('va-nav-group', VaNavGroup)
-    Vue.component('va-nav-header', VaNavHeader)
-    Vue.component('va-nav-item', VaNavItem)
-    Vue.component('va-nav-tab', VaNavTab)
-    Vue.component('va-nav-vertical', VaNavVerticalRouter)
+    Vue.component('va-nav-group', NavGroup)
+    Vue.component('va-nav-header', NavHeader)
+    Vue.component('va-nav-item', NavItem)
+    Vue.component('va-nav-tab', NavTab)
+    Vue.component('va-nav-vertical', NavVerticalRouter)
 
-    Vue.component('va-select2-multi', VaSelect2Multi)
-    Vue.component('va-select2-option', VaSelect2Option)
-    Vue.component('va-select2-single', VaSelect2Single)
-    Vue.component('va-tabs', VaTabs)
-    Vue.component('va-tab', VaTab)
+    Vue.component('va-select2-multi', Select2Multi)
+    Vue.component('va-select2-option', Select2Option)
+    Vue.component('va-select2-single', Select2Single)
+    Vue.component('va-tabs', Tabs)
+    Vue.component('va-tab', Tab)
 
-    Vue.component('va-avatar', VaAvatar)
-    Vue.component('va-dialog', VaDialog)
-    Vue.component('va-icon', VaIcon)
-    Vue.component('va-lozenge', VaLozenge)
-    Vue.component('va-message', VaMessage)
-    Vue.component('va-progress-indicator', VaProgressIndicator)
-    Vue.component('va-spinner', VaSpinner)
-    Vue.component('va-inline-dialog', VaInlineDialog)
+    Vue.component('va-avatar', Avatar)
+    Vue.component('va-dialog', Dialog)
+    Vue.component('va-icon', Icon)
+    Vue.component('va-lozenge', Lozenge)
+    Vue.component('va-message', Message)
+    Vue.component('va-progress-indicator', ProgressIndicator)
+    Vue.component('va-spinner', Spinner)
+    Vue.component('va-inline-dialog', InlineDialog)
 
     Vue.directive('va-tooltip', AuiTooltip)
   }
