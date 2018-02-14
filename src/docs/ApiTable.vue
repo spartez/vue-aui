@@ -24,7 +24,7 @@
           <td headers="type"><code>{{prop.type}}</code></td>
           <td headers="default"><code>{{prop.default || '-'}}</code></td>
           <td headers="description">
-            <aui-lozenge v-for="badge in prop.badges" type="complete">{{badge}}</aui-lozenge>
+            <aui-lozenge v-for="badge in prop.badges" type="complete" :key="badge">{{badge}}</aui-lozenge>
             {{prop.description}}
           </td>
         </tr>
