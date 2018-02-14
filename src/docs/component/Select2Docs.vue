@@ -6,27 +6,27 @@
       <va-tabs>
         <va-tab name="Example">
           <p>
-            <va-select2-single v-model="selectValue" placeholder="Select value" allow-clear
-                               :disabled="initiallyDisabled">
+            <va-select2 v-model="selectValue" placeholder="Select value" allow-clear
+                        :disabled="initiallyDisabled">
               <va-select2-option :value="1" text="Option 1"></va-select2-option>
               <va-select2-option :value="2" text="Option 2"></va-select2-option>
-            </va-select2-single>
+            </va-select2>
             <span>{{({selectValue})}}</span>
           </p>
 
           <p>
-            <va-select2-single v-model="selectValue2" placeholder="Select value" class="custom-class">
+            <va-select2 v-model="selectValue2" placeholder="Select value" class="custom-class">
               <va-select2-option value="value1" text="Any value"></va-select2-option>
-            </va-select2-single>
+            </va-select2>
             <button class="aui-button aui-button-link" @click="selectValue2 = undefined">Clear value</button>
           </p>
 
           <h5>Default value and options loaded asynchronously</h5>
           <p>
-            <va-select2-single v-model="selectInitialValue" class="custom-class">
+            <va-select2 v-model="selectInitialValue" class="custom-class">
               <va-select2-option v-for="value in asyncValues" :value="value" :key="value"
                                  :text="value"></va-select2-option>
-            </va-select2-single>
+            </va-select2>
             <button class="aui-button aui-button-link" @click="selectInitialValue = undefined">Clear value</button>
             <button class="aui-button aui-button-link" @click="selectInitialValue = 'value1'">Set</button>
             ({{selectInitialValue}})
@@ -34,9 +34,9 @@
 
           <h5>Query for options</h5>
           <p>
-            <va-select2-single v-model="selectValueAsync" class="custom-class"
-                               :query="queryValues"
-                               :init-selection="initialValue"></va-select2-single>
+            <va-select2 v-model="selectValueAsync" class="custom-class"
+                        :query="queryValues"
+                        :init-selection="initialValue"></va-select2>
             ({{selectValueAsync}})
           </p>
         </va-tab>
@@ -49,7 +49,7 @@
       <h4>Custom templating</h4>
       <va-tabs>
         <va-tab name="Example">
-          <va-select2-single v-model="color">
+          <va-select2 v-model="color">
           <span slot="formatResult" slot-scope="option" style="display: flex">
             <span :style="{backgroundColor: option.data.rgb}" class="color-picker-item"></span>
             <span style="padding: 6px">{{option.data.name}}</span>
@@ -62,10 +62,10 @@
             <va-select2-option value="green" :data="{name: 'Green', rgb: '#14892c'}"></va-select2-option>
             <va-select2-option value="red" :data="{name: 'Red', rgb: '#d04437'}"></va-select2-option>
             <va-select2-option value="yellow" :data="{name: 'Yellow', rgb: '#f6c342'}"></va-select2-option>
-          </va-select2-single>
+          </va-select2>
 
           <form class="aui">
-            <va-select2-multi v-model="users">
+            <va-select2 multiple v-model="users">
             <span slot="formatResult" slot-scope="option" style="display: flex">
               <aui-avatar size="small" :src="option.data.url"></aui-avatar>
               <span style="margin: 4px 8px">{{option.data.fullname}} ({{option.value}})</span>
@@ -78,7 +78,7 @@
                                  :data="{fullname: 'Alice', url:'https://randomuser.me/api/portraits/women/14.jpg'}"></va-select2-option>
               <va-select2-option value="bob"
                                  :data="{fullname: 'Bob', url:'https://randomuser.me/api/portraits/men/52.jpg'}"></va-select2-option>
-            </va-select2-multi>
+            </va-select2>
           </form>
         </va-tab>
         <va-tab name="Code">
@@ -92,36 +92,36 @@
         <va-tab name="Example">
           <h5>With predefined set of options</h5>
           <form class="aui">
-            <va-select2-multi v-model="selectValues" class="custom-class2" placeholder="Select any value"
-                              :disabled="initiallyDisabled">
+            <va-select2 multiple v-model="selectValues" class="custom-class2" placeholder="Select any value"
+                        :disabled="initiallyDisabled">
               <va-select2-option :value="1" text="Value 1"></va-select2-option>
               <va-select2-option :value="2" text="Value 2"></va-select2-option>
               <va-select2-option :value="3" text="Value 3"></va-select2-option>
-            </va-select2-multi>
+            </va-select2>
           </form>
           <span>{{selectValues}}</span>
 
           <h5>Tags mode - options are created dynamically</h5>
           <form class="aui">
-            <va-select2-multi v-model="selectTags" tags-mode sortable width="auto">
+            <va-select2 multiple v-model="selectTags" tags-mode sortable width="auto">
               <va-select2-option value="tag1" text="Tag 1"></va-select2-option>
               <va-select2-option value="tag2" text="Tag 2"></va-select2-option>
-            </va-select2-multi>
+            </va-select2>
           </form>
           <span>{{selectTags}}</span>
 
           <h5>Query for options</h5>
           <form class="aui">
-            <va-select2-multi ref="asyncSelect" v-model="queryExample" :query="queryValues"
-                              :init-selection="initialMultiValues">
-            </va-select2-multi>
+            <va-select2 multiple ref="asyncSelect" v-model="queryExample" :query="queryValues"
+                        :init-selection="initialMultiValues">
+            </va-select2>
           </form>
           <span>{{queryExample}}</span>
 
           <h5>Disabled with placeholder</h5>
           <form class="aui">
-            <va-select2-multi disabled placeholder="Disabled select">
-            </va-select2-multi>
+            <va-select2 multiple disabled placeholder="Disabled select">
+            </va-select2>
           </form>
         </va-tab>
         <va-tab name="Code">
@@ -131,31 +131,25 @@
     </div>
 
     <div class="aui-item">
-      <api-table :name="['va-select2-single', 'va-select2-multi']" :props="[
+      <api-table :name="['va-select2']" :props="[
+      {name: 'allow-clear', type: 'Boolean', badges:['single'], description: 'Show clear button to remove current value.'},
       {name: 'disabled', type: 'Boolean', default: 'false', description: 'Disables the select.'},
       {name: 'dropdown-auto-width', type: 'Boolean', default: 'false', description: 'Attempts to automatically size the width of the dropdown based on content inside.'},
       {name: 'init-selection', type: 'Function', description: 'Used with query. Essentially this is an id->object mapping function.'},
       {name: 'maximum-input-length', type: 'Number', description: 'Maximum number of characters that can be entered for an input.'},
       {name: 'minimum-input-length', type: 'Number', description: 'Number of characters necessary to start a search.'},
+      {name: 'minimum-results-for-search', type: 'Number', badges:['single'], description: 'The minimum number of results that must be initially populated in order to keep the search field.'},
+      {name: 'multiple', type: 'Boolean', description: 'Controls single or multi select. Multi-select uses Array in v-model (:value, @input).'},
       {name: 'placeholder', type: 'String', description: 'Initial value that is selected if no other selection is made.'},
       {name: 'query', type: 'Function', description: 'Function used to query results for the search term.'},
+      {name: 'sortable', type: 'Boolean', default: 'false', badges:['multiple'], description: 'Enabled drag-and-drop sorting of selected elements. Requires jquery-draggable plugin.'},
+      {name: 'tags-mode', type: 'Boolean', default: 'false', badges:['multiple'], description: 'Puts Select2 into \'tagging\'mode.'},
+      {name: 'value', type: 'String, Number, Array', badges:['single'], description: 'Selected value. Multiple uses Array and single String or Number values.'},
       {name: 'width', type: 'String', description: 'Controls the width style attribute of the Select2 container div.'},
     ]" :events="[
       {name:'input', description: 'Emitted whenever select value is changed.'},
     ]" :slots="[
       {name: 'default', description: 'Used to put va-select2-option elements.'}
-    ]"/>
-
-      <api-table name="va-select2-single" :props="[
-      {name: 'allow-clear', type: 'Boolean', description: 'Show clear button to remove current value.'},
-      {name: 'minimum-results-for-search', type: 'Number', description: 'The minimum number of results that must be initially populated in order to keep the search field.'},
-      {name: 'value', type: 'String, Number', description: 'Selected value.'},
-    ]"/>
-      <api-table name="va-select2-multi" :props="[
-      {name: 'placeholder', type: 'String', description: 'Initial value that is selected if no other selection is made.'},
-      {name: 'sortable', type: 'Boolean', default: 'false', description: 'Enabled drag-and-drop sorting of selected elements. Requires jquery-draggable plugin.'},
-      {name: 'tags-mode', type: 'Boolean', default: 'false', description: 'Puts Select2 into \'tagging\'mode.'},
-      {name: 'value', type: 'Array', default: '[]', description: 'Selected value.'},
     ]"/>
 
       <api-table name="va-select2-option" :props="[
@@ -195,25 +189,25 @@
         color: 'red',
 
         code1: `<p>
-  <va-select2-single v-model="selectValue" placeholder="Select value" allow-clear :disabled="initiallyDisabled">
+  <va-select2 v-model="selectValue" placeholder="Select value" allow-clear :disabled="initiallyDisabled">
     <va-select2-option value="value1" text="Option 1"></va-select2-option>
     <va-select2-option value="value2" text="Option 2"></va-select2-option>
-  </va-select2-single>
+  </va-select2>
   <span>{{selectValue}}</span>
 </p>
 
 <p>
-  <va-select2-single v-model="selectValue2" placeholder="Select value" class="custom-class">
+  <va-select2 v-model="selectValue2" placeholder="Select value" class="custom-class">
     <va-select2-option value="value1" text="Any value"></va-select2-option>
-  </va-select2-single>
+  </va-select2>
   <button class="aui-button aui-button-link" @click="selectValue2 = undefined">Clear value</button>
 </p>
 
 <h5>Default value and options loaded asynchronously</h5>
 <p>
-  <va-select2-single v-model="selectInitialValue" class="custom-class">
+  <va-select2 v-model="selectInitialValue" class="custom-class">
     <va-select2-option v-for="value in asyncValues" :value="value" :text="value"></va-select2-option>
-  </va-select2-single>
+  </va-select2>
   <button class="aui-button aui-button-link" @click="selectInitialValue = undefined">Clear value</button>
   <button class="aui-button aui-button-link" @click="selectInitialValue = 'value1'">Set</button>
   ({{selectInitialValue}})
@@ -221,14 +215,14 @@
 
 <h5>Query for options</h5>
 <p>
-  <va-select2-single v-model="selectValueAsync" class="custom-class"
+  <va-select2 v-model="selectValueAsync" class="custom-class"
                       :query="queryValues"
-                      :init-selection="initialValue"></va-select2-single>
+                      :init-selection="initialValue"></va-select2>
   ({{selectValueAsync}})
 </p>
 `,
 
-        codeCustomTemplates: `<va-select2-single v-model="color">
+        codeCustomTemplates: `<va-select2 v-model="color">
   <span slot="formatResult" slot-scope="option" style="display: flex">
     <span :style="{backgroundColor: option.data.rgb}" class="color-picker-item"></span>
     <span style="padding: 6px">{{option.data.name}}</span>
@@ -241,10 +235,10 @@
   <va-select2-option value="green" :data="{name: 'Green', rgb: '#14892c'}"></va-select2-option>
   <va-select2-option value="red" :data="{name: 'Red', rgb: '#d04437'}"></va-select2-option>
   <va-select2-option value="yellow" :data="{name: 'Yellow', rgb: '#f6c342'}"></va-select2-option>
-</va-select2-single>
+</va-select2>
 
 <form class="aui">
-  <va-select2-multi v-model="users">
+  <va-select2 multiple v-model="users">
     <span slot="formatResult" slot-scope="option" style="display: flex">
       <aui-avatar size="small" :src="option.data.url"></aui-avatar>
       <span style="margin: 4px 8px">{{option.data.fullname}} ({{option.value}})</span>
@@ -257,39 +251,39 @@
                         :data="{fullname: 'Alice', url:'https://randomuser.me/api/portraits/women/14.jpg'}"></va-select2-option>
     <va-select2-option value="bob"
                         :data="{fullname: 'Bob', url:'https://randomuser.me/api/portraits/men/52.jpg'}"></va-select2-option>
-  </va-select2-multi>
+  </va-select2>
 </form>`,
         code2: `<h5>With predefined set of options</h5>
 <form class="aui">
-  <va-select2-multi v-model="selectValues" class="custom-class2" placeholder="Select any value" :disabled="initiallyDisabled">
+  <va-select2 multiple v-model="selectValues" class="custom-class2" placeholder="Select any value" :disabled="initiallyDisabled">
     <va-select2-option value="value1" text="Value 1"></va-select2-option>
     <va-select2-option value="value2" text="Value 2"></va-select2-option>
     <va-select2-option value="value3" text="Value 3"></va-select2-option>
-  </va-select2-multi>
+  </va-select2>
 </form>
 <span>{{selectValues}}</span>
 
 <h5>Tags mode - options are created dynamically</h5>
 <form class="aui">
-  <va-select2-multi v-model="selectTags" tags-mode sortable width="auto">
+  <va-select2 multiple v-model="selectTags" tags-mode sortable width="auto">
     <va-select2-option value="tag1" text="Tag 1"></va-select2-option>
     <va-select2-option value="tag2" text="Tag 2"></va-select2-option>
-  </va-select2-multi>
+  </va-select2>
 </form>
 <span>{{selectTags}}</span>
 
 <h5>Query for options</h5>
 <form class="aui">
-  <va-select2-multi ref="asyncSelect" v-model="queryExample" :query="queryValues"
+  <va-select2 multiple ref="asyncSelect" v-model="queryExample" :query="queryValues"
                      :init-selection="initialMultiValues">
-  </va-select2-multi>
+  </va-select2>
 </form>
 <span>{{queryExample}}</span>
 
 <h5>Disabled with placeholder</h5>
 <form class="aui">
-  <va-select2-multi disabled placeholder="Disabled select">
-  </va-select2-multi>
+  <va-select2 multiple disabled placeholder="Disabled select">
+  </va-select2>
 </form>
 `
       }

@@ -38,6 +38,7 @@ import NavItem from './components/navigation/NavItem.vue'
 import NavTab from './components/navigation/NavTab.vue'
 import NavVerticalRouter from './components/navigation/NavVerticalRouter.js'
 
+import Select2 from './components/select2/Select2'
 import Select2Multi from './components/select2/Select2Multi.vue'
 import Select2Option from './components/select2/Select2Option'
 import Select2Single from './components/select2/select2Single.vue'
@@ -90,6 +91,7 @@ export {
   NavItem,
   NavTab,
   NavVerticalRouter,
+  Select2,
   Select2Multi,
   Select2Option,
   Select2Single,
@@ -147,6 +149,7 @@ export default {
     Vue.component('va-nav-tab', NavTab)
     Vue.component('va-nav-vertical', NavVerticalRouter)
 
+    Vue.component('va-select2', Select2)
     Vue.component('va-select2-multi', Select2Multi)
     Vue.component('va-select2-option', Select2Option)
     Vue.component('va-select2-single', Select2Single)

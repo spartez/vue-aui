@@ -23,7 +23,10 @@
           </td>
           <td headers="type"><code>{{prop.type}}</code></td>
           <td headers="default"><code>{{prop.default || '-'}}</code></td>
-          <td headers="description">{{prop.description}}</td>
+          <td headers="description">
+            <aui-lozenge v-for="badge in prop.badges" type="complete">{{badge}}</aui-lozenge>
+            {{prop.description}}
+          </td>
         </tr>
         </tbody>
       </table>
@@ -120,6 +123,10 @@
 <script>
   export default {
     props: {
+      badges: {
+        type: Array,
+        default: () => []
+      },
       directiveName: String,
       directiveValue: Object,
       events: Array,
