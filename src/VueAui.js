@@ -11,7 +11,7 @@ import AuiNavVerticalRouter from './components/navigation/NavVerticalRouter.js'
 
 import AuiSelect2Multi from './components/select2/Select2Multi.vue'
 import AuiSelect2Option from './components/select2/Select2Option'
-import AuiSelect2Single from './components/select2/select2Single.vue'
+import AuiSelect2Single from './components/select2/Select2Single.vue'
 
 import AuiTab from './components/tabs/Tab.vue'
 import AuiTabs from './components/tabs/Tabs.vue'
@@ -41,7 +41,7 @@ import NavVerticalRouter from './components/navigation/NavVerticalRouter.js'
 import Select2 from './components/select2/Select2'
 import Select2Multi from './components/select2/Select2Multi.vue'
 import Select2Option from './components/select2/Select2Option'
-import Select2Single from './components/select2/select2Single.vue'
+import Select2Single from './components/select2/Select2Single.vue'
 
 import Tab from './components/tabs/Tab.vue'
 import Tabs from './components/tabs/Tabs.vue'
