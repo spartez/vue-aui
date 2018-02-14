@@ -16,7 +16,14 @@
     props: {
       sortable: Boolean,
       tagsMode: Boolean,
-      value: Array
+      value: Array,
+      locked: {type: Array, default: () => []}
+    },
+
+    watch: {
+      locked() {
+        this.updateValue()
+      },
     },
 
     created() {
@@ -27,6 +34,24 @@
       this.$input.val(this.value && this.value.join(SEPARATOR))
 
       const options = {...this.commonOptions}
+
+      if (this.initSelection) {
+        options.initSelection = (element, callback) => {
+          const callbackWrapper = options => {
+            if (!options) {
+              callback(options)
+            } else {
+              callback(options.map(option => ({
+                ...option,
+                locked: option.locked || this.locked.indexOf(option.id) >= 0
+              })))
+            }
+          }
+
+          this.initSelection(element, callbackWrapper)
+        }
+      }
+
       if (this.tagsMode) {
         options.formatNoMatches = () => "Type to add a value"
         options.tags = () => this.options

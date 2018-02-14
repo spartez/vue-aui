@@ -113,7 +113,7 @@
           <h5>Query for options</h5>
           <form class="aui">
             <va-select2 multiple ref="asyncSelect" v-model="queryExample" :query="queryValues"
-                        :init-selection="initialMultiValues">
+                        :init-selection="initialMultiValues" :locked="queryExampleLocked">
             </va-select2>
           </form>
           <span>{{queryExample}}</span>
@@ -275,7 +275,7 @@
 <h5>Query for options</h5>
 <form class="aui">
   <va-select2 multiple ref="asyncSelect" v-model="queryExample" :query="queryValues"
-                     :init-selection="initialMultiValues">
+                     :init-selection="initialMultiValues" :locked="queryExampleLocked">
   </va-select2>
 </form>
 <span>{{queryExample}}</span>
@@ -299,12 +299,6 @@
       }, 2000)
       setTimeout(() => this.queryExampleLocked.push('tag2'), 1000)
       setTimeout(() => this.initiallyDisabled = false, 1000)
-    },
-
-    watch: {
-      queryExampleLocked() {
-        this.$refs.asyncSelect.$emit('dataChanged');
-      }
     },
 
     methods: {
@@ -338,7 +332,6 @@
         const items = element.val().split(',').map(value => ({
           id: value,
           text: namesMap[value] || value,
-          locked: this.queryExampleLocked.indexOf(value) >= 0
         }))
         setTimeout(() => callback(items), 300)
       }

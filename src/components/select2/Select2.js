@@ -21,6 +21,7 @@ export default {
     minimumResultsForSearch: Number,
 
     // From multi select
+    locked: Array,
     sortable: Boolean,
     tagsMode: Boolean,
   },
