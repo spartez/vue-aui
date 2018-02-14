@@ -70,8 +70,8 @@ export default {
         this.options = this.$slots.default
           .filter(vnode => vnode.tag && (vnode.tag.match(/va-select2-option$/) || vnode.tag.match(/VaSelect2Option$/)
             || vnode.tag.match(/aui-select2-option$/) || vnode.tag.match(/AuiSelect2Option$/)))
-            .map(vnode => vnode.componentOptions.propsData)
-            .map(props => ({...props, id: props.value}))
+          .map(vnode => vnode.componentOptions.propsData)
+          .map(props => ({...props, id: props.value}))
       }
       this.updateValue()
     },
@@ -93,7 +93,9 @@ export default {
         // For some reason directly returning VNode rendered by render function from different project doesn't work
         const rendererComponent = new Vue({render: h => h('wrapper', [renderOption(option)])});
         const optionElement = rendererComponent.$mount().$el.firstChild;
-        return optionElement.outerHTML;
+        return optionElement.nodeType === Node.TEXT_NODE
+          ? optionElement.textContent
+          : optionElement.outerHTML;
       } else {
         return option.text;
       }
