@@ -9,7 +9,7 @@
       type: {
         type: String,
         validator(value) {
-          const types = ['success', 'error', 'current', 'complete', 'moved']
+          const types = ['default', 'success', 'error', 'current', 'complete', 'moved']
           return types.indexOf(value) >= 0
         }
       }
