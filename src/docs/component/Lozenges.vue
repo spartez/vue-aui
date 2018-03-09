@@ -29,7 +29,7 @@
 
     <div class="aui-item">
       <api-table name="aui-lozenge" :props="[
-      {name: 'type', type: 'String', default: 'medium', description: 'Available: \'success\', \'error\', \'current\', \'complete\', \'moved\''},
+      {name: 'type', type: 'String', default: 'default', description: 'Available: \'success\', \'error\', \'current\', \'complete\', \'moved\''},
       {name: 'subtle', type: 'Boolean', default: 'false', description: 'Renders subtle lozenge without background.'},
     ]">
       </api-table>
