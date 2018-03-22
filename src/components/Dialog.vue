@@ -1,5 +1,5 @@
 <template>
-  <section role="dialog" :style="{ width: width }" :class="classObject">
+  <section role="dialog" :style="{ width: width, 'max-width': maxWidth }" :class="classObject">
     <header class="aui-dialog2-header">
       <h2 class="aui-dialog2-header-main">
         {{ title }}
@@ -40,6 +40,7 @@
         default: true
       },
       maxHeight: String,
+      maxWidth: String,
       noPadding: Boolean,
       showCloseButton: Boolean,
       size: {

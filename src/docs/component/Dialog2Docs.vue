@@ -95,6 +95,7 @@
       {name: 'height', type: 'String', default: '-', description: 'Set fixed height for the dialog.'},
       {name: 'is-visible', isSyncable: true, type: 'Boolean', default: 'true', description: 'Syncable. This param hides and shows the dialog in floating mode.'},
       {name: 'max-height', type: 'String', default: '-', description: 'Sets max dialog height.'},
+      {name: 'max-width', type: 'String', default: '-', description: 'Sets max dialog width.'},
       {name: 'no-padding', type: 'Boolean', default: 'false', description: 'Clears out default dialog content padding.'},
       {name: 'show-close-button', type: 'Boolean', default: 'false', description: 'Shows close button on the top right corner. It emits close event after click.'},
       {name: 'size', type: 'String', default: 'medium', description: 'Allows setting one of AUI predefined window sizes: small, medium, large, xlarge.'},
