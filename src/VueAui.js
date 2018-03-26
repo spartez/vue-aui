@@ -133,7 +133,6 @@ export default {
     Vue.component('aui-lozenge', AuiLozenge)
     Vue.component('aui-message', AuiMessage)
     Vue.component('aui-progress-indicator', AuiProgressIndicator)
-    Vue.component('aui-spinner', AuiSpinner)
 
     Vue.directive('aui-tooltip', AuiTooltip)
     // end of deprecated
