@@ -1,27 +1,21 @@
 <template>
   <div class="aui-group">
     <div class="aui-item">
+      <va-message>
+        AUI 7.7 introduced spinner web component {{`<\aui-spinner>`}} which functionally replaces old spinner. 'va-spinner' will
+        still work on AUI older than 7.7. See
+        <a href="https://docs.atlassian.com/aui/latest/docs/spinner.html" target="_blank">
+          aui-spinner web component documentation</a>.
+      </va-message>
       <va-tabs>
-        <va-tab name="Example">
-          <h3>Standard spinner similar to aui-wait</h3>
-          <va-spinner></va-spinner>
-          <va-spinner :spin="isSpinning"></va-spinner>
-          <h3>Various spinners</h3>
-          <p>
-            <va-spinner :radius="40" :length="30" :width="16"></va-spinner>
-            <va-spinner :radius="30" :width="8" :length="15"></va-spinner>
-            <va-spinner :radius="15" :width="4" :length="8"></va-spinner>
-            <va-spinner :radius="8" :length="6" :width="2"></va-spinner>
-          </p>
-        </va-tab>
-        <va-tab name="Code">
+        <va-tab name="Deprecated code">
           <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
         </va-tab>
       </va-tabs>
     </div>
 
     <div class="aui-item">
-      <api-table name="va-spinner" :props="[
+      <api-table name="va-spinner" is-deprecated :props="[
       {name: 'spin', type: 'Boolean', default: 'true', description: 'Controls visibility of the spinner.'},
       {name: 'radius', type: 'Number', default: '3', description: 'Radius of the empty circle between the lines.'},
       {name: 'width', type: 'Number', default: '2', description: 'Width of the line.'},

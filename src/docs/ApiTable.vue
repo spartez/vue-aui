@@ -3,6 +3,7 @@
     <va-lozenge v-for="name in namesArray" class="api-element" type="current" :key="name">&lt;{{name}}&gt;
     </va-lozenge>
     <va-lozenge v-if="directiveName" class="api-element" type="current">v-{{directiveName}}</va-lozenge>
+    <va-lozenge v-if="isDeprecated" type="error">Deprecated</va-lozenge>
 
     <template v-if="props && props.length">
       <h4>Props</h4>
