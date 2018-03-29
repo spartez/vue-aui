@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import find from 'lodash/find'
+import sanitizeHtml from 'sanitize-html'
 
 export default {
 
@@ -97,7 +98,7 @@ export default {
           ? optionElement.textContent
           : optionElement.outerHTML;
       } else {
-        return option.text;
+        return sanitizeHtml(option.text);
       }
     }
   }
