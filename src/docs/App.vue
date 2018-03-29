@@ -12,11 +12,7 @@
         <ul class="aui-nav">
           <li>
             <a href="https://github.com/spartez/vue-aui">
-              <div class="aui-avatar aui-avatar-small">
-                <div class="aui-avatar-inner">
-                  <img src="http://oi65.tinypic.com/sm9g76.jpg">
-                </div>
-              </div>
+              <va-avatar src="http://oi65.tinypic.com/sm9g76.jpg" size="small"></va-avatar>
             </a>
           </li>
         </ul>
@@ -27,21 +23,21 @@
       <div class="aui-page-panel">
         <div class="aui-page-panel-inner">
           <div class="aui-page-panel-nav">
-            <aui-nav-vertical>
+            <va-nav-vertical>
 
-              <aui-nav-group>
-                <aui-nav-item name="Getting started" href="#/" :selected="$route.path === '/'"></aui-nav-item>
-              </aui-nav-group>
+              <va-nav-group>
+                <va-nav-item name="Getting started" href="#/" :selected="$route.path === '/'"></va-nav-item>
+              </va-nav-group>
 
-              <aui-nav-header name="Components"></aui-nav-header>
-              <aui-nav-group>
-                <aui-nav-item v-for="page in pages"
+              <va-nav-header name="Components"></va-nav-header>
+              <va-nav-group>
+                <va-nav-item v-for="page in pages"
                               :key="page.path"
                               :name="page.meta.docsName"
                               :href="'#' + page.path"
-                              :selected="$route.path === page.path"></aui-nav-item>
-              </aui-nav-group>
-            </aui-nav-vertical>
+                              :selected="$route.path === page.path"></va-nav-item>
+              </va-nav-group>
+            </va-nav-vertical>
           </div>
           <section class="aui-page-panel-content">
             <div class="aui-toolbar2" role="toolbar">
@@ -51,14 +47,14 @@
                     <h2 class="class-header" v-if="$route.path !== '/'">{{$route.meta.docsName}}</h2>
                   </div>
                   <div class="aui-toolbar2-secondary">
-                    <aui-buttons>
-                      <aui-button v-if="$route.meta.auiLink" :href="$route.meta.auiLink" target="_blank">
-                        <aui-icon>link</aui-icon>
-                      </aui-button>
-                      <aui-button v-if="$route.meta.componentName" :href="githubLink" target="_blank">
-                        <aui-icon>file-code</aui-icon>
-                      </aui-button>
-                    </aui-buttons>
+                    <va-buttons>
+                      <va-button v-if="$route.meta.auiLink" :href="$route.meta.auiLink" target="_blank">
+                        <va-icon>link</va-icon>
+                      </va-button>
+                      <va-button v-if="$route.meta.componentName" :href="githubLink" target="_blank">
+                        <va-icon>file-code</va-icon>
+                      </va-button>
+                    </va-buttons>
                   </div>
                 </div>
               </div>

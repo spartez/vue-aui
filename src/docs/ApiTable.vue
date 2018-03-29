@@ -1,8 +1,8 @@
 <template>
   <div class="api-table">
-    <aui-lozenge v-for="name in namesArray" class="api-element" type="current" :key="name">&lt;{{name}}&gt;
-    </aui-lozenge>
-    <aui-lozenge v-if="directiveName" class="api-element" type="current">v-{{directiveName}}</aui-lozenge>
+    <va-lozenge v-for="name in namesArray" class="api-element" type="current" :key="name">&lt;{{name}}&gt;
+    </va-lozenge>
+    <va-lozenge v-if="directiveName" class="api-element" type="current">v-{{directiveName}}</va-lozenge>
 
     <template v-if="props && props.length">
       <h4>Props</h4>
@@ -18,13 +18,13 @@
         <tbody>
         <tr v-for="prop in props">
           <td headers="name">
-            <aui-lozenge class="name-lozenge" subtle type="current">{{prop.name}}</aui-lozenge>
-            <aui-lozenge class="name-lozenge" v-if="prop.isSyncable" type="complete">.sync</aui-lozenge>
+            <va-lozenge class="name-lozenge" subtle type="current">{{prop.name}}</va-lozenge>
+            <va-lozenge class="name-lozenge" v-if="prop.isSyncable" type="complete">.sync</va-lozenge>
           </td>
           <td headers="type"><code>{{prop.type}}</code></td>
           <td headers="default"><code>{{prop.default || '-'}}</code></td>
           <td headers="description">
-            <aui-lozenge v-for="badge in prop.badges" type="complete" :key="badge">{{badge}}</aui-lozenge>
+            <va-lozenge v-for="badge in prop.badges" type="complete" :key="badge">{{badge}}</va-lozenge>
             {{prop.description}}
           </td>
         </tr>
@@ -45,10 +45,10 @@
         <!-- TODO add paylod description to events -->
         <tr v-for="prop in events">
           <td headers="event-name">
-            <aui-lozenge class="name-lozenge" subtle type="current">{{prop.name}}</aui-lozenge>
+            <va-lozenge class="name-lozenge" subtle type="current">{{prop.name}}</va-lozenge>
           </td>
           <td headers="event-description">
-            <aui-lozenge v-if="prop.isDeprecated" type="error">Deprecated</aui-lozenge>
+            <va-lozenge v-if="prop.isDeprecated" type="error">Deprecated</va-lozenge>
             {{prop.description}}
           </td>
         </tr>
@@ -69,7 +69,7 @@
         <tbody>
         <tr v-for="slot in slots">
           <td headers="slot-name">
-            <aui-lozenge class="name-lozenge" subtle type="current">{{slot.name}}</aui-lozenge>
+            <va-lozenge class="name-lozenge" subtle type="current">{{slot.name}}</va-lozenge>
           </td>
           <td headers="slot-scope-params"><code>{{slot.scope || '-'}}</code></td>
           <td headers="slot-description">{{slot.description}}</td>
@@ -110,7 +110,7 @@
         <tbody>
         <tr v-for="modifier in modifiers">
           <td headers="modifier-name">
-            <aui-lozenge class="name-lozenge" subtle type="current">{{modifier.name}}</aui-lozenge>
+            <va-lozenge class="name-lozenge" subtle type="current">{{modifier.name}}</va-lozenge>
           </td>
           <td headers="modifier-description">{{modifier.description}}</td>
         </tr>

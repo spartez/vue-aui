@@ -53,13 +53,7 @@
 <va-lozenge type="error" subtle>error</va-lozenge>
 <va-lozenge type="current" subtle>current</va-lozenge>
 <va-lozenge type="complete" subtle>complete</va-lozenge>
-<va-lozenge type="moved" subtle>moved</va-lozenge>`,
-        code2: `<aui-button disabled>Button</aui-button>
-<aui-button light>Light</aui-button>
-<aui-button subtle>Subtle</aui-button>
-<aui-button compact>Compact</aui-button>`,
-        code3: `<aui-button type="link" href="#">Link 1</aui-button>
-<aui-button type="link" href="#">Link 2</aui-button>`,
+<va-lozenge type="moved" subtle>moved</va-lozenge>`
       }
     }
   }

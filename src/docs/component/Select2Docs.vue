@@ -67,11 +67,11 @@
           <form class="aui">
             <va-select2 multiple v-model="users">
             <span slot="formatResult" slot-scope="option" style="display: flex">
-              <aui-avatar size="small" :src="option.data.url"></aui-avatar>
+              <va-avatar size="small" :src="option.data.url"></va-avatar>
               <span style="margin: 4px 8px">{{option.data.fullname}} ({{option.value}})</span>
             </span>
               <span slot="formatSelection" slot-scope="option">
-              <aui-avatar size="xsmall" :src="option.data.url"></aui-avatar>
+              <va-avatar size="xsmall" :src="option.data.url"></va-avatar>
               {{option.data.fullname}}
             </span>
               <va-select2-option value="alice"
@@ -240,11 +240,11 @@
 <form class="aui">
   <va-select2 multiple v-model="users">
     <span slot="formatResult" slot-scope="option" style="display: flex">
-      <aui-avatar size="small" :src="option.data.url"></aui-avatar>
+      <va-avatar size="small" :src="option.data.url"></va-avatar>
       <span style="margin: 4px 8px">{{option.data.fullname}} ({{option.value}})</span>
     </span>
     <span slot="formatSelection" slot-scope="option">
-      <aui-avatar size="xsmall" :src="option.data.url"></aui-avatar>
+      <va-avatar size="xsmall" :src="option.data.url"></va-avatar>
       {{option.data.fullname}}
     </span>
     <va-select2-option value="alice"

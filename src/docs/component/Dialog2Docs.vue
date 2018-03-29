@@ -19,12 +19,12 @@
             The end.<br>
 
             <div slot="header-actions">
-              <aui-button light>Settings</aui-button>
+              <va-button light>Settings</va-button>
             </div>
             <div slot="footer-actions">
-              <aui-button type="primary">Confirm</aui-button>
-              <aui-button>Next</aui-button>
-              <aui-button type="link">Close</aui-button>
+              <va-button type="primary">Confirm</va-button>
+              <va-button>Next</va-button>
+              <va-button type="link">Close</va-button>
             </div>
             <div slot="footer-hint">
               Focus dialog and type ESC to close it.
@@ -45,8 +45,8 @@
               End.
             </div>
             <div slot="footer-actions">
-              <aui-button type="primary">Yes</aui-button>
-              <aui-button type="link">Cancel</aui-button>
+              <va-button type="primary">Yes</va-button>
+              <va-button type="link">Cancel</va-button>
             </div>
           </va-dialog>
         </va-tab>
@@ -60,24 +60,24 @@
       <va-tabs>
         <va-tab name="Example">
           <p>
-            <aui-button @click="showFloatingDialog = true">Show dialog 1</aui-button>
+            <va-button @click="showFloatingDialog = true">Show dialog 1</va-button>
             Is visible? {{showFloatingDialog}}
             <va-dialog title="Are you sure?" @onClose="alert('Close clicked')" floating
                         :is-visible.sync="showFloatingDialog">
               <div>I'm dialog 1.</div>
               <div slot="footer-actions">
-                <aui-button type="primary" @click="showFloatingDialog = false">Ok</aui-button>
+                <va-button type="primary" @click="showFloatingDialog = false">Ok</va-button>
               </div>
             </va-dialog>
           </p>
           <p>
-            <aui-button @click="showFloatingDialog2 = true">Show dialog 2</aui-button>
+            <va-button @click="showFloatingDialog2 = true">Show dialog 2</va-button>
             Is visible? {{showFloatingDialog2}}
             <va-dialog title="Are you sure?" @close="alert('Close clicked')" floating
                         :is-visible.sync="showFloatingDialog2">
               <div>I'm dialog 2.</div>
               <div slot="footer-actions">
-                <aui-button type="primary" @click="showFloatingDialog2 = false">Ok</aui-button>
+                <va-button type="primary" @click="showFloatingDialog2 = false">Ok</va-button>
               </div>
             </va-dialog>
           </p>
@@ -123,12 +123,12 @@
             @close="alert('Close clicked')">
   Dialog content
   <div slot="header-actions">
-    <aui-button light>Settings</aui-button>
+    <va-button light>Settings</va-button>
   </div>
   <div slot="footer-actions">
-    <aui-button type="primary">Confirm</aui-button>
-    <aui-button>Next</aui-button>
-    <aui-button type="link">Close</aui-button>
+    <va-button type="primary">Confirm</va-button>
+    <va-button>Next</va-button>
+    <va-button type="link">Close</va-button>
   </div>
   <div slot="footer-hint">
     Focus dialog and type ESC to close it.
@@ -141,17 +141,17 @@
     End.
   </div>
   <div slot="footer-actions">
-    <aui-button type="primary">Yes</aui-button>
-    <aui-button type="link">Cancel</aui-button>
+    <va-button type="primary">Yes</va-button>
+    <va-button type="link">Cancel</va-button>
   </div>
 </va-dialog>`,
-        code3: `<aui-button @click="showFloatingDialog = true">Show dialog 1</aui-button>
+        code3: `<va-button @click="showFloatingDialog = true">Show dialog 1</va-button>
 Is visible? {{showFloatingDialog}}
 <va-dialog title="Are you sure?" @onClose="alert('Close clicked')" floating
             :is-visible.sync="showFloatingDialog">
   <div>I'm dialog 1.</div>
   <div slot="footer-actions">
-    <aui-button type="primary" @click="showFloatingDialog = false">Ok</aui-button>
+    <va-button type="primary" @click="showFloatingDialog = false">Ok</va-button>
   </div>
 </va-dialog>`
       }

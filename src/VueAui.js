@@ -108,62 +108,75 @@ export {
   InlineDialog
 };
 
+function deprecated(component) {
+  const DeprecatedMixin = {
+    created() {
+      console.warn(`You are using deprecated version of component ${this.$vnode.componentOptions.tag} starting with "aui". Use "va-" prefix instead.`);
+    }
+  };
+
+  const mixins = component.mixins
+    ? [...component.mixins, DeprecatedMixin]
+    : [DeprecatedMixin];
+  return {...component, mixins}
+}
+
 export default {
   install(Vue, options) {
-    // Deprecated components
-    Vue.component('aui-button', AuiButton)
-    Vue.component('aui-buttons', AuiButtons)
-    Vue.component('aui-toggle-button', AuiToggleButton)
+    Vue.config.ignoredElements.push('aui-badge');
 
-    Vue.component('aui-nav-group', AuiNavGroup)
-    Vue.component('aui-nav-header', AuiNavHeader)
-    Vue.component('aui-nav-item', AuiNavItem)
-    Vue.component('aui-nav-tab', AuiNavTab)
-    Vue.component('aui-nav-vertical', AuiNavVerticalRouter)
+    Vue.component('aui-button', deprecated(AuiButton));
+    Vue.component('aui-buttons', deprecated(AuiButtons));
+    Vue.component('aui-toggle-button', deprecated(AuiToggleButton));
 
-    Vue.component('aui-select2-multi', AuiSelect2Multi)
-    Vue.component('aui-select2-option', AuiSelect2Option)
-    Vue.component('aui-tabs', AuiTabs)
-    Vue.component('aui-tab', AuiTab)
-    Vue.component('aui-select2-single', AuiSelect2Single)
+    Vue.component('aui-nav-group', deprecated(AuiNavGroup));
+    Vue.component('aui-nav-header', deprecated(AuiNavHeader));
+    Vue.component('aui-nav-item', deprecated(AuiNavItem));
+    Vue.component('aui-nav-tab', deprecated(AuiNavTab));
+    Vue.component('aui-nav-vertical', deprecated(AuiNavVerticalRouter));
 
-    Vue.component('aui-avatar', AuiAvatar)
-    Vue.component('aui-dialog', AuiDialog)
-    Vue.component('aui-icon', AuiIcon)
-    Vue.component('aui-lozenge', AuiLozenge)
-    Vue.component('aui-message', AuiMessage)
-    Vue.component('aui-progress-indicator', AuiProgressIndicator)
+    Vue.component('aui-select2-multi', deprecated(AuiSelect2Multi));
+    Vue.component('aui-select2-option', deprecated(AuiSelect2Option));
+    Vue.component('aui-tabs', deprecated(AuiTabs));
+    Vue.component('aui-tab', deprecated(AuiTab));
+    Vue.component('aui-select2-single', deprecated(AuiSelect2Single));
 
-    Vue.directive('aui-tooltip', AuiTooltip)
-    // end of deprecated
+    Vue.component('aui-avatar', deprecated(AuiAvatar));
+    Vue.component('aui-dialog', deprecated(AuiDialog));
+    Vue.component('aui-icon', deprecated(AuiIcon));
+    Vue.component('aui-lozenge', deprecated(AuiLozenge));
+    Vue.component('aui-message', deprecated(AuiMessage));
+    Vue.component('aui-progress-indicator', deprecated(AuiProgressIndicator));
 
-    Vue.component('va-badge', Badge)
-    Vue.component('va-button', Button)
-    Vue.component('va-buttons', Buttons)
-    Vue.component('va-toggle', ToggleButton)
+    Vue.directive('aui-tooltip', deprecated(AuiTooltip));
 
-    Vue.component('va-nav-group', NavGroup)
-    Vue.component('va-nav-header', NavHeader)
-    Vue.component('va-nav-item', NavItem)
-    Vue.component('va-nav-tab', NavTab)
-    Vue.component('va-nav-vertical', NavVerticalRouter)
+    Vue.component('va-badge', Badge);
+    Vue.component('va-button', Button);
+    Vue.component('va-buttons', Buttons);
+    Vue.component('va-toggle', ToggleButton);
 
-    Vue.component('va-select2', Select2)
-    Vue.component('va-select2-multi', Select2Multi)
-    Vue.component('va-select2-option', Select2Option)
-    Vue.component('va-select2-single', Select2Single)
-    Vue.component('va-tabs', Tabs)
-    Vue.component('va-tab', Tab)
+    Vue.component('va-nav-group', NavGroup);
+    Vue.component('va-nav-header', NavHeader);
+    Vue.component('va-nav-item', NavItem);
+    Vue.component('va-nav-tab', NavTab);
+    Vue.component('va-nav-vertical', NavVerticalRouter);
 
-    Vue.component('va-avatar', Avatar)
-    Vue.component('va-dialog', Dialog)
-    Vue.component('va-icon', Icon)
-    Vue.component('va-lozenge', Lozenge)
-    Vue.component('va-message', Message)
-    Vue.component('va-progress-indicator', ProgressIndicator)
-    Vue.component('va-spinner', Spinner)
-    Vue.component('va-inline-dialog', InlineDialog)
+    Vue.component('va-select2', Select2);
+    Vue.component('va-select2-multi', Select2Multi);
+    Vue.component('va-select2-option', Select2Option);
+    Vue.component('va-select2-single', Select2Single);
+    Vue.component('va-tabs', Tabs);
+    Vue.component('va-tab', Tab);
 
-    Vue.directive('va-tooltip', AuiTooltip)
+    Vue.component('va-avatar', Avatar);
+    Vue.component('va-dialog', Dialog);
+    Vue.component('va-icon', Icon);
+    Vue.component('va-lozenge', Lozenge);
+    Vue.component('va-message', Message);
+    Vue.component('va-progress-indicator', ProgressIndicator);
+    Vue.component('va-spinner', Spinner);
+    Vue.component('va-inline-dialog', InlineDialog);
+
+    Vue.directive('va-tooltip', AuiTooltip);
   }
 }

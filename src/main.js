@@ -3,8 +3,8 @@ import App from './docs/App.vue'
 
 import './main.css'
 
-import "@atlassian/aui/dist/aui/css/aui.min.css"
-import "@atlassian/aui/dist/aui/css/aui-experimental.min.css"
+import "@atlassian/aui/dist/aui/css/aui.css"
+import "@atlassian/aui/dist/aui/css/aui-experimental.css"
 import "@atlassian/aui/dist/aui/js/aui.min"
 import "@atlassian/aui/dist/aui/js/aui-experimental.min"
 import "@atlassian/aui/dist/aui/js/aui-datepicker.min"
