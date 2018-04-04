@@ -27,6 +27,8 @@ import AuiTooltip from './directives/Tooltip'
 import AuiInlineDialog from './components/InlineDialog'
 // end of deprecated imports
 
+import './vueAui.css'
+
 import Badge from './components/buttons/Badge'
 import Button from './components/buttons/Button'
 import Buttons from './components/buttons/Buttons.vue'

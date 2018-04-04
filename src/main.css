@@ -14,14 +14,3 @@ code.hljs {
 .aui-tabs {
   padding-top: 10px;
 }
-
-/* This is an extraction from AUI but css minifier sometimes minifies this rule wrongly in other plugins */
-/* Clear select2's overrides for retina displays */
-@media all, (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5) {
-  .aui-select2-container.select2-container .select2-search-choice-close,
-  .aui-select2-container.select2-container .select2-choice abbr {
-    /* !important to ensure that the select2 hover state doesn't modify the background position */
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAQAAABuBnYAAAAAKUlEQVQI12NgYFj0nwEKwKxF/9P+Q4TgLAgDIQEVQuJiCKBpwWoosrUAzbg31XT4p6QAAAAASUVORK5CYII=') 0 0 no-repeat !important;
-    background-size: 8px !important;
-  }
-}
