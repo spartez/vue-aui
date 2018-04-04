@@ -144,7 +144,7 @@
       {name: 'query', type: 'Function', description: 'Function used to query results for the search term.'},
       {name: 'sortable', type: 'Boolean', default: 'false', badges:['multiple'], description: 'Enabled drag-and-drop sorting of selected elements. Requires jquery-draggable plugin.'},
       {name: 'tags-mode', type: 'Boolean', default: 'false', badges:['multiple'], description: 'Puts Select2 into \'tagging\'mode.'},
-      {name: 'value', type: 'String, Number, Array', badges:['single'], description: 'Selected value. Multiple uses Array and single String or Number values.'},
+      {name: 'value', type: 'String, Number, Array', description: 'Selected value. Multiple uses Array and single String or Number values.'},
       {name: 'width', type: 'String', description: 'Controls the width style attribute of the Select2 container div.'},
     ]" :events="[
       {name:'input', description: 'Emitted whenever select value is changed.'},
