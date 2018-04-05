@@ -21,6 +21,7 @@ export default {
   },
 
   props: {
+    busy: Boolean,
     compact: Boolean,
     disabled: Boolean,
     href: String,
@@ -48,4 +49,28 @@ export default {
       }
     }
   },
+
+  methods: {
+    updateBusy() {
+      this.$nextTick(() => {
+        if (this.$el && this.$el.busy && this.$el.idle) {
+          if (this.busy) {
+            this.$el.busy()
+          } else {
+            this.$el.idle();
+          }
+        }
+      })
+    }
+  },
+
+  watch: {
+    busy() {
+      this.updateBusy();
+    }
+  },
+
+  mounted() {
+    this.updateBusy();
+  }
 }
