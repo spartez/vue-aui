@@ -1,4 +1,5 @@
 export default {
+  name: 'va-select2-option',
   props: {
     text: String,
     value: [String, Number],
