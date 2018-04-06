@@ -27,8 +27,6 @@ import AuiTooltip from './directives/Tooltip'
 import AuiInlineDialog from './components/InlineDialog'
 // end of deprecated imports
 
-import './vueAui.css'
-
 import Badge from './components/buttons/Badge'
 import Button from './components/buttons/Button'
 import Buttons from './components/buttons/Buttons.vue'
@@ -123,9 +121,28 @@ function deprecated(component) {
   return {...component, mixins}
 }
 
+/* This is an extraction from AUI but css minifier sometimes minifies this rule wrongly in other plugins */
+function fixSelect2ClearButtonsCss() {
+  const css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = `
+/* Clear select2's overrides for retina displays */
+@media all, (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5) {
+.aui-select2-container.select2-container .select2-search-choice-close,
+.aui-select2-container.select2-container .select2-choice abbr {
+    /* !important to ensure that the select2 hover state doesn't modify the background position */
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAQAAABuBnYAAAAAKUlEQVQI12NgYFj0nwEKwKxF/9P+Q4TgLAgDIQEVQuJiCKBpwWoosrUAzbg31XT4p6QAAAAASUVORK5CYII=') 0 0 no-repeat !important;
+    background-size: 8px !important;
+  }
+}`;
+  document.body.appendChild(css);
+}
+
 export default {
   install(Vue, options) {
     Vue.config.ignoredElements.push('aui-badge');
+
+    fixSelect2ClearButtonsCss();
 
     Vue.component('aui-button', deprecated(AuiButton));
     Vue.component('aui-buttons', deprecated(AuiButtons));
