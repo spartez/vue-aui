@@ -8,6 +8,9 @@ import AuiNavItem from './navigation/AuiNavItem.vue'
 import AuiNavTab from './navigation/AuiNavTab.vue'
 import AuiNavVerticalRouter from './navigation/AuiNavVerticalRouter.js'
 
+import AuiProgressTracker from './progress-tracker/AuiProgressTracker.vue'
+import AuiProgressTrackerStep from './progress-tracker/AuiProgressTrackerStep.vue'
+
 import AuiSelect2Multi from './select2/AuiSelect2Multi.vue'
 import AuiSelect2Option from './select2/AuiSelect2Option'
 import AuiSelect2Single from './select2/AuiSelect2Single.vue'
@@ -34,6 +37,8 @@ export {
   AuiNavItem,
   AuiNavTab,
   AuiNavVerticalRouter,
+  AuiProgressTracker,
+  AuiProgressTrackerStep,
   AuiSelect2Multi,
   AuiSelect2Option,
   AuiSelect2Single,
@@ -61,6 +66,9 @@ export default {
     Vue.component('aui-nav-item', AuiNavItem)
     Vue.component('aui-nav-tab', AuiNavTab)
     Vue.component('aui-nav-vertical', AuiNavVerticalRouter)
+
+    Vue.component('aui-progress-tracker', AuiProgressTracker)
+    Vue.component('aui-progress-tracker-step', AuiProgressTrackerStep)
 
     Vue.component('aui-select2-multi', AuiSelect2Multi)
     Vue.component('aui-select2-option', AuiSelect2Option)
