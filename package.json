@@ -28,9 +28,11 @@
   },
   "main": "dist/static/js/vue-aui.js",
   "unpkg": "dist/static/js/vue-aui.js",
-  "dependencies": {},
-  "peerDependencies": {
+  "dependencies": {
     "vue": "^2.5.2"
+  },
+  "peerDependencies": {
+    "@atlassian/aui": "^7.1.0"
   },
   "devDependencies": {
     "@atlassian/aui": "^7.6.1",
