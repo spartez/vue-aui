@@ -28,7 +28,7 @@ https://spartez.github.io/vue-aui/
 npm install vue-aui --save
 ```
 
-and finally install vuejs plugin using
+and finally install the Vue plugin using
 
 ```js
 Vue.use(VueAui)
