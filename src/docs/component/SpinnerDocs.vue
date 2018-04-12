@@ -2,8 +2,8 @@
   <div class="aui-group">
     <div class="aui-item">
       <va-message>
-        AUI 7.7 introduced spinner web component {{`<\aui-spinner>`}} which functionally replaces old spinner. 'va-spinner' will
-        still work on AUI older than 7.7. See
+        AUI 7.7 introduced spinner web component {{`&lt;aui-spinner&gt;`}} which functionally replaces {{`&lt;va-spinner&gt;`}}.
+        You can still use {{`&lt;va-spinner&gt;`}} on AUI older than 7.7. See
         <a href="https://docs.atlassian.com/aui/latest/docs/spinner.html" target="_blank">
           aui-spinner web component documentation</a>.
       </va-message>
@@ -29,17 +29,19 @@
 </template>
 
 <script>
+  import {stripIndent} from "common-tags";
+
   export default {
     data() {
       return {
-        code: `<va-spinner></va-spinner>
-<va-spinner :spin="isSpinning"></va-spinner>
+        code: stripIndent`
+            <va-spinner></va-spinner>
+            <va-spinner :spin="isSpinning"></va-spinner>
 
-<va-spinner :radius="40" :length="30" :width="16"></va-spinner>
-<va-spinner :radius="30" :width="8" :length="15"></va-spinner>
-<va-spinner :radius="15" :width="4" :length="8"></va-spinner>
-<va-spinner :radius="8" :length="6" :width="2"></va-spinner>`,
-
+            <va-spinner :radius="40" :length="30" :width="16"></va-spinner>
+            <va-spinner :radius="30" :width="8" :length="15"></va-spinner>
+            <va-spinner :radius="15" :width="4" :length="8"></va-spinner>
+            <va-spinner :radius="8" :length="6" :width="2"></va-spinner>`,
         isSpinning: true
       }
     },
