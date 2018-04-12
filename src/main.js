@@ -2,6 +2,9 @@ import Vue from 'vue'
 import App from './docs/App.vue'
 
 import './main.css'
+import 'highlightjs/styles/github-gist.css'
+
+import './jquery-shim'
 
 import "@atlassian/aui/dist/aui/css/aui.css"
 import "@atlassian/aui/dist/aui/css/aui-experimental.css"

@@ -5,6 +5,7 @@ code.hljs {
   margin: 10px 0;
   overflow: auto;
   padding: 12px;
+  background: #fcfcfc;
 }
 
 .tabs-pane {
