@@ -1,5 +1,9 @@
 <template>
-  <li class="aui-progress-tracker-step" :class="{'aui-progress-tracker-step-current': active}" style="width:25%"><span><slot></slot></span></li>
+  <li class="aui-progress-tracker-step" :class="{'aui-progress-tracker-step-current': active}" style="width: 1%">
+    <span>
+      <slot></slot>
+    </span>
+  </li>
 </template>
 
 <script>
@@ -9,7 +13,3 @@
     }
   }
 </script>
-
-<style scoped>
-
-</style>
