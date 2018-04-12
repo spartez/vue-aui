@@ -15,15 +15,16 @@ F<template>
             <aui-progress-tracker-step><a href="#">Third Link</a></aui-progress-tracker-step>
             <aui-progress-tracker-step><a href="#">Fourth Link</a></aui-progress-tracker-step>
           </aui-progress-tracker>
+
+          <aui-progress-tracker>
+            <aui-progress-tracker-step>First Step</aui-progress-tracker-step>
+            <aui-progress-tracker-step>Second Step</aui-progress-tracker-step>
+            <aui-progress-tracker-step active>Third Step</aui-progress-tracker-step>
+            <aui-progress-tracker-step>Fourth Step</aui-progress-tracker-step>
+            <aui-progress-tracker-step>Fifth Step</aui-progress-tracker-step>
+          </aui-progress-tracker>
         </aui-tab>
 
-        <aui-progress-tracker>
-          <aui-progress-tracker-step>First Step</aui-progress-tracker-step>
-          <aui-progress-tracker-step>Second Step</aui-progress-tracker-step>
-          <aui-progress-tracker-step active>Third Step</aui-progress-tracker-step>
-          <aui-progress-tracker-step>Fourth Step</aui-progress-tracker-step>
-          <aui-progress-tracker-step>Fifth Step</aui-progress-tracker-step>
-        </aui-progress-tracker>
 
         <aui-tab name="Code">
           <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
@@ -54,7 +55,6 @@ F<template>
   <aui-progress-tracker-step>First Step</aui-progress-tracker-step>
   <aui-progress-tracker-step>Second Step</aui-progress-tracker-step>
   <aui-progress-tracker-step active>Third Step</aui-progress-tracker-step>
-  <aui-progress-tracker-step>Fourth Step</aui-progress-tracker-step>
 </aui-progress-tracker>
 
 <aui-progress-tracker>
@@ -62,6 +62,14 @@ F<template>
   <aui-progress-tracker-step><a href="#">Second Link</a></aui-progress-tracker-step>
   <aui-progress-tracker-step><a href="#">Third Link</a></aui-progress-tracker-step>
   <aui-progress-tracker-step><a href="#">Fourth Link</a></aui-progress-tracker-step>
+</aui-progress-tracker>
+
+<aui-progress-tracker>
+  <aui-progress-tracker-step>First Step</aui-progress-tracker-step>
+  <aui-progress-tracker-step>Second Step</aui-progress-tracker-step>
+  <aui-progress-tracker-step active>Third Step</aui-progress-tracker-step>
+  <aui-progress-tracker-step>Fourth Step</aui-progress-tracker-step>
+  <aui-progress-tracker-step>Fifth Step</aui-progress-tracker-step>
 </aui-progress-tracker>
 `
       }
