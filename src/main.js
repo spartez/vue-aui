@@ -27,6 +27,7 @@ import Lozenges from './docs/component/Lozenges.vue'
 import Messages from './docs/component/Messages'
 import Navigation from './docs/component/Navigation.vue'
 import ProgressIndicator from './docs/component/ProgressIndicator.vue'
+import ProgressTracker from './docs/component/ProgressTracker.vue'
 import Tabs from './docs/component/Tabs.vue'
 import ToggleButton from './docs/component/ToggleButton.vue'
 import Tooltip from './docs/component/Tooltip'
@@ -131,6 +132,14 @@ const router = new VueRouter({
         componentName: 'ProgressIndicator',
         docsName: 'Progress Indicator',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/progress-indicator.html'
+      }
+    },
+    {
+      path: '/components/progress-tracker', component: ProgressTracker,
+      meta: {
+        componentName: 'ProgressTracker',
+        docsName: 'Progress Tracker',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/progress-tracker.html'
       }
     },
     {
