@@ -4,6 +4,13 @@
 
 [![npm version](https://badge.fury.io/js/vue-aui.svg)](https://badge.fury.io/js/vue-aui)
 
+This library provides a way to use Atlassian User Interface ([AUI](https://docs.atlassian.com/aui/latest/))
+that is native to Vue.js. It's created to speed-up development of Jira add-ons, but can also be used 
+with other Atlassian products like Confluence, Bamboo, Bitbucket etc. that use AUI.
+
+If you develop Jira add-ons please also take a look at [vue-aui-jira-extras](https://github.com/spartez/vue-aui-jira-extras)
+that provides Jira specific additions, some of them built on top this library.
+
 ### Demo and docs
 
 https://spartez.github.io/vue-aui/
@@ -33,15 +40,14 @@ Alternatively, you can import and use a single component:
 
 ```html
 <template>
-  <aui-button>Click me</aui-button>
+  <va-button>Click me</va-button>
 </template>
 
 <script>
-import { Button } from 'vue-aui';
+import { VaButton } from 'vue-aui';
 
 export default {
-  components: { AuiButton: Button }
-  // ...
+  components: { VaButton }
 };
 </script>
 ```
