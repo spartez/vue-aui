@@ -19,9 +19,9 @@ https://spartez.github.io/vue-aui/
 
 ##### Requirements
 
-* Vue 2.5.2+
-* NPM 5+
-* AUI 6.0+ - you need to attach this yourself to the page
+* Vue ^2.5.2
+* npm ^5
+* AUI ^6.0 - you need to attach this yourself to the page or require via npm
 
 ##### Using npm
 ```
@@ -44,11 +44,11 @@ Alternatively, you can import and use a single component:
 </template>
 
 <script>
-import { VaButton } from 'vue-aui';
+import { VaButton } from 'vue-aui'
 
 export default {
   components: { VaButton }
-};
+}
 </script>
 ```
 
@@ -58,11 +58,12 @@ export default {
 <script src="path/to/dist/vue-aui.js"></script>
 ```
 
-Use `VueAui.default` to install the plugin into vuejs, if you imported vue-aui using a script tag:
-
+Use `VueAui.default` to install the plugin into Vue. 
 ```html
 Vue.use(VueAui.default);
 ```
+This will register all the components.
+
 
 ### CodePen demo starter:
 https://codepen.io/dskrodzki/pen/LeGBme

@@ -10,7 +10,21 @@ npm run dev
 
 ## Publishing
 
-1. Make sure you have np installed `npm i -g np` 
-2. `npm run release` 
+### Preconditions
+* logged into npm
+* having access to vue-aui package in the npm repository
 
-In pre 1.0 versions any minor version can be braking. Braking changes though will be listed on release notes page. Patches won't be braking.
+### Releasing new version
+`npm run release` 
+
+Don't be scared to run it. This will run **interactive release process** with [np](https://www.npmjs.com/package/np) package. 
+It'll prevent you from publishing most of the common mistakes.
+
+##### So what does this command do for me?
+* Ensures clean git state
+* Builds new library
+* Builds new docs
+* Updates the version in package.json
+* Commits everything under the new version tag
+* Publishes package to npm
+* Pushes release commit and tag to Github
