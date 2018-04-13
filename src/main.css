@@ -15,3 +15,7 @@ code.hljs {
 .aui-tabs {
   padding-top: 10px;
 }
+
+.aui-group .aui-item:first-child {
+  overflow-x: auto;
+}

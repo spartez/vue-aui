@@ -23,6 +23,8 @@ import VaIcon from './components/Icon'
 import VaLozenge from './components/Lozenge.vue'
 import VaMessage from './components/Message'
 import VaProgressIndicator from './components/ProgressIndicator.vue'
+import VaProgressTracker from './components/progress-tracker/ProgressTracker.vue'
+import VaProgressTrackerStep from './components/progress-tracker/ProgressTrackerStep.vue'
 import VaSpinner from './components/Spinner.vue'
 import VaTooltip from './directives/Tooltip'
 import VaInlineDialog from './components/InlineDialog'
@@ -48,6 +50,8 @@ export {
   VaLozenge as AuiLozenge,
   VaMessage as AuiMessage,
   VaProgressIndicator as AuiProgressIndicator,
+  VaProgressTracker as AuiProgressTracker,
+  VaProgressTrackerStep as AuiProgressTrackerStep,
   VaSpinner as AuiSpinner,
   VaTooltip as AuiTooltip,
   VaInlineDialog as AuiInlineDialog,
@@ -75,6 +79,8 @@ export {
   VaLozenge,
   VaMessage,
   VaProgressIndicator,
+  VaProgressTracker,
+  VaProgressTrackerStep,
   VaSpinner,
   VaTooltip,
   VaInlineDialog
@@ -133,6 +139,8 @@ function registerAllDeprecated(Vue) {
   Vue.component('aui-lozenge', deprecated(VaLozenge));
   Vue.component('aui-message', deprecated(VaMessage));
   Vue.component('aui-progress-indicator', deprecated(VaProgressIndicator));
+  Vue.component('aui-progress-tracker', deprecated(VaProgressTracker));
+  Vue.component('aui-progress-tracker-step', deprecated(VaProgressTrackerStep));
 
   Vue.directive('aui-tooltip', deprecated(VaTooltip));
 }
@@ -162,6 +170,8 @@ function registerAll(Vue) {
   Vue.component('va-lozenge', VaLozenge);
   Vue.component('va-message', VaMessage);
   Vue.component('va-progress-indicator', VaProgressIndicator);
+  Vue.component('va-progress-tracker', VaProgressTracker);
+  Vue.component('va-progress-tracker-step', VaProgressTrackerStep);
   Vue.component('va-spinner', VaSpinner);
   Vue.component('va-inline-dialog', VaInlineDialog);
 

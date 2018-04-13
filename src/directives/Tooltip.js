@@ -16,6 +16,7 @@ export default {
 
 function destroyTooltip(el) {
   const $el = AJS.$(el);
+  $el.tooltip('disable');
   $el.tooltip('hide');
   $el.removeData('tipsy');
   $el.unbind('.tipsy');

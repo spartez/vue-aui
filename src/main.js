@@ -18,38 +18,39 @@ import VueAui from './VueAui'
 import Welcome from './docs/Welcome.vue'
 
 import ApiTable from './docs/ApiTable'
-import AuiSpinner from './docs/component/SpinnerDocs.vue'
-import Avatars from './docs/component/AvatarsDocs.vue'
-import Badges from './docs/component/BadgesDocs.vue'
-import Buttons from './docs/component/ButtonsDocs.vue'
-import Select2 from './docs/component/Select2Docs.vue'
-import Dialog2 from './docs/component/Dialog2Docs.vue'
-import Icons from './docs/component/IconsDocs.vue'
-import InlineDialog from './docs/component/InlineDialogDocs.vue'
-import Lozenges from './docs/component/LozengesDocs.vue'
-import Messages from './docs/component/MessagesDocs'
-import Navigation from './docs/component/NavigationDocs.vue'
-import ProgressIndicator from './docs/component/ProgressIndicatorDocs.vue'
-import Tabs from './docs/component/TabsDocs.vue'
-import ToggleButton from './docs/component/ToggleButtonDocs.vue'
-import Tooltip from './docs/component/TooltipDocs'
+import SpinnerDocs from './docs/component/SpinnerDocs.vue'
+import AvatarsDocs from './docs/component/AvatarsDocs.vue'
+import BadgesDocs from './docs/component/BadgesDocs.vue'
+import ButtonsDocs from './docs/component/ButtonsDocs.vue'
+import Select2Docs from './docs/component/Select2Docs.vue'
+import Dialog2Docs from './docs/component/Dialog2Docs.vue'
+import IconsDocs from './docs/component/IconsDocs.vue'
+import InlineDialogDocs from './docs/component/InlineDialogDocs.vue'
+import LozengesDocs from './docs/component/LozengesDocs.vue'
+import MessagesDocs from './docs/component/MessagesDocs'
+import NavigationDocs from './docs/component/NavigationDocs.vue'
+import ProgressIndicatorDocs from './docs/component/ProgressIndicatorDocs.vue'
+import ProgressTrackerDocs from './docs/component/ProgressTrackerDocs.vue'
+import TabsDocs from './docs/component/TabsDocs.vue'
+import ToggleButtonDocs from './docs/component/ToggleButtonDocs.vue'
+import TooltipDocs from './docs/component/TooltipDocs'
 
 import VueHighlightJS from 'vue-highlightjs'
 import VueRouter from 'vue-router'
 
-Vue.use(VueHighlightJS)
-Vue.use(VueAui)
-Vue.use(VueRouter)
+Vue.use(VueHighlightJS);
+Vue.use(VueAui);
+Vue.use(VueRouter);
 
 Vue.component('api-table', ApiTable);
 
-Vue.config.ignoredElements = ['wrapper', 'aui-badge']
+Vue.config.ignoredElements = ['wrapper', 'aui-badge', 'aui-spinner'];
 
 const router = new VueRouter({
   routes: [
     {path: '/', component: Welcome},
     {
-      path: '/components/avatars', component: Avatars,
+      path: '/components/avatars', component: AvatarsDocs,
       meta: {
         componentName: 'AvatarsDocs',
         docsName: 'Avatars',
@@ -57,7 +58,7 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/components/badges', component: Badges,
+      path: '/components/badges', component: BadgesDocs,
       meta: {
         componentName: 'BadgesDocs',
         docsName: 'Badges',
@@ -65,7 +66,7 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/components/buttons', component: Buttons,
+      path: '/components/buttons', component: ButtonsDocs,
       meta: {
         componentName: 'ButtonsDocs',
         docsName: 'Buttons',
@@ -73,7 +74,7 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/components/select2', component: Select2,
+      path: '/components/select2', component: Select2Docs,
       meta: {
         componentName: 'Select2Docs',
         docsName: 'AUI Select2',
@@ -81,7 +82,7 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/components/dialog2', component: Dialog2,
+      path: '/components/dialog2', component: Dialog2Docs,
       meta: {
         componentName: 'Dialog2Docs',
         docsName: 'Dialog 2',
@@ -89,7 +90,7 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/components/icons', component: Icons,
+      path: '/components/icons', component: IconsDocs,
       meta: {
         componentName: 'IconsDocs',
         docsName: 'Icons',
@@ -97,7 +98,7 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/components/inline-dialog', component: InlineDialog,
+      path: '/components/inline-dialog', component: InlineDialogDocs,
       meta: {
         componentName: 'InlineDialogDocs',
         docsName: 'Inline Dialog',
@@ -105,7 +106,7 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/components/lozenges', component: Lozenges,
+      path: '/components/lozenges', component: LozengesDocs,
       meta: {
         componentName: 'LozengesDocs',
         docsName: 'Lozenges',
@@ -113,7 +114,7 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/components/messages', component: Messages,
+      path: '/components/messages', component: MessagesDocs,
       meta: {
         componentName: 'MessagesDocs',
         docsName: 'Messages',
@@ -121,7 +122,7 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/components/navigation', component: Navigation,
+      path: '/components/navigation', component: NavigationDocs,
       meta: {
         componentName: 'NavigationDocs',
         docsName: 'Navigation',
@@ -129,7 +130,7 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/components/progress-indicator', component: ProgressIndicator,
+      path: '/components/progress-indicator', component: ProgressIndicatorDocs,
       meta: {
         componentName: 'ProgressIndicatorDocs',
         docsName: 'Progress Indicator',
@@ -137,7 +138,15 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/components/spinner', component: AuiSpinner,
+      path: '/components/progress-tracker', component: ProgressTrackerDocs,
+      meta: {
+        componentName: 'ProgressTrackerDocs',
+        docsName: 'Progress Tracker',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/progress-tracker.html'
+      }
+    },
+    {
+      path: '/components/spinner', component: SpinnerDocs,
       meta: {
         componentName: 'AuiSpinnerDocs',
         docsName: 'Spinner',
@@ -145,7 +154,7 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/components/tabs', component: Tabs,
+      path: '/components/tabs', component: TabsDocs,
       meta: {
         componentName: 'TabsDocs',
         docsName: 'Tabs',
@@ -153,7 +162,7 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/components/toggle-button', component: ToggleButton,
+      path: '/components/toggle-button', component: ToggleButtonDocs,
       meta: {
         componentName: 'ToggleButtonDocs',
         docsName: 'Toggle Button',
@@ -161,7 +170,7 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/components/tooltip', component: Tooltip,
+      path: '/components/tooltip', component: TooltipDocs,
       meta: {
         componentName: 'TooltipDocs',
         docsName: 'Tooltips',
@@ -169,7 +178,7 @@ const router = new VueRouter({
       }
     }
   ]
-})
+});
 
 router.afterEach((to, from) => {
   if (location.hostname !== 'localhost') {
