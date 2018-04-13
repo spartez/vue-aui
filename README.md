@@ -58,5 +58,11 @@ export default {
 <script src="path/to/dist/vue-aui.js"></script>
 ```
 
+Use `VueAui.default` to install the plugin into vuejs, if you imported vue-aui using a script tag:
+
+```html
+Vue.use(VueAui.default);
+```
+
 ### CodePen demo starter:
 https://codepen.io/dskrodzki/pen/LeGBme
