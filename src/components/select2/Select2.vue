@@ -1,5 +1,5 @@
 <template>
-  <va-select2-single v-if="!multiple"
+  <select2-single v-if="!multiple"
                      ref="select"
                      :allow-clear="allowClear"
                      :dropdown-auto-width="dropdownAutoWidth"
@@ -30,9 +30,9 @@
       <template v-else>{{option.text}}</template>
     </template>
 
-  </va-select2-single>
+  </select2-single>
 
-  <va-select2-multi v-else
+  <select2-multi v-else
                     ref="select"
                     :disabled="disabled"
                     :dropdown-auto-width="dropdownAutoWidth"
@@ -64,10 +64,13 @@
       <template v-else>{{option.text}}</template>
     </template>
 
-  </va-select2-multi>
+  </select2-multi>
 </template>
 
 <script>
+  import Select2Single from './Select2Single'
+  import Select2Multi from './Select2Multi'
+
   export default {
     props: {
       multiple: Boolean,
@@ -92,6 +95,8 @@
       sortable: Boolean,
       tagsMode: Boolean,
     },
+
+    components: {Select2Single, Select2Multi},
 
     created() {
       this.$on('dataChanged', () => this.$refs.select.$emit('dataChanged'));
