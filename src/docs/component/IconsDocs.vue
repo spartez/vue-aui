@@ -21,7 +21,7 @@
     </div>
 
     <div class="aui-item">
-      <api-table name="aui-avatar" :props="[
+      <api-table name="va-icon" :props="[
       {name: 'size', type: 'String', default: 'medium', description: 'Sets proper size aligned with AUI guidelines.'},
     ]">
       </api-table>

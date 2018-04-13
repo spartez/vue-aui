@@ -11,7 +11,7 @@
     <h2>Demo</h2>
     <p>
 
-      <iframe height='305' scrolling='no' title='vue-aui demo'
+      <iframe height='400' scrolling='no' title='vue-aui demo'
               src='//codepen.io/damienix/embed/woXRpP/?height=305&theme-id=light&default-tab=html,result&embed-version=2'
               frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a
         href='http://codepen.io/damienix/pen/woXRpP/'>vue-aui demo</a> by Damian Skrodzki (<a

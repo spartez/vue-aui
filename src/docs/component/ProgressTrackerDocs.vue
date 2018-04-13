@@ -34,11 +34,11 @@ F
     </div>
 
     <div class="aui-item">
-      <api-table name="aui-progress-tracker" :slots="[
+      <api-table name="va-progress-tracker" :slots="[
         {name: 'default', description: 'Container for aui-progress-tracker-step elements.'},
       ]">
       </api-table>
-      <api-table name="aui-progress-tracker-step" :props="[
+      <api-table name="va-progress-tracker-step" :props="[
       {name: 'active', type: 'Boolean', default: 'false', description: 'Set progress to this step.'},
     ]" :slots="[
       {name: 'default', description: 'Step label content.'},
