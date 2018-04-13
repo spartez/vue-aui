@@ -68,9 +68,7 @@ export {
   VaNavTab,
   VaNavVerticalRouter,
   VaSelect2,
-  VaSelect2Multi,
   VaSelect2Option,
-  VaSelect2Single,
   VaTab,
   VaTabs,
   VaAvatar,
@@ -158,9 +156,7 @@ function registerAll(Vue) {
   Vue.component('va-nav-vertical', VaNavVerticalRouter);
 
   Vue.component('va-select2', VaSelect2);
-  Vue.component('va-select2-multi', VaSelect2Multi);
   Vue.component('va-select2-option', VaSelect2Option);
-  Vue.component('va-select2-single', VaSelect2Single);
   Vue.component('va-tabs', VaTabs);
   Vue.component('va-tab', VaTab);
 
