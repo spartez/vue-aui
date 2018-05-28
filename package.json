@@ -29,6 +29,7 @@
   "main": "dist/static/js/vue-aui.js",
   "unpkg": "dist/static/js/vue-aui.js",
   "dependencies": {
+    "prettier": "^1.12.1",
     "vue": "^2.5.2"
   },
   "peerDependencies": {
