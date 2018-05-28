@@ -137,6 +137,7 @@
       {name: 'dropdown-auto-width', type: 'Boolean', default: 'false', description: 'Attempts to automatically size the width of the dropdown based on content inside.'},
       {name: 'init-selection', type: 'Function', description: 'Used with query. Essentially this is an id->object mapping function.'},
       {name: 'maximum-input-length', type: 'Number', description: 'Maximum number of characters that can be entered for an input.'},
+      {name: 'maximum-selection-size', type: 'Number', badges:['multiple'], description: 'Maximum number of items that can be selected.'},
       {name: 'minimum-input-length', type: 'Number', description: 'Number of characters necessary to start a search.'},
       {name: 'minimum-results-for-search', type: 'Number', badges:['single'], description: 'The minimum number of results that must be initially populated in order to keep the search field.'},
       {name: 'multiple', type: 'Boolean', description: 'Controls single or multi select. Multi-select uses Array in v-model (:value, @input).'},
