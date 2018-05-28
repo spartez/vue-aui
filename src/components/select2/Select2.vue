@@ -39,7 +39,6 @@
                     :init-selection="initSelection"
                     :locked="locked"
                     :maximum-input-length="maximumInputLength"
-                    :maximum-selection-size="maximumSelectionSize"
                     :minimum-input-length="minimumInputLength"
                     :placeholder="placeholder"
                     :sortable="sortable"
@@ -82,7 +81,6 @@
       dropdownAutoWidth: Boolean,
       initSelection: Function,
       maximumInputLength: Number,
-      maximumSelectionSize: Number,
       minimumInputLength: Number,
       placeholder: String,
       query: Function,
