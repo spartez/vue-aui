@@ -83,6 +83,7 @@
       dropdownAutoWidth: Boolean,
       initSelection: Function,
       maximumInputLength: Number,
+      maximumSelectionSize: Number,
       minimumInputLength: Number,
       placeholder: String,
       query: Function,
