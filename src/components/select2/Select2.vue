@@ -36,6 +36,7 @@
                     ref="select"
                     :disabled="disabled"
                     :dropdown-auto-width="dropdownAutoWidth"
+                    :format-selection-too-big="formatSelectionTooBig"
                     :init-selection="initSelection"
                     :locked="locked"
                     :maximum-input-length="maximumInputLength"
@@ -82,7 +83,6 @@
       dropdownAutoWidth: Boolean,
       initSelection: Function,
       maximumInputLength: Number,
-      maximumSelectionSize: Number,
       minimumInputLength: Number,
       placeholder: String,
       query: Function,
@@ -93,7 +93,9 @@
       minimumResultsForSearch: Number,
 
       // From multi select
+      formatSelectionTooBig: Function,
       locked: Array,
+      maximumSelectionSize: Number,
       sortable: Boolean,
       tagsMode: Boolean,
     },
