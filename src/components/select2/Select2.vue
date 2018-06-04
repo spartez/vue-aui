@@ -20,14 +20,14 @@
       <slot v-if="$scopedSlots.formatResult"
             name="formatResult"
             :data="option.data" :value="option.value" :text="option.text"/>
-      <template v-else>{{option.text}}</template>
+      <template v-else>{{option.text ? option.text.toString() : ''}}</template>
     </template>
 
     <template slot="formatSelection" slot-scope="option">
       <slot v-if="$scopedSlots.formatSelection"
             name="formatSelection"
             :data="option.data" :value="option.value" :text="option.text"/>
-      <template v-else>{{option.text}}</template>
+      <template v-else>{{option.text ? option.text.toString() : ''}}</template>
     </template>
 
   </select2-single>
@@ -56,14 +56,14 @@
       <slot v-if="$scopedSlots.formatResult"
             name="formatResult"
             :data="option.data" :value="option.value" :text="option.text"/>
-      <template v-else>{{option.text}}</template>
+      <template v-else>{{option.text ? option.text.toString() : ''}}</template>
     </template>
 
     <template slot="formatSelection" slot-scope="option">
       <slot v-if="$scopedSlots.formatSelection"
             name="formatSelection"
             :data="option.data" :value="option.value" :text="option.text"/>
-      <template v-else>{{option.text}}</template>
+      <template v-else>{{option.text ? option.text.toString() : ''}}</template>
     </template>
 
   </select2-multi>
