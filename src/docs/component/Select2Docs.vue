@@ -133,6 +133,7 @@
     <div class="aui-item">
       <api-table :name="['va-select2']" :props="[
       {name: 'allow-clear', type: 'Boolean', badges:['single'], description: 'Show clear button to remove current value.'},
+      {name: 'create-search-choice', type: 'Function', description: 'Builds an item for custom input or returns null or undefined for invalid input.'},
       {name: 'disabled', type: 'Boolean', default: 'false', description: 'Disables the select.'},
       {name: 'dropdown-auto-width', type: 'Boolean', default: 'false', description: 'Attempts to automatically size the width of the dropdown based on content inside.'},
       {name: 'format-selection-too-big', type: 'Function', badges:['multiple'], description: 'Provides a message when number of selected items exceeds maximum-selection-size. Takes current size as an argument.'},
