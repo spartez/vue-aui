@@ -35,7 +35,7 @@
 
   <select2-multi v-else
                     ref="select"
-                    :createSearchChoice="createSearchChoice"
+                    :create-search-choice="createSearchChoice"
                     :disabled="disabled"
                     :dropdown-auto-width="dropdownAutoWidth"
                     :format-selection-too-big="formatSelectionTooBig"
