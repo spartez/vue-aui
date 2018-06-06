@@ -2,6 +2,7 @@
   <select2-single v-if="!multiple"
                      ref="select"
                      :allow-clear="allowClear"
+                     :create-search-choice="createSearchChoice"
                      :dropdown-auto-width="dropdownAutoWidth"
                      :disabled="disabled"
                      :init-selection="initSelection"
@@ -34,6 +35,7 @@
 
   <select2-multi v-else
                     ref="select"
+                    :createSearchChoice="createSearchChoice"
                     :disabled="disabled"
                     :dropdown-auto-width="dropdownAutoWidth"
                     :format-selection-too-big="formatSelectionTooBig"
@@ -79,6 +81,7 @@
       value: [String, Number, Array],
 
       // From mixin
+      createSearchChoice: Function,
       disabled: Boolean,
       dropdownAutoWidth: Boolean,
       initSelection: Function,

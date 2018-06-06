@@ -5,6 +5,7 @@ import sanitizeHtml from 'sanitize-html'
 export default {
 
   props: {
+    createSearchChoice: Function,
     disabled: Boolean,
     dropdownAutoWidth: Boolean,
     initSelection: Function,
@@ -24,6 +25,7 @@ export default {
   computed: {
     commonOptions() {
       return {
+        createSearchChoice: this.createSearchChoice,
         dropdownAutoWidth: this.dropdownAutoWidth,
         formatResult: option => this.renderTemplate(option, this.$scopedSlots.formatResult),
         formatSelection: option => this.renderTemplate(option, this.$scopedSlots.formatSelection),
