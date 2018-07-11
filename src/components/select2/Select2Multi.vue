@@ -55,7 +55,9 @@
       }
 
       if (this.tagsMode) {
-        options.formatNoMatches = () => "Type to add a value"
+        if (!options.formatNoMatches) {
+          options.formatNoMatches = () => "Type to add a value"
+        }
         options.tags = () => this.options
       } else {
         options.multiple = true
