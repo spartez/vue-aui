@@ -5,6 +5,7 @@
                      :create-search-choice="createSearchChoice"
                      :dropdown-auto-width="dropdownAutoWidth"
                      :disabled="disabled"
+                     :format-no-matches="formatNoMatches"
                      :init-selection="initSelection"
                      :maximum-input-length="maximumInputLength"
                      :minimum-input-length="minimumInputLength"
@@ -38,6 +39,7 @@
                     :create-search-choice="createSearchChoice"
                     :disabled="disabled"
                     :dropdown-auto-width="dropdownAutoWidth"
+                    :format-no-matches="formatNoMatches"
                     :format-selection-too-big="formatSelectionTooBig"
                     :init-selection="initSelection"
                     :locked="locked"
@@ -84,6 +86,7 @@
       createSearchChoice: Function,
       disabled: Boolean,
       dropdownAutoWidth: Boolean,
+      formatNoMatches: Function,
       initSelection: Function,
       maximumInputLength: Number,
       minimumInputLength: Number,

@@ -8,6 +8,7 @@ export default {
     createSearchChoice: Function,
     disabled: Boolean,
     dropdownAutoWidth: Boolean,
+    formatNoMatches: Function,
     initSelection: Function,
     maximumInputLength: Number,
     minimumInputLength: Number,
@@ -27,6 +28,7 @@ export default {
       return {
         createSearchChoice: this.createSearchChoice,
         dropdownAutoWidth: this.dropdownAutoWidth,
+        formatNoMatches: this.formatNoMatches,
         formatResult: option => this.renderTemplate(option, this.$scopedSlots.formatResult),
         formatSelection: option => this.renderTemplate(option, this.$scopedSlots.formatSelection),
         initSelection: this.initSelection,
