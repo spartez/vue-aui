@@ -69,6 +69,11 @@
 
     methods: {
       setupSorting() {
+        if (!AJS.$.fn.sortable) {
+          console.warn("jQuery sortable not available, skipping sortable option.");
+          return;
+        }
+
         this.$input.prev('div').find('.select2-choices').sortable({
           containment: 'parent',
           start: () => this.$input.auiSelect2("onSortStart"),
