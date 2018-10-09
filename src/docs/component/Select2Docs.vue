@@ -133,10 +133,14 @@
     <div class="aui-item">
       <api-table :name="['va-select2']" :props="[
       {name: 'allow-clear', type: 'Boolean', badges:['single'], description: 'Show clear button to remove current value.'},
+      {name: 'create-search-choice', type: 'Function', description: 'Builds an item for custom input or returns null or undefined for invalid input.'},
       {name: 'disabled', type: 'Boolean', default: 'false', description: 'Disables the select.'},
       {name: 'dropdown-auto-width', type: 'Boolean', default: 'false', description: 'Attempts to automatically size the width of the dropdown based on content inside.'},
+      {name: 'format-no-matches', type: 'Function', description: 'Function used to render the \'No matches\' message.'},
+      {name: 'format-selection-too-big', type: 'Function', badges:['multiple'], description: 'Provides a message when number of selected items exceeds maximum-selection-size. Takes current size as an argument.'},
       {name: 'init-selection', type: 'Function', description: 'Used with query. Essentially this is an id->object mapping function.'},
       {name: 'maximum-input-length', type: 'Number', description: 'Maximum number of characters that can be entered for an input.'},
+      {name: 'maximum-selection-size', type: 'Number', badges:['multiple'], description: 'Maximum number of items that can be selected.'},
       {name: 'minimum-input-length', type: 'Number', description: 'Number of characters necessary to start a search.'},
       {name: 'minimum-results-for-search', type: 'Number', badges:['single'], description: 'The minimum number of results that must be initially populated in order to keep the search field.'},
       {name: 'multiple', type: 'Boolean', description: 'Controls single or multi select. Multi-select uses Array in v-model (:value, @input).'},

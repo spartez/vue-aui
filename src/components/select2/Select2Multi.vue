@@ -14,6 +14,8 @@
     mixins: [auiSelect2Mixin],
 
     props: {
+      formatSelectionTooBig: Function,
+      maximumSelectionSize: Number,
       sortable: Boolean,
       tagsMode: Boolean,
       value: Array,
@@ -53,12 +55,17 @@
       }
 
       if (this.tagsMode) {
-        options.formatNoMatches = () => "Type to add a value"
+        if (!options.formatNoMatches) {
+          options.formatNoMatches = () => "Type to add a value"
+        }
         options.tags = () => this.options
       } else {
         options.multiple = true
         options.data = () => ({results: this.options})
       }
+
+      options.formatSelectionTooBig = this.formatSelectionTooBig
+      options.maximumSelectionSize = this.maximumSelectionSize
 
       this.$input.auiSelect2(options)
 
