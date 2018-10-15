@@ -1,6 +1,9 @@
 <template>
-  <li :class="{'aui-nav-selected': this.selected}">
-    <a :href="href">{{name}}</a>
+  <li class="nav-item" :class="{'aui-nav-selected': this.selected}">
+    <a :href="href">
+      <va-icon class="nav-item-icon" v-if="icon">{{ icon }}</va-icon>
+      {{name}}
+    </a>
   </li>
 </template>
 
@@ -9,7 +12,8 @@
     props: {
       name: String,
       href: String,
-      selected: Boolean
+      selected: Boolean,
+      icon: String
     }
   }
 </script>
@@ -17,5 +21,9 @@
 <style scoped>
   a {
     cursor: pointer;
+  }
+
+  .nav-item-icon {
+    padding-right: .5em;
   }
 </style>

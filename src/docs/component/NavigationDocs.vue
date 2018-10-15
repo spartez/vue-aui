@@ -12,6 +12,7 @@
             <va-nav-group>
               <va-nav-item name="Item 3" href="#"></va-nav-item>
               <va-nav-item name="Item 4"></va-nav-item>
+              <va-nav-item icon="edit" name="Edit"></va-nav-item>
             </va-nav-group>
           </va-nav-vertical>
         </va-tab>
@@ -62,6 +63,7 @@
       {name: 'name', type: 'String', description: 'Item name on the navigation list.'},
       {name: 'selected', type: 'Boolean', default: 'false', description: 'Renderes selected item.'},
       {name: 'href', type: 'String', description: 'Rendered link href.'},
+      {name: 'icon', type: 'String', description: 'Add an icon left of the name.'},
     ]" :slots="[
       {name: 'default', description: 'Used in tabs-mode. Tab content.'},
     ]">
