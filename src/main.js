@@ -34,6 +34,7 @@ import ProgressTrackerDocs from './docs/component/ProgressTrackerDocs.vue'
 import TabsDocs from './docs/component/TabsDocs.vue'
 import ToggleButtonDocs from './docs/component/ToggleButtonDocs.vue'
 import TooltipDocs from './docs/component/TooltipDocs'
+import TablesDocs from './docs/component/TablesDocs'
 
 import VueHighlightJS from 'vue-highlightjs'
 import VueRouter from 'vue-router'
@@ -151,6 +152,14 @@ const router = new VueRouter({
         componentName: 'AuiSpinnerDocs',
         docsName: 'Spinner',
         auiLink: 'https://docs.atlassian.com/aui/latest/docs/spinner.html'
+      }
+    },
+    {
+      path: '/components/tables', component: TablesDocs,
+      meta: {
+        componentName: 'TablesDocs',
+        docsName: 'Tables',
+        auiLink: 'https://docs.atlassian.com/aui/latest/docs/tables.html'
       }
     },
     {
