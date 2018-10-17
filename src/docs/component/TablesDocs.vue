@@ -19,13 +19,45 @@
           <pre v-highlightjs><code class="xml" v-text="code2"></code></pre>
         </va-tab>
       </va-tabs>
+      <h3>Using markups</h3>
+      <va-tabs>
+        <va-tab name="Example">
+          <va-table>
+            <thead>
+              <tr>
+                <th v-for="(header, keyH) in headers" :key="keyH" :id="header.key">{{ header.name }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(item, keyV) in items" :key="keyV">
+                <td v-for="(value, keyI) in Object.values(item)" :key="keyI" :headers="Object.keys(item)[keyI]">{{ value }}</td>
+              </tr>
+            </tbody>
+            <tfoot slot="footer">
+              <tr>
+                <td v-for="(footer, keyF) in (headers.length - 2)" :key="keyF"></td>
+                <td><strong>Total</strong></td>
+                <td><strong>{{ items.length }}</strong></td>
+              </tr>
+            </tfoot>
+          </va-table>
+        </va-tab>
+        <va-tab name="Code">
+          <pre v-highlightjs><code class="xml" v-text="code3"></code></pre>
+        </va-tab>
+      </va-tabs>
     </div>
     <div class="aui-item">
       <api-table name="va-table" :props="[
         {name: 'headers', type: 'Array', description: 'Array of strings for the table headers.'},
         {name: 'items', type: 'Array', description: 'Array of objects. Must be in the same order as the headers.'},
         {name: 'list', type: 'Boolean', default: 'false', description: 'If true it will set the aui-table-list class.'}
-      ]">
+      ]"
+      :slots="[
+        {name: 'default', description: 'Optional. In case you want to create the markups yourself. It\'\s necessary when you don\'\t pass the items and headers prop.'},
+        {name: 'footer', description: 'Footer of the table.'}
+      ]"
+      >
       </api-table>
     </div>
   </div>
@@ -36,10 +68,22 @@
     data() {
       return {
         headers: [
-            '#',
-            'First name',
-            'Last name',
-            'Username'
+            {
+              name: '#',
+              key: 'uuid'
+            },
+            {
+              name: 'First name',
+              key: 'firstName'
+            },
+            {
+              name: 'Username',
+              key: 'userName'
+            },
+            {
+              name: 'Last name',
+              key: 'lastName'
+            }
         ],
         items: [
           {
@@ -49,20 +93,39 @@
             userName: 'mbond'
           },
           {
-            uuid: '2',
             firstName: 'Ross',
-            lastName: 'Chaldecott',
-            userName: 'rchaldecott'
+            userName: 'rchaldecott',
+            uuid: '2',
+            lastName: 'Chaldecott'
           },
           {
-            uuid: '3',
-            firstName: 'Henry',
             lastName: 'Tapia',
-            userName: 'htapia'
+            firstName: 'Henry',
+            userName: 'htapia',
+            uuid: '3'
           }
         ],
         code: `<va-table :headers="headers" :items="items"></va-table>`,
-        code2: `<va-table :headers="headers" :items="items" list></va-table>`
+        code2: `<va-table :headers="headers" :items="items" list></va-table>`,
+        code3: `<va-table>
+  <thead>
+    <tr>
+      <th v-for="(header, keyH) in headers" :key="keyH" :id="header.key">{{ header.name }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for="(item, keyV) in items" :key="keyV">
+      <td v-for="(value, keyI) in Object.values(item)" :key="keyI" :headers="Object.keys(item)[keyI]">{{ value }}</td>
+    </tr>
+  </tbody>
+  <tfoot slot="footer">
+    <tr>
+      <td v-for="(footer, keyF) in (headers.length - 2)" :key="keyF"></td>
+      <td><strong>Total</strong></td>
+      <td><strong>{{ items.length }}</strong></td>
+    </tr>
+  </tfoot>
+</va-table>`
       }
     }
   }
