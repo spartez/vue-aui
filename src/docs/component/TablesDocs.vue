@@ -30,7 +30,7 @@
             </thead>
             <tbody>
               <tr v-for="(item, keyV) in items" :key="keyV">
-                <td v-for="(value, keyI) in Object.values(item)" :key="keyI" :headers="Object.keys(item)[keyI]">{{ value }}</td>
+                <td v-for="(header, keyI) in headers" :key="keyI" :headers="header.key">{{ item[header.key] }}</td>
               </tr>
             </tbody>
             <tfoot slot="footer">
@@ -87,22 +87,22 @@
         ],
         items: [
           {
-            uuid: '1',
-            firstName: 'Matt',
             lastName: 'Bond',
-            userName: 'mbond'
+            firstName: 'Matt',
+            userName: 'mbond',
+            uuid: '1'
           },
           {
-            firstName: 'Ross',
-            userName: 'rchaldecott',
             uuid: '2',
-            lastName: 'Chaldecott'
+            firstName: 'Ross',
+            lastName: 'Chaldecott',
+            userName: 'rchaldecott'
           },
           {
-            lastName: 'Tapia',
+            uuid: '3',
             firstName: 'Henry',
-            userName: 'htapia',
-            uuid: '3'
+            lastName: 'Tapia',
+            userName: 'htapia'
           }
         ],
         code: `<va-table :headers="headers" :items="items"></va-table>`,
@@ -115,7 +115,7 @@
   </thead>
   <tbody>
     <tr v-for="(item, keyV) in items" :key="keyV">
-      <td v-for="(value, keyI) in Object.values(item)" :key="keyI" :headers="Object.keys(item)[keyI]">{{ value }}</td>
+      <td v-for="(header, keyI) in headers" :key="keyI" :headers="header.key">{{ item[header.key] }}</td>
     </tr>
   </tbody>
   <tfoot slot="footer">

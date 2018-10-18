@@ -7,7 +7,7 @@
     </thead>
     <tbody v-if="hasItems">
       <tr v-for="(item, keyV) in items" :key="keyV">
-        <td v-for="(value, keyI) in Object.values(item)" :key="keyI" :headers="Object.keys(item)[keyI]">{{ value }}</td>
+        <td v-for="(header, keyI) in headers" :key="keyI" :headers="header.key">{{ item[header.key] }}</td>
       </tr>
     </tbody>
     <slot v-else></slot>
