@@ -8,7 +8,7 @@ export default {
     const sizeClass = 'aui-icon-' + this.size;
     return createComponent('span', {
       class: ['aui-icon', iconClass, sizeClass],
-      style: `color: ${this.color}`
+      style: `color: ${this.vaColor}`
     })
   },
 
@@ -20,7 +20,7 @@ export default {
       },
       default: 'small'
     },
-    color: String
+    vaColor: String
   },
 
   computed: {

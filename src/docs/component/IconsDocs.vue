@@ -23,13 +23,13 @@
       <va-tabs>
         <va-tab name="Example">
           <p>
-            <va-icon color="orange" size="large">like</va-icon>
-            <va-icon color="green" size="large">add</va-icon>
-            <va-icon color="red" size="large">bitbucket</va-icon>
-            <va-icon color="rgb(128, 0, 128)" size="large">vid-play</va-icon>
-            <va-icon color="rgba(255, 0, 255, .5)" size="large">pause</va-icon>
-            <va-icon color="hsl(240, 100%, 27%)" size="large">star</va-icon>
-            <va-icon color="#00e5ff" size="large">space-personal</va-icon>
+            <va-icon va-color="orange" size="large">like</va-icon>
+            <va-icon va-color="green" size="large">add</va-icon>
+            <va-icon va-color="red" size="large">bitbucket</va-icon>
+            <va-icon va-color="rgb(128, 0, 128)" size="large">vid-play</va-icon>
+            <va-icon va-color="rgba(255, 0, 255, .5)" size="large">pause</va-icon>
+            <va-icon va-color="hsl(240, 100%, 27%)" size="large">star</va-icon>
+            <va-icon va-color="#00e5ff" size="large">space-personal</va-icon>
           </p>
         </va-tab>
         <va-tab name="Code">
@@ -41,7 +41,7 @@
     <div class="aui-item">
       <api-table name="va-icon" :props="[
       {name: 'size', type: 'String', default: 'medium', description: 'Sets proper size aligned with AUI guidelines.'},
-      {name: 'color', type: 'String', default: '', description: 'Sets a custom color. Accepts all color values available.'},
+      {name: 'va-color', type: 'String', default: '', description: 'Sets a custom color. Accepts all color values available.'},
     ]">
       </api-table>
     </div>
@@ -59,13 +59,13 @@
 <va-icon size="large">like</va-icon>
 <va-icon size="large">user</va-icon>
 <va-icon size="large">approve</va-icon>`,
-        code2: `<va-icon color="orange" size="large">like</va-icon>
-<va-icon color="green" size="large">add</va-icon>
-<va-icon color="red" size="large">bitbucket</va-icon>
-<va-icon color="rgb(128, 0, 128)" size="large">vid-play</va-icon>
-<va-icon color="rgba(255, 0, 255, .5)" size="large">pause</va-icon>
-<va-icon color="hsl(240, 100%, 27%)" size="large">star</va-icon>
-<va-icon color="#00e5ff" size="large">space-personal</va-icon>`,
+        code2: `<va-icon va-color="orange" size="large">like</va-icon>
+<va-icon va-color="green" size="large">add</va-icon>
+<va-icon va-color="red" size="large">bitbucket</va-icon>
+<va-icon va-color="rgb(128, 0, 128)" size="large">vid-play</va-icon>
+<va-icon va-color="rgba(255, 0, 255, .5)" size="large">pause</va-icon>
+<va-icon va-color="hsl(240, 100%, 27%)" size="large">star</va-icon>
+<va-icon va-color="#00e5ff" size="large">space-personal</va-icon>`,
       }
     }
   }
