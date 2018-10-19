@@ -28,7 +28,7 @@
       label: String,
       tooltipOn: String,
       tooltipOff: String,
-      color: String
+      vaColor: String
     },
     data: () => ({
       opacity: false
@@ -41,7 +41,7 @@
       this.$refs.toggle.addEventListener('change', this.emitChange);
       this.$nextTick(() => this.$refs.toggle.busy = this.busy);
 
-      if (this.color) {
+      if (this.vaColor) {
         this.changeColor();
       }
     },
@@ -51,7 +51,7 @@
         const toggleOn = this.$el.querySelector('.aui-toggle-input:enabled + .aui-toggle-view');
 
         if (toggleOn && this.$refs.toggle.checked) {
-          toggleOn.style.backgroundColor = this.color;
+          toggleOn.style.backgroundColor = this.VaColor;
 
           return;
         }
