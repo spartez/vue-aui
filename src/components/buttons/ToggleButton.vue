@@ -2,10 +2,6 @@
     <span>
         <aui-label v-if="label" :for="id">{{ label }}</aui-label>
         <aui-toggle ref="toggle" :id="id"
-                    @mouseover="opacity = true"
-                    @mouseout="opacity = false"
-                    :style="{'opacity': opacity ? .7 : 1}"
-                    style="transition: 100ms all linear"
                     :tooltip-on="tooltipOn || 'Enabled'" :tooltip-off="tooltipOff || 'Disabled'"
                     :disabled="disabled"
                     :label="label || ''"
@@ -49,9 +45,8 @@
     methods: {
       changeColor() {
         const toggleOn = this.$el.querySelector('.aui-toggle-input:enabled + .aui-toggle-view');
-
         if (toggleOn && this.$refs.toggle.checked) {
-          toggleOn.style.backgroundColor = this.VaColor;
+          toggleOn.style.backgroundColor = this.vaColor;
 
           return;
         }
@@ -71,3 +66,13 @@
     }
   }
 </script>
+
+<style>
+.aui-toggle-input + .aui-toggle-view {
+  transition: 100ms all linear;
+}
+
+.aui-toggle:not([disabled]):not([busy]):hover .aui-toggle-input:enabled + .aui-toggle-view {
+  opacity: .7;
+}
+</style>
