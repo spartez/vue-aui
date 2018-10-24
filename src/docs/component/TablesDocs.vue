@@ -49,13 +49,13 @@
     </div>
     <div class="aui-item">
       <api-table name="va-table" :props="[
-        {name: 'headers', type: 'Array', description: 'Array of strings for the table headers.'},
-        {name: 'items', type: 'Array', description: 'Array of objects. Must be in the same order as the headers.'},
+        {name: 'headers', type: 'Array', description: 'Array of objects for the table\'\s header. Each object must contain a name and a key property, both strings. This key property will bind the column to the respective header, so be sure to pass the same name.'},
+        {name: 'items', type: 'Array', description: 'Array of objects for the table\'\s body.'},
         {name: 'list', type: 'Boolean', default: 'false', description: 'If true it will set the aui-table-list class.'}
       ]"
       :slots="[
         {name: 'default', description: 'Optional. In case you want to create the markups yourself. It\'\s necessary when you don\'\t pass the items and headers prop.'},
-        {name: 'footer', description: 'Footer of the table.'}
+        {name: 'footer', description: 'Optional. Footer of the table.'}
       ]"
       >
       </api-table>
