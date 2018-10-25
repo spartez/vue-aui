@@ -28,6 +28,7 @@ import VaProgressTrackerStep from './components/progress-tracker/ProgressTracker
 import VaSpinner from './components/Spinner.vue'
 import VaTooltip from './directives/Tooltip'
 import VaInlineDialog from './components/InlineDialog'
+import VaTable from './components/Table'
 
 // Deprecated exports
 export {
@@ -55,6 +56,7 @@ export {
   VaSpinner as AuiSpinner,
   VaTooltip as AuiTooltip,
   VaInlineDialog as AuiInlineDialog,
+  VaTable as AuiTable
 }
 
 export {
@@ -81,7 +83,8 @@ export {
   VaProgressTrackerStep,
   VaSpinner,
   VaTooltip,
-  VaInlineDialog
+  VaInlineDialog,
+  VaTable
 };
 
 function deprecated(component) {
@@ -139,6 +142,7 @@ function registerAllDeprecated(Vue) {
   Vue.component('aui-progress-indicator', deprecated(VaProgressIndicator));
   Vue.component('aui-progress-tracker', deprecated(VaProgressTracker));
   Vue.component('aui-progress-tracker-step', deprecated(VaProgressTrackerStep));
+  Vue.component('aui-table', deprecated(VaTable));
 
   Vue.directive('aui-tooltip', deprecated(VaTooltip));
 }
@@ -170,6 +174,7 @@ function registerAll(Vue) {
   Vue.component('va-progress-tracker-step', VaProgressTrackerStep);
   Vue.component('va-spinner', VaSpinner);
   Vue.component('va-inline-dialog', VaInlineDialog);
+  Vue.component('va-table', VaTable);
 
   Vue.directive('va-tooltip', VaTooltip);
 }
