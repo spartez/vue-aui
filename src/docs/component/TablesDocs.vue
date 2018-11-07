@@ -19,6 +19,15 @@
           <pre v-highlightjs><code class="xml" v-text="code2"></code></pre>
         </va-tab>
       </va-tabs>
+      <h3>Sortable prop</h3>
+      <va-tabs>
+        <va-tab name="Example">
+          <va-table :headers="headers" :items="items" sortable></va-table>
+        </va-tab>
+        <va-tab name="Code">
+          <pre v-highlightjs><code class="xml" v-text="code3"></code></pre>
+        </va-tab>
+      </va-tabs>
       <h3>Using markups</h3>
       <va-tabs>
         <va-tab name="Example">
@@ -43,15 +52,17 @@
           </va-table>
         </va-tab>
         <va-tab name="Code">
-          <pre v-highlightjs><code class="xml" v-text="code3"></code></pre>
+          <pre v-highlightjs><code class="xml" v-text="code4"></code></pre>
         </va-tab>
       </va-tabs>
     </div>
     <div class="aui-item">
       <api-table name="va-table" :props="[
-        {name: 'headers', type: 'Array', description: 'Array of objects for the table\'\s header. Each object must contain a name and a key property, both strings. This key property will bind the column to the respective header, so be sure to pass the same name.'},
+        {name: 'headers', type: 'Array', description: 'Array of objects for the table\'\s header. Each object must contain a name and a key property, both strings. This key property will bind the column to the respective header, so be sure to pass the same name. If sortable is true, but you don\'t want to sort a especific header, you can pass the sortable false attribute.'},
         {name: 'items', type: 'Array', description: 'Array of objects for the table\'\s body.'},
-        {name: 'list', type: 'Boolean', default: 'false', description: 'If true it will set the aui-table-list class.'}
+        {name: 'list', type: 'Boolean', default: 'false', description: 'If true it will set the aui-table-list class.'},
+        {name: 'sortable', type: 'Boolean', default: 'false', description: 'If true the table headers can be clicked and the data is sortable.'},
+        {name: 'sortableCallback', type: 'Function', default: '', description: 'Can be used when sortable is true. Pass a function here to be called when you sort a column. Useful for reloading the table asynchronously.'}
       ]"
       :slots="[
         {name: 'default', description: 'Optional. In case you want to create the markups yourself. It\'\s necessary when you don\'\t pass the items and headers prop.'},
@@ -82,7 +93,8 @@
             },
             {
               name: 'Last name',
-              key: 'lastName'
+              key: 'lastName',
+              sortable: false
             }
         ],
         items: [
@@ -107,7 +119,8 @@
         ],
         code: `<va-table :headers="headers" :items="items"></va-table>`,
         code2: `<va-table :headers="headers" :items="items" list></va-table>`,
-        code3: `<va-table>
+        code3: `<va-table :headers="headers" :items="items" sortable></va-table>`,
+        code4: `<va-table>
   <thead>
     <tr>
       <th v-for="(header, keyH) in headers" :key="keyH" :id="header.key">{{ header.name }}</th>
