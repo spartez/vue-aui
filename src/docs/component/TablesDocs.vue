@@ -61,7 +61,7 @@
         {name: 'headers', type: 'Array', description: 'Array of objects for the table\'\s header. Each object must contain a name and a key property, both strings. This key property will bind the column to the respective header, so be sure to pass the same name. If sortable is true, but you don\'t want to sort a especific header, you can pass the sortable false attribute.'},
         {name: 'items', type: 'Array', description: 'Array of objects for the table\'\s body.'},
         {name: 'list', type: 'Boolean', default: 'false', description: 'If true it will set the aui-table-list class.'},
-        {name: 'sortable', type: 'Boolean', default: 'false', description: 'If true the table headers can be clicked and the data is sortable.'},
+        {name: 'sortable', type: 'Boolean', default: 'false', description: 'If true the table headers can be clicked and the data is sorted.'},
         {name: 'sortableCallback', type: 'Function', default: '', description: 'Can be used when sortable is true. Pass a function here to be called when you sort a column. Useful for reloading the table asynchronously.'}
       ]"
       :slots="[
