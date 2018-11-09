@@ -2,7 +2,7 @@
   <div>
     <div class="aui-tabs horizontal-tabs">
       <ul class="tabs-menu">
-        <li ref="item" class="menu-item" v-for="tab in tabs">
+        <li ref="item" class="menu-item" :style="styleWidth" v-for="(tab, key) in tabs" :key="key">
           <a :href="'#' + tab.componentOptions.propsData.tabId">{{tab.data.attrs.name}}</a>
         </li>
       </ul>
@@ -15,6 +15,10 @@
   import {createUniqueId} from '../../utils'
 
   export default {
+    props: {
+      fullWidth: Boolean
+    },
+
     mounted() {
       const link = AJS.$(this.$el).find('.menu-item a')[0];
       const $link = AJS.$(link);
@@ -33,6 +37,15 @@
           }
         }
         return tabs
+      },
+      styleWidth() {
+        if (!this.fullWidth) return
+
+        const width = `${100 / this.tabs.length}%`
+        return {
+          width,
+          textAlign: 'center'
+        }
       }
     }
   }
