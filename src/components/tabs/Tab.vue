@@ -7,13 +7,14 @@
 <script>
   export default {
     props: {
-      tabId: String
-    },
-
-    data() {
-      return {
-        id: this.tabId
-      }
+      id: {
+         type: String,
+         required: true
+       },
+       name: {
+         type: String,
+         required: true
+       }
     }
   }
 </script>
