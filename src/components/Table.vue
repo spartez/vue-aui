@@ -2,9 +2,8 @@
   <table class="aui" :class="{'aui-table-list': list, 'aui-table-sortable': sortable}">
     <thead v-if="hasItems">
       <tr>
-        <th v-for="(header, keyH) in headers" :key="keyH" :id="header.key"
-          @click="sortField(header.key)" :class="setSortClass(header)">
-          {{ header.name }}
+        <th v-for="(header, keyH) in headers" :key="keyH" @click="sortField(header)" :class="setSortClass(header)">
+          <span>{{ header.name }}</span>
         </th>
     </tr>
     </thead>
@@ -60,13 +59,13 @@ export default {
       return unsortable
     },
     sortField(header) {
-      if (!header.sortable) return
+      if (header.hasOwnProperty('sortable') && !header.sortable) return
 
       this.sortDirection = this.sortDirection === '-' ? '+' : '-'
       this.sort = this.sortDirection + header.key
 
       if (this.sortableCallback) {
-        this.sortableCallback()
+        this.sortableCallback(this.sort)
       }
 
       return
