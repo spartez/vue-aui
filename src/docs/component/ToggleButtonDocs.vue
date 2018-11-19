@@ -19,9 +19,12 @@
           <p>
             <va-toggle v-model="toggle3" :busy="busy"></va-toggle>
           </p>
-          <h5>Custom color</h5>
+          <h5>Type</h5>
           <p>
-            <va-toggle v-model="toggle4" va-color="#ffa500"></va-toggle>
+            <va-toggle v-model="toggle4" va-type="error"></va-toggle>
+            <va-toggle v-model="toggle5" va-type="warning"></va-toggle>
+            <va-toggle v-model="toggle6" va-type="success"></va-toggle>
+            <va-toggle v-model="toggle7" va-type="info"></va-toggle>
           </p>
         </va-tab>
         <va-tab name="Code">
@@ -39,7 +42,7 @@
         {name: 'label', type: 'String', description: 'Adds aui-label with given text.'},
         {name: 'tooltip-off', type: 'String', default: 'right middle', description: 'Sets the tooltip text when the toggle is set to the \'off\' state.'},
         {name: 'tooltip-on', type: 'String', default: 'right middle', description: 'Sets the tooltip text when the toggle is set to the \'on\' state.'},
-        {name: 'va-color', type: 'String', description: 'Sets a custom background color when the toggle is set to the \'on\' state.'},
+        {name: 'va-type', type: 'String', default: 'success', description: 'Colored type of the toggle button. Accepted values: error, warning, success, info.'},
       ]" :events="[
         {name:'input', description: 'Emitted when toggle status is changed.'},
       ]">
@@ -56,6 +59,9 @@
         toggle2: false,
         toggle3: true,
         toggle4: true,
+        toggle5: true,
+        toggle6: true,
+        toggle7: true,
         busy: true,
         code: `<p>
   <va-toggle v-model="toggle1"></va-toggle>
@@ -79,7 +85,10 @@
 
 <h5>Custom color</h5>
 <p>
-  <va-toggle v-model="toggle4" va-color="#ffa500"></va-toggle>
+  <va-toggle v-model="toggle4" va-type="error"></va-toggle>
+  <va-toggle v-model="toggle5" va-type="warning"></va-toggle>
+  <va-toggle v-model="toggle6" va-type="success"></va-toggle>
+  <va-toggle v-model="toggle7" va-type="info"></va-toggle>
 </p>
 `
       }
