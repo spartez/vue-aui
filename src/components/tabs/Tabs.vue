@@ -19,31 +19,27 @@
       }
     },
     mounted() {
-      console.log('mounted')
       this.updateTabs()
       AJS.tabs.setup()
     },
     updated(){
-      console.log('updated')
       this.updateTabs()
     },
     methods: {
       selectDefaultTab() {
         if (this.tabs.length){
-          console.log('select first tab')
           this.selectTab(this.tabs[0].hash)
         }
       },
       hasActiveTab(){
-        return $('.menu-item.active-tab').length
+        let activeTab = $('.menu-item.active-tab')
+        return activeTab.length && activeTab.is(':visible')
       },
       selectTab(tabHash) {
         Vue.nextTick(() => {
           const tabLinks = this.$refs[`tab_link_${tabHash}`]
-          console.log('TABLINKS', tabLinks)
           if (tabLinks && tabLinks.length) {
             let $tabLink = $(tabLinks[0])
-            console.log('$TABLINK', $tabLink)
             AJS.tabs.change($tabLink)
           }
         })
@@ -56,7 +52,6 @@
             tabs.push(tab)
           }
         })
-        console.log('TABS', tabs)
         return tabs
       },
       tabsChanged(newTabs){
@@ -66,7 +61,9 @@
         let newTabs = this.getTabs()
         if (this.tabsChanged(newTabs)) {
           this.tabs = newTabs
-          this.selectDefaultTab()
+          if (!this.hasActiveTab()){
+            this.selectDefaultTab()
+          }
         }
       }
     }
