@@ -1,18 +1,25 @@
 <template>
-  <div class="tabs-pane" :id="id">
+  <div class="tabs-pane" :id="hash">
     <slot></slot>
   </div>
 </template>
 
 <script>
+  import {createUniqueId} from '../../utils'
+
   export default {
     props: {
-      tabId: String
+      id: {
+        type: String
+      },
+      name: {
+        type: String,
+        required: true
+      }
     },
-
-    data() {
-      return {
-        id: this.tabId
+    computed: {
+      hash() {
+        return this.id ? this.id : createUniqueId(`tab`)
       }
     }
   }
