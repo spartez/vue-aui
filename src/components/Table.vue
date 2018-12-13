@@ -3,7 +3,11 @@
     <thead v-if="hasItems">
       <tr>
         <th v-for="(header, keyH) in headers" :key="keyH" @click="sortField(header)" :class="setSortClass(header)">
-          <span>{{ header.name }}</span>
+          <span :class="{'table-sorter-header-inner': sortable}">
+            <span :class="{'aui-table-header-content': sortable}">
+              <span>{{ header.name }}</span>
+            </span>
+          </span>
         </th>
     </tr>
     </thead>
@@ -73,3 +77,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.tablesorter-header > .tablesorter-header-inner > .aui-table-header-content::after {
+  display: none;
+}
+</style>
