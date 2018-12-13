@@ -1,6 +1,7 @@
 <template>
   <div class="aui-group">
     <div class="aui-item">
+      <h3>Basic usage</h3>
       <va-tabs>
         <va-tab name="Example">
           <va-tabs>
@@ -27,6 +28,33 @@
           <pre v-highlightjs><code class="xml" v-text='code'></code></pre>
         </va-tab>
       </va-tabs>
+      <h3>Full width prop</h3>
+      <va-tabs>
+        <va-tab name="Example">
+          <va-tabs va-full-width>
+            <va-tab name="Tab 1">
+              <h3>Tab 1</h3>
+              <p>This is content of tab 1</p>
+            </va-tab>
+            <va-tab name="Tab 2">
+              <h3>Tab 2</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into
+                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release
+                of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+                like Aldus PageMaker including versions of Lorem Ipsum.
+              </p>
+            </va-tab>
+          </va-tabs>
+        </va-tab>
+
+        <va-tab name="Code">
+          <pre v-highlightjs><code class="xml" v-text='code2'></code></pre>
+        </va-tab>
+      </va-tabs>
     </div>
 
     <div class="aui-item">
@@ -36,6 +64,7 @@
       </api-table>
       <api-table name="va-tab" :props="[
       {name: 'name', type: 'String', description: 'Tab title.'},
+      {name: 'va-full-width', type: 'Boolean', default: 'false', description: 'If true then the tabs have full-width and the text is centered'},
     ]" :slots="[
       {name: 'default', description: 'Tab contents.'},
     ]">
@@ -64,7 +93,25 @@
     </p>
   </va-tab>
 </va-tabs>
-`
+`,
+      code2: `<va-tabs full-width>
+<va-tab name="Tab 1">
+  <h3>Tab 1</h3>
+  <p>This is content of tab 1</p>
+</va-tab>
+<va-tab name="Tab 2">
+  <h3>Tab 2</h3>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+    scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+    into
+    electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+    release
+    of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+    like Aldus PageMaker including versions of Lorem Ipsum.
+  </p>
+</va-tab>
+</va-tabs>`
       }
     }
   }
