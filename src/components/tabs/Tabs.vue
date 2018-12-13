@@ -16,7 +16,7 @@
 
   export default {
     props: {
-      fullWidth: Boolean
+      vaFullWidth: Boolean
     },
 
     mounted() {
@@ -39,11 +39,10 @@
         return tabs
       },
       styleWidth() {
-        if (!this.fullWidth) return
+        if (!this.vaFullWidth) return
 
-        const width = `${100 / this.tabs.length}%`
         return {
-          width,
+          flex: 1,
           textAlign: 'center'
         }
       }

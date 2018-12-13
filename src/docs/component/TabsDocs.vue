@@ -31,7 +31,7 @@
       <h3>Full width prop</h3>
       <va-tabs>
         <va-tab name="Example">
-          <va-tabs full-width>
+          <va-tabs va-full-width>
             <va-tab name="Tab 1">
               <h3>Tab 1</h3>
               <p>This is content of tab 1</p>
@@ -64,7 +64,7 @@
       </api-table>
       <api-table name="va-tab" :props="[
       {name: 'name', type: 'String', description: 'Tab title.'},
-      {name: 'full-width', type: 'Boolean', default: 'false', description: 'If true then the tabs have full-width and the text is centered'},
+      {name: 'va-full-width', type: 'Boolean', default: 'false', description: 'If true then the tabs have full-width and the text is centered'},
     ]" :slots="[
       {name: 'default', description: 'Tab contents.'},
     ]">
