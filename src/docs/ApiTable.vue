@@ -79,6 +79,28 @@
       </table>
     </template>
 
+    <template v-if="methods && methods.length">
+      <h4>Methods</h4>
+      <table class="aui">
+        <thead>
+        <tr>
+          <th id="method-name">Name</th>
+          <th id="method-params">Params</th>
+          <th id="method-description">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="method in methods">
+          <td headers="method-name">
+            <va-lozenge class="name-lozenge" subtle type="current">{{method.name}}</va-lozenge>
+          </td>
+          <td headers="method-params"><code>{{method.params || '-'}}</code></td>
+          <td headers="method-description">{{method.description}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </template>
+
     <template v-if="directiveValue">
       <h4>Directive value</h4>
       <table class="aui">
@@ -139,6 +161,7 @@
       modifiers: Array,
       props: Array,
       slots: Array,
+      methods: Array,
     },
     computed: {
       namesArray() {

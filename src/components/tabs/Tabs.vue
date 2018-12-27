@@ -2,8 +2,12 @@
   <div>
     <div class="aui-tabs horizontal-tabs">
       <ul class="tabs-menu">
-        <li class="menu-item" :key="tab.hash" v-for="tab in tabs">
-          <a :ref="'tab_link_' + tab.hash" :href="'#' + tab.hash" v-html="tab.name"></a>
+        <li v-for="tab in tabs" :key="tab.id" class="menu-item">
+          <a
+            :ref="`tab_link_${tab.id}`"
+            :href="'#' + tab.id"
+            v-html="tab.name"
+          ></a>
         </li>
       </ul>
       <slot></slot>
@@ -12,60 +16,63 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        tabs: []
+export default {
+  data() {
+    return {
+      tabs: []
+    };
+  },
+  mounted() {
+    this.updateTabs();
+    AJS.tabs.setup();
+  },
+  updated() {
+    console.log("tabs updated");
+    this.updateTabs();
+  },
+  methods: {
+    selectDefaultTab() {
+      if (this.tabs.length) {
+        this.selectTab(this.tabs[0].id);
       }
     },
-    mounted() {
-      this.updateTabs()
-      AJS.tabs.setup()
+    hasActiveTab() {
+      let activeTab = AJS.$(".menu-item.active-tab");
+      return activeTab.length && activeTab.is(":visible");
     },
-    updated(){
-      this.updateTabs()
-    },
-    methods: {
-      selectDefaultTab() {
-        if (this.tabs.length){
-          this.selectTab(this.tabs[0].hash)
+    selectTab(id) {
+      console.log("ID", id);
+      this.$nextTick(() => {
+        const tabLinks = this.$refs[`tab_link_${id}`];
+        console.log("TABLINKS", tabLinks);
+        if (tabLinks && tabLinks.length) {
+          let $tabLink = AJS.$(tabLinks[0]);
+          AJS.tabs.change($tabLink);
         }
-      },
-      hasActiveTab(){
-        let activeTab = $('.menu-item.active-tab')
-        return activeTab.length && activeTab.is(':visible')
-      },
-      selectTab(tabHash) {
-        Vue.nextTick(() => {
-          const tabLinks = this.$refs[`tab_link_${tabHash}`]
-          if (tabLinks && tabLinks.length) {
-            let $tabLink = $(tabLinks[0])
-            AJS.tabs.change($tabLink)
-          }
-        })
-      },
-      getTabs() {
-        let tabs = []
-        this.$slots.default.forEach(vNode => {
-          if (vNode.componentInstance && vNode.componentOptions.tag === "va-tab") {
-            let tab = vNode.componentInstance
-            tabs.push(tab)
-          }
-        })
-        return tabs
-      },
-      tabsChanged(newTabs){
-        return  newTabs.length !== this.tabs.length
-      },
-      updateTabs() {
-        let newTabs = this.getTabs()
-        if (this.tabsChanged(newTabs)) {
-          this.tabs = newTabs
-          if (!this.hasActiveTab()){
-            this.selectDefaultTab()
-          }
+      });
+    },
+    getTabs() {
+      return this.$slots.default
+        .filter(
+          vNode =>
+            vNode.componentInstance &&
+            (vNode.componentOptions.tag === "va-tab" ||
+              vNode.componentOptions.tag === "aui-tab")
+        )
+        .map(vNode => vNode.componentInstance);
+    },
+    tabsChanged(newTabs) {
+      return newTabs.length !== this.tabs.length;
+    },
+    updateTabs() {
+      let newTabs = this.getTabs();
+      if (this.tabsChanged(newTabs)) {
+        this.tabs = newTabs;
+        if (!this.hasActiveTab()) {
+          this.selectDefaultTab();
         }
       }
     }
   }
+};
 </script>

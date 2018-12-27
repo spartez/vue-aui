@@ -1,3 +1,7 @@
+.project
+/dist
+dist
+
 .idea/
 .DS_Store
 *.swp
@@ -10,8 +14,8 @@ test/unit/coverage
 test/e2e/reports
 selenium-debug.log
 
-dist
-.project
+
+
 
 # Editor directories and files
 .idea
