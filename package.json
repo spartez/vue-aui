@@ -24,7 +24,7 @@
     "release": "np",
     "unit": "mocha-webpack --webpack-config build/webpack.test.conf.js --require test/setup.js --glob '*.spec.js' src test --recursive",
     "test": "echo 'They don`t work'",
-    "version": "node build/clean.js && npm run build && git add ./dist ./index.html"
+    "version": "node build/clean.js && npm run build && git add ./dist -f ./index.html"
   },
   "main": "dist/static/js/vue-aui.js",
   "unpkg": "dist/static/js/vue-aui.js",

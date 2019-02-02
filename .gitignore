@@ -1,6 +1,4 @@
-.project
-/dist
-dist
+dist/
 
 .idea/
 .DS_Store
@@ -14,12 +12,10 @@ test/unit/coverage
 test/e2e/reports
 selenium-debug.log
 
-
-
-
 # Editor directories and files
 .idea
 .vscode
+.project
 *.suo
 *.ntvs*
 *.njsproj
