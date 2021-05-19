@@ -61,7 +61,7 @@
     "jquery": "^2.2.4",
     "jsdom": "^11.3.0",
     "jsdom-global": "^3.0.2",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "mocha": "^4.0.1",
     "mocha-webpack": "^1.0.1",
     "np": "^2.20.1",
