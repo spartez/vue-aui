@@ -24,7 +24,7 @@
     "release": "np",
     "unit": "jest",
     "test": "echo 'They don`t work'",
-    "version": "node build/clean.js && npm run build && git add ./dist ./index.html"
+    "version": "node build/clean.js && npm run build && git add -f ./dist ./index.html"
   },
   "main": "dist/static/js/vue-aui.js",
   "unpkg": "dist/static/js/vue-aui.js",
