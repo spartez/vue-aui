@@ -27,8 +27,7 @@ const app = express()
 const compiler = webpack(webpackConfig)
 
 const devMiddleware = require('webpack-dev-middleware')(compiler, {
-  publicPath: webpackConfig.output.publicPath,
-  quiet: true
+  publicPath: webpackConfig.output.publicPath
 })
 
 const hotMiddleware = require('webpack-hot-middleware')(compiler, {
@@ -67,8 +66,6 @@ app.use(devMiddleware)
 // serve pure static assets
 const staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
-
-const uri = 'http://localhost:' + port
 
 var _resolve
 var _reject
