@@ -30,7 +30,12 @@ const webpackConfig = merge(baseWebpackConfig, {
       {
         test: /\.css$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../../',
+            },
+          },
           {
             loader: 'css-loader',
             options: {
