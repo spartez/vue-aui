@@ -17,6 +17,9 @@
     "atlassian user interface"
   ],
   "bugs": "https://github.com/spartez/vue-aui/issues",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "start": "npm run dev",
     "dev": "node build/dev-server.js",
