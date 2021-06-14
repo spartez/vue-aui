@@ -90,8 +90,6 @@ export {
 function deprecated(component) {
   const DeprecatedMixin = {
     created() {
-      const foo = { x: 7 };
-      const bar = { ...foo };
       console.warn(`You are using deprecated component with name "${this.$vnode.componentOptions.tag}". Use one with "va-" prefix instead.`);
     }
   };
