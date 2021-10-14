@@ -8,7 +8,7 @@
 <script>
   import auiSelect2Mixin from './select2Mixin'
 
-  const SEPARATOR = '|';
+  const SEPARATOR = '\u0000';
 
   export default {
     mixins: [auiSelect2Mixin],
