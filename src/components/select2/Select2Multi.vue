@@ -8,7 +8,7 @@
 <script>
   import auiSelect2Mixin from './select2Mixin'
 
-  const SEPARATOR = ',';
+  const SEPARATOR = '\u0000';
 
   export default {
     mixins: [auiSelect2Mixin],
@@ -35,7 +35,10 @@
     mounted() {
       this.$input.val(this.value && this.value.join(SEPARATOR))
 
-      const options = {...this.commonOptions}
+      const options = {
+        ...this.commonOptions,
+        separator: SEPARATOR
+      }
 
       if (this.initSelection) {
         options.initSelection = (element, callback) => {
