@@ -14,6 +14,7 @@
                      :query="query"
                      :width="width"
                      :value="value"
+                      :separator="separator"
                      @input="$emit('input', $event)"
   >
     <slot></slot>
@@ -52,6 +53,7 @@
                     :query="query"
                     :value="value"
                     :width="width"
+                 :separator="separator"
                     @input="$emit('input', $event)"
   >
     <slot></slot>
@@ -104,6 +106,10 @@
       maximumSelectionSize: Number,
       sortable: Boolean,
       tagsMode: Boolean,
+      separator: {
+        type: String,
+        default: ','
+      }
     },
 
     components: {Select2Single, Select2Multi},
