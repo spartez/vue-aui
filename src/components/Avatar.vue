@@ -1,5 +1,5 @@
 <template>
-  <span :class="['aui-avatar', 'aui-avatar-' + size, this.squared ? 'aui-avatar-squared' : '']">
+  <span :class="['aui-avatar', 'aui-avatar-' + size, squared ? 'aui-avatar-squared' : '']">
     <span class="aui-avatar-inner"><img :src="src"></span>
   </span>
 </template>

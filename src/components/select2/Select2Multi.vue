@@ -8,8 +8,6 @@
 <script>
   import auiSelect2Mixin from './select2Mixin'
 
-  const SEPARATOR = '\u0000';
-
   export default {
     mixins: [auiSelect2Mixin],
 
@@ -19,7 +17,11 @@
       sortable: Boolean,
       tagsMode: Boolean,
       value: Array,
-      locked: {type: Array, default: () => []}
+      locked: {type: Array, default: () => []},
+      separator: {
+        type: String,
+        default: ','
+      }
     },
 
     watch: {
@@ -33,11 +35,11 @@
     },
 
     mounted() {
-      this.$input.val(this.value && this.value.join(SEPARATOR))
+      this.$input.val(this.value && this.value.join(this.separator))
 
       const options = {
         ...this.commonOptions,
-        separator: SEPARATOR
+        separator: this.separator
       }
 
       if (this.initSelection) {
