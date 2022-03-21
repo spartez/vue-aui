@@ -9,7 +9,8 @@ module.exports = {
     ],
     plugins: [
         '@babel/plugin-transform-runtime',
-        '@babel/plugin-proposal-object-rest-spread'
+        '@babel/plugin-proposal-object-rest-spread',
+        '@babel/plugin-proposal-unicode-property-regex'
     ],
     sourceType: 'unambiguous',
     env: {
