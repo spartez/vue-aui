@@ -119,3 +119,15 @@
     }
   }
 </script>
+
+<style>
+/* Override AUI misplaced close icon */
+.select2-container.select2-container-multi .select2-search-choice-close {
+  top: 5px !important;
+  right: 2px !important;
+}
+
+.select2-container .select2-search-choice-close {
+  top: 10px !important;
+}
+</style>
