@@ -5,6 +5,7 @@
                     :tooltip-on="tooltipOn || 'Enabled'" :tooltip-off="tooltipOff || 'Disabled'"
                     :disabled="disabled"
                     :label="label || ''"
+                    :class="vaType"
                     :checked="value"></aui-toggle>
     </span>
 </template>
@@ -23,7 +24,17 @@
       },
       label: String,
       tooltipOn: String,
-      tooltipOff: String
+      tooltipOff: String,
+      vaType: {
+        type: String,
+        default: 'success',
+        validator(value) {
+          return 'error' === value
+            || 'warning' === value
+            || 'success' === value
+            || 'info' === value
+        }
+      }
     },
 
     mounted: function () {
@@ -47,3 +58,40 @@
     }
   }
 </script>
+
+<style>
+.aui-toggle-input + .aui-toggle-view {
+  transition: 100ms all linear;
+}
+
+.error:not([disabled]) .aui-toggle-input:checked:enabled + .aui-toggle-view,
+.error:not([disabled]):hover .aui-toggle-input:checked:enabled + .aui-toggle-view,
+.error.aui-toggle-input.indeterminate-checked + .aui-toggle-view {
+  background-color: #DE350B;
+}
+
+.success:not([disabled]) .aui-toggle-input:checked:enabled + .aui-toggle-view,
+.success:not([disabled]):hover .aui-toggle-input:checked:enabled + .aui-toggle-view,
+.success.aui-toggle-input.indeterminate-checked + .aui-toggle-view {
+  background-color: #00875A;
+}
+
+.warning:not([disabled]) .aui-toggle-input:checked:enabled + .aui-toggle-view,
+.warning:not([disabled]):hover .aui-toggle-input:checked:enabled + .aui-toggle-view,
+.warning.aui-toggle-input.indeterminate-checked + .aui-toggle-view {
+  background-color: #FFAB00;
+}
+
+.info:not([disabled]) .aui-toggle-input:checked:enabled + .aui-toggle-view,
+.info:not([disabled]):hover .aui-toggle-input:checked:enabled + .aui-toggle-view,
+.info .aui-toggle-input.indeterminate-checked + .aui-toggle-view {
+  background-color: #0052CC;
+}
+
+.error:not([disabled]):not([busy]):hover .aui-toggle-input:checked:enabled + .aui-toggle-view,
+.warning:not([disabled]):not([busy]):hover .aui-toggle-input:checked:enabled + .aui-toggle-view,
+.success:not([disabled]):not([busy]):hover .aui-toggle-input:checked:enabled + .aui-toggle-view,
+.info:not([disabled]):not([busy]):hover .aui-toggle-input:checked:enabled + .aui-toggle-view {
+  opacity: .7;
+}
+</style>
